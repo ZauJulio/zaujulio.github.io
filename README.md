@@ -3,7 +3,7 @@
   <img src="https://media.giphy.com/media/nDg8O2z3Rmk6Y/source.gif" width="30px">
 </h1>
 
-<p align="right"> <img src="https://komarev.com/ghpvc/?username=zaujulio&color=grey" alt="zaujulio" /> </p>
+<p align="right"> <img src="https://komarev.com/ghpvc/?username=zaujulio&color=blue" alt="zaujulio" /> </p>
 
 I'm at university, always researching and learning something new, very well accompanied by my playlists.
 
