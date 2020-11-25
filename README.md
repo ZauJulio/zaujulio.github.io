@@ -1,5 +1,5 @@
 <h1 align="center">
-  Hello Hobbits and Padawans
+  Hello Padawans
   <img src="https://media.giphy.com/media/nDg8O2z3Rmk6Y/source.gif" width="30px">
 </h1>
 
@@ -36,7 +36,6 @@ I am currently learning about machine learning and artificial intelligence, but 
 <img src="https://devicon.dev/devicon.git/icons/linux/linux-original.svg" alt="linux" width="20" height="20"/>
 </p>
 
-<p align="center"><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaujulio&layout=compact" alt="zaujulio"/></p>
 
 <p align="center">
 <a href="https://twitter.com/Zau_Galvao?s=09" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="ZauJulio" height="20" width="20" /></a>
