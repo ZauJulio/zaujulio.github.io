@@ -12,7 +12,7 @@ I am currently learning about machine learning and artificial intelligence, but 
 - 📧 Talk to me by email, remember to bring a cup of coffee...
 - 🐦 Follow me there on Twitter, nothing to do with GitHub :D
 
-##### Sit vis vobiscum. <img src="https://media.giphy.com/media/H0YQivUNTuC4f9kEA0/source.gif" width="30px">
+##### Sit vis vobiscum
 
 
 <p align="center">
