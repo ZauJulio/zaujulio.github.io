@@ -13,9 +13,9 @@ I am currently learning about machine learning and artificial intelligence, but 
 - 🐦 Follow me there on Twitter, nothing to do with GitHub :D
 
 <p align="center">
-  <img align="center" src="https://github.com/ZauJulio/ZauJulio/blob/main/2021-02-07_06-21.png?raw=true" width=400>
-  <img align="center" src="https://github.com/ZauJulio/ZauJulio/blob/main/2021-02-07_06-22.png" width=400>
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=zaujulio&&show_icons=true&theme=radical&include_all_commits=true" alt="zaujulio">
+  <img align="center" src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=zaujulio&bg=F4F4F4" width=600>
+  <img align="center" src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23000;--border-radius:10px" width=400>
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=zaujulio&&show_icons=true&theme=radical&include_all_commits=true" width=400 alt="zaujulio">
 
 <h4 align="center">Sit vis vobiscum</>
 </p>
