@@ -20,9 +20,6 @@ I am currently learning about machine learning and artificial intelligence, but 
     <img align="center" src="https://github-readme-stats.vercel.app/api?username=zaujulio&&show_icons=true&theme=graywhite&include_all_commits=true" width=400 alt="zaujulio">
 </p>
 
-<p align="center"><img src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=zaujulio&bg=DCDCDC" width=500></>
-
-
 
 <p align="center">
 <a href="https://twitter.com/Zau_Galvao?s=09" target="blank"><img align="center" src="https://cdn.jsdelivr.net/npm/simple-icons@3.0.1/icons/twitter.svg" alt="ZauJulio" height="30" width="30" /></a>
