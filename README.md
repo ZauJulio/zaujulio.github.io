@@ -12,7 +12,12 @@ I am currently learning about machine learning and artificial intelligence, but 
 - 📧 Talk to me by email, remember to bring a cup of coffee...
 - 🐦 Follow me there on Twitter, nothing to do with GitHub :D
 
-##### Sit vis vobiscum
+<p align="center">
+<img align="center" src="https://github-readme-stats.vercel.app/api?username=zaujulio&&show_icons=true&theme=radical&include_all_commits=true" alt="zaujulio">
+
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=zaujulio&show_icons=true&locale=en&layout=compact&bg_color=0D1117&title_color=fff&text_color=fff&icon_color=0076B7" alt="zaujulio" />
+<h4 align="center">Sit vis vobiscum</>
+</p>
 
 
 <p align="center">
