@@ -16,7 +16,7 @@ I am currently learning about machine learning and artificial intelligence, but 
 <h4 align="center">Sit vis vobiscum</>
 
 <p align="center">
-    <img align="center" src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23131221;--bg-color:%23611460;--badge-bg-color:%23131221;--badge-text-color:%23A5FFF7;--border:%23fff" width=400>    
+    <img align="center" src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23141321;--bg-color:%23D83A7C;--badge-bg-color:%23141321;--badge-text-color:%23A5FFF7;" width=400>    
     <img align="center" src="https://github-readme-stats.vercel.app/api?username=zaujulio&&show_icons=true&theme=radical&include_all_commits=true" width=400 alt="zaujulio">
 </p>
 
