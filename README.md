@@ -10,7 +10,7 @@ I'm at university, always researching and learning something new, very well acco
 I am currently learning about machine learning and artificial intelligence, but I am also interested in cloud and web. I'll tell you right away, I love Python and Linux. I'm also learning HTML + CSS + JS / TS with React and MongoDB and Postgress.
 
 - 📧 Talk to me by email, remember to bring a cup of coffee...
-- 🐦 Follow me there on Twitter, nothing to do with GitHub :D
+- 🐦 Follow me there on Twitter, GitHub updates :D
 
 
 <h4 align="center">Sit vis vobiscum</>
