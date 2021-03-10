@@ -4,6 +4,7 @@
 </h1>
 
 <p align="right"> <img src="https://komarev.com/ghpvc/?username=zaujulio&color=blue" alt="zaujulio" /> </p>
+<img align="right" src="./undraw_Code_thinking_re_gka2.svg" width=300>
 
 I'm at university, always researching and learning something new, very well accompanied by my playlists.
 
