@@ -16,10 +16,27 @@ I am currently learning about machine learning and artificial intelligence, but 
 <h4 align="center">Sit vis vobiscum</>
 
 <p align="center">
-  <img align="top" src="https://github-readme-stats.vercel.app/api?username=zaujulio&&show_icons=true&theme=radical&include_all_commits=true" height=300 width=400>
-  <img align="top" src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaujulio&layout=compact&theme=radical" height=300 width=400>
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img
+      align="center"
+      src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaujulio&layout=compact&theme=radical"
+    />
+  </a>
+  <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img
+      align="center"
+      height="165"
+      src="https://github-readme-stats.vercel.app/api?username=zaujulio&count_private=true&show_icons=true&theme=radical&custom_title=Github%20Status&hide=issues"
+    />
+  </a>
+</p>
 
-  <img src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23141321;--bg-color:%23D83A7C;--badge-bg-color:%23141321;--badge-text-color:%23A5FFF7;" width=800>
+<p align="center">
+  <img
+       width=800
+       align="center"
+       height="165"
+       src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23141321;--bg-color:%23D83A7C;--badge-bg-color:%23141321;--badge-text-color:%23A5FFF7;">
 </p>
 
 <p align="center">
