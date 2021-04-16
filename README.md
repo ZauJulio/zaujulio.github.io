@@ -26,17 +26,25 @@ I am currently learning about machine learning and artificial intelligence, but 
     <img
       align="center"
       height="165"
-      src="https://github-readme-stats.vercel.app/api?username=zaujulio&count_private=true&show_icons=true&theme=radical&custom_title=Github%20Status&hide=issues"
+      src="https://github-readme-stats.vercel.app/api?username=zaujulio&count_private=true&show_icons=true&theme=radical"
     />
   </a>
 </p>
 
 <p align="center">
-  <img
-       width=800
-       align="center"
-       height="165"
-       src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23141321;--bg-color:%23D83A7C;--badge-bg-color:%23141321;--badge-text-color:%23A5FFF7;">
+  <a href="https://profile.codersrank.io/user/zaujulio">
+    <img
+         align="center"
+         height="165"
+         src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23141321;--bg-color:%23D83A7C;--badge-bg-color:%23141321;--badge-text-color:%23A5FFF7;">
+  </a>
+<!--   <a href="https://github.com/anuraghazra/github-readme-stats">
+    <img
+      align="center"
+      height="165"
+      src="https://github-readme-stats.vercel.app/api/wakatime?username=zaujulio)](https://github.com/anuraghazra/github-readme-stats&theme=radical"
+    />
+  </a> -->
 </p>
 
 <p align="center">
