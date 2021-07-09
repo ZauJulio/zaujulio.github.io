@@ -8,16 +8,27 @@
 
 I'm at university, always researching and learning something new, very well accompanied by my playlists.
 
-I am currently learning about machine learning and artificial intelligence, but I am also interested in cloud and web. I'll tell you right away, I love Python and Linux. I'm also learning HTML + CSS + JS / TS with React and MongoDB and Postgress.
+I am currently learning about artificial intelligence, but I am also interested in cloud, web and graphic design. I'll tell you right away, I love Python and Linux. I'm also learning about DB's and Web development.
 
 - 📧 Talk to me by email, remember to bring a cup of coffee...
 - 🐦 Follow me there on Twitter, GitHub updates :D
 
-<h4 align="center">Sit vis vobiscum</>
+___
+<h4 align="center">Silenzio, Bruno!</h4>
+
+<p align="center">
+  <img
+    align="center"
+     height="400"
+    src="https://cr-skills-chart-widget.azurewebsites.net/api/api?username=zaujulio&bg=%23141321"
+  />
+</p>
+  
 
 <p align="center">
   <a href="https://github.com/anuraghazra/github-readme-stats">
     <img
+      height="145"
       align="center"
       src="https://github-readme-stats.vercel.app/api/top-langs/?username=zaujulio&layout=compact&theme=radical"
     />
@@ -25,27 +36,20 @@ I am currently learning about machine learning and artificial intelligence, but 
   <a href="https://github.com/anuraghazra/github-readme-stats">
     <img
       align="center"
-      height="165"
+      height="145"
       src="https://github-readme-stats.vercel.app/api?username=zaujulio&count_private=true&show_icons=true&theme=radical"
     />
   </a>
 </p>
 
-<p align="center">
+<!-- <p align="center">
   <a href="https://profile.codersrank.io/user/zaujulio">
     <img
          align="center"
          height="165"
          src="https://cr-ss-service.azurewebsites.net/api/ScreenShot?widget=summary&username=zaujulio&badges=2&show-avatar=false&style=--header-bg-color:%23141321;--bg-color:%23D83A7C;--badge-bg-color:%23141321;--badge-text-color:%23A5FFF7;">
   </a>
-<!--   <a href="https://github.com/anuraghazra/github-readme-stats">
-    <img
-      align="center"
-      height="165"
-      src="https://github-readme-stats.vercel.app/api/wakatime?username=zaujulio)](https://github.com/anuraghazra/github-readme-stats&theme=radical"
-    />
-  </a> -->
-</p>
+</p> -->
 
 <p align="center">
   <a href="https://twitter.com/Zau_Galvao?s=09" target="_blank"><img align="center" src="https://img.shields.io/badge/Twitter-1DA1F2?style=for-the-badge&logo=twitter&logoColor=white"/></a>
