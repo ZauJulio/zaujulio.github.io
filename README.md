@@ -36,7 +36,7 @@ ___
   </a>
 
   <a id="codersrank" href="https://profile.codersrank.io/user/zaujulio" target="_blank">
-    <img width="114" height="28" src="https://i.imgur.com/EQnULDd.png" alt="_" />
+    <img width="114" height="28" src="https://img.shields.io/static/v1?style=for-the-badge&message=CodersRank&color=67A4AC&logo=CodersRank&logoColor=FFFFFF&label=" alt="_" />
   </a>
 
   <a id="figma" href="https://www.figma.com/@zaujulio" target="_blank">
