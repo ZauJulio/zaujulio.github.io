@@ -3,7 +3,11 @@
   <img src="https://media.giphy.com/media/nDg8O2z3Rmk6Y/source.gif" width="30px" height="30px">
 </h1>
 
-<p align="right"> <img src="https://komarev.com/ghpvc/?username=zaujulio&color=blue" alt="zaujulio" /> </p>
+<p align="right">
+  <img src="https://komarev.com/ghpvc/?username=zaujulio&color=blue" alt="zaujulio" />
+  <img src="https://wakatime.com/badge/user/8435e4b0-2060-46c8-8e9d-f8a7a42880ee.svg" alt="waka" />
+</p>
+
 <img align="right" src="./thinking.svg" width=300>
 
 I'm at university, always researching and learning something new = )
@@ -25,16 +29,11 @@ ___
   <a id="linkedin" href="https://www.linkedin.com/in/zaujulio" target="_blank">
     <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="_" />
   </a>
-  <a id="telegram" href="https://t.me/ZauJulio" target="_blank">
-    <img src="https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white" alt="_" />
-  </a>
-</p>
-
-<p id="badgets" align="center">
+  
   <a id="gmail" href="http://zauhdf@gmail.com/" target="_blank">
     <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="_" />
   </a>
-
+  
   <a id="codersrank" href="https://profile.codersrank.io/user/zaujulio" target="_blank">
     <img width="114" height="28" src="https://img.shields.io/static/v1?style=for-the-badge&message=CodersRank&color=67A4AC&logo=CodersRank&logoColor=FFFFFF&label=" alt="_" />
   </a>
