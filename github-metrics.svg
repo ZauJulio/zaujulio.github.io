@@ -203,7 +203,7 @@
                         <div class="chart-bars horizontal">
                             <div class="entry">
                                 <span class="name">studiosol</span>
-                                <div class="bar" style="width: 28.112%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                                <div class="bar" style="width: 28.104%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                                 <span class="value">35%</span>
                             </div>
                             <div class="entry">
@@ -213,7 +213,7 @@
                             </div>
                             <div class="entry">
                                 <span class="name">bitwise-challenge</span>
-                                <div class="bar" style="width: 20.6%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
+                                <div class="bar" style="width: 20.608%; background-color: var(--color-calendar-graph-day-L2-bg)"></div>
                                 <span class="value">26%</span>
                             </div>
                             <div class="entry">
