@@ -38,7 +38,7 @@ jobs:
           plugin_people: yes
           plugin_people_limit: 24
           plugin_people_size: 30
-          plugin_people_thanks: Temaker11, oakanderson, JustGlowing, lpabarbosa, joaoborges, jpzm, tacianosilva, ViniciusMaiaM, JFmaia
+          plugin_people_thanks: DayXL, Temaker11, oakanderson, JustGlowing, lpabarbosa, joaoborges, jpzm, tacianosilva, ViniciusMaiaM, JFmaia
           plugin_people_types: thanks
           
           plugin_wakatime: yes
