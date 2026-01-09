@@ -35,11 +35,11 @@ jobs:
           plugin_languages_aliases: JavaScript:JS, TypeScript:TS, Jupyter Notebook:Jupyter
           commits_authoring: zaujulio, zauhdf@gmail.com, zaujulio@users.noreply.github.com
 
-          plugin_people: yes
-          plugin_people_limit: 24
-          plugin_people_size: 30
-          plugin_people_thanks: Sckelic, DayXL, Temaker11, oakanderson, JustGlowing, lpabarbosa, joaoborges, jpzm, tacianosilva, ViniciusMaiaM, JFmaia
-          plugin_people_types: thanks
+          # plugin_people: yes
+          # plugin_people_limit: 24
+          # plugin_people_size: 30
+          # plugin_people_thanks: Sckelic, DayXL, Temaker11, oakanderson, JustGlowing, lpabarbosa, joaoborges, jpzm, tacianosilva, ViniciusMaiaM, JFmaia
+          # plugin_people_types: thanks
           
           plugin_wakatime: yes
           plugin_wakatime_token: ${{ secrets.WAKATIME_TOKEN }}
