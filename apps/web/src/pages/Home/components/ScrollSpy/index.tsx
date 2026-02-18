@@ -14,9 +14,9 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + window.innerHeight / 3;
       const windowHeight = window.innerHeight;
       const documentHeight = document.documentElement.scrollHeight;
+      const triggerOffset = 150; // Distance from top of viewport to trigger section change
 
       // Check if we're at the top (Hero section)
       if (window.scrollY < 100) {
@@ -31,16 +31,34 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
         return;
       }
 
-      // Find the active section by checking which one is in the viewport
+      // Find the active section - check which section's top is closest to the trigger offset
       let currentSection = '';
+      let minDistance = Infinity;
+      
       for (const section of sections) {
         const element = document.getElementById(section.id);
         if (element) {
           const rect = element.getBoundingClientRect();
-          // Check if the section is in the upper third of the viewport
-          if (rect.top <= windowHeight / 3 && rect.bottom >= 0) {
+          const distance = Math.abs(rect.top - triggerOffset);
+          
+          // If section top is at or above trigger offset and closer than current
+          if (rect.top <= triggerOffset && distance < minDistance) {
+            minDistance = distance;
             currentSection = section.id;
-            break;
+          }
+        }
+      }
+      
+      // If no section found above trigger, use the first visible one
+      if (!currentSection) {
+        for (const section of sections) {
+          const element = document.getElementById(section.id);
+          if (element) {
+            const rect = element.getBoundingClientRect();
+            if (rect.top > triggerOffset && rect.top < windowHeight / 2) {
+              currentSection = section.id;
+              break;
+            }
           }
         }
       }

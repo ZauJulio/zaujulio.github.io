@@ -2,7 +2,7 @@ import { SendIcon, MailIcon, LinkedinIcon, GithubIcon } from 'lucide-react';
 
 export function HireMeSection() {
   return (
-    <section id='hire' className='bg-gray-950 py-24 scroll-mt-8'>
+    <section id='hire' className='bg-gray-950 py-24'>
       <div className='container mx-auto px-6 max-w-3xl text-center'>
         <div className='flex justify-center mb-6'>
           <div className='p-3 bg-brand-900/40 rounded-xl'>

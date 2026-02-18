@@ -494,7 +494,7 @@ function SkillsBlock() {
 
 export function AboutMeSection() {
   return (
-    <section id='about' className='bg-black py-20 scroll-mt-8'>
+    <section id='about' className='bg-black py-20'>
       <div className='container mx-auto px-6 max-w-6xl'>
 
         {/* Section Title */}
