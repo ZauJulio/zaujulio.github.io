@@ -32,4 +32,5 @@ jobs:
           git add resume/resume.pdf
           git diff --staged --quiet && echo "No changes to commit" && exit 0
           git commit -m "build(resume): update resume.pdf - [Skip GitHub Action]"
+          git pull --rebase origin main
           git push
