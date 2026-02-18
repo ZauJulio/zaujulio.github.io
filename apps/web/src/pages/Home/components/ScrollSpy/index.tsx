@@ -15,10 +15,19 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY + window.innerHeight / 3;
+      const windowHeight = window.innerHeight;
+      const documentHeight = document.documentElement.scrollHeight;
 
       // Check if we're at the top (Hero section)
       if (window.scrollY < 100) {
         setActiveSection('');
+        return;
+      }
+
+      // Check if we're near the bottom of the page
+      const isNearBottom = window.scrollY + windowHeight >= documentHeight - 100;
+      if (isNearBottom && sections.length > 0) {
+        setActiveSection(sections[sections.length - 1].id);
         return;
       }
 
@@ -29,7 +38,7 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
         if (element) {
           const rect = element.getBoundingClientRect();
           // Check if the section is in the upper third of the viewport
-          if (rect.top <= window.innerHeight / 3 && rect.bottom >= 0) {
+          if (rect.top <= windowHeight / 3 && rect.bottom >= 0) {
             currentSection = section.id;
             break;
           }

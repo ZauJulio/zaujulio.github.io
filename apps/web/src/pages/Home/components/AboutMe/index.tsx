@@ -593,19 +593,30 @@ export function AboutMeSection() {
               <div className='absolute -left-[1px] top-7 -translate-x-1/2 h-3 w-3 rounded-full bg-brand-500 shadow-[0_0_8px_2px] shadow-brand-500/40 transition-all group-hover:scale-150 group-hover:shadow-[0_0_12px_4px] z-10' />
 
               <div className='bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg border border-gray-700/60 hover:border-brand-500 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-900/20'>
-                <h4 className='text-xl font-bold text-white mb-1'>
-                  Features Analyzer
-                </h4>
-                <h5 className='text-brand-300 font-medium text-sm mb-1'>
-                  Boilerplate for Data Visualization and Analysis Tools
-                </h5>
-                <p className='text-gray-500 text-xs mb-4'>
-                  Federal University of Rio Grande do Norte (UFRN) - 2024
-                </p>
+                <div className='flex flex-col md:flex-row gap-6 mb-4'>
+                  <div className='md:w-1/3'>
+                    <img
+                      src='/thesis-features-analyzer.png'
+                      alt='Features Analyzer Application Screenshot'
+                      className='w-full h-auto rounded-lg border border-gray-700/60 shadow-lg'
+                    />
+                  </div>
+                  <div className='md:w-2/3'>
+                    <h4 className='text-xl font-bold text-white mb-1'>
+                      Features Analyzer
+                    </h4>
+                    <h5 className='text-brand-300 font-medium text-sm mb-1'>
+                      Boilerplate for Data Visualization and Analysis Tools
+                    </h5>
+                    <p className='text-gray-500 text-xs mb-4'>
+                      Federal University of Rio Grande do Norte (UFRN) - 2024
+                    </p>
 
-                <p className='text-gray-400 text-sm leading-relaxed mb-4'>
-                  A Python desktop application for dataset feature analysis, prototyping and testing machine learning and statistical models. Built with a modular architecture using GTK for the UI, featuring a custom state management system with the Observer pattern, a typed JSON ORM with Pydantic and TinyDB, and internationalization support (i18n). Includes Docker containerization and automated documentation with MkDocs.
-                </p>
+                    <p className='text-gray-400 text-sm leading-relaxed'>
+                      A Python desktop application for dataset feature analysis, prototyping and testing machine learning and statistical models. Built with a modular architecture using GTK for the UI, featuring a custom state management system with the Observer pattern, a typed JSON ORM with Pydantic and TinyDB, and internationalization support (i18n). Includes Docker containerization and automated documentation with MkDocs.
+                    </p>
+                  </div>
+                </div>
 
                 <div className='flex flex-wrap gap-1.5 mb-4'>
                   {['Python', 'GTK', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Pydantic', 'TinyDB', 'Docker', 'i18n'].map((skill) => (
