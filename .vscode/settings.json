@@ -1,16 +1,14 @@
 {
   "css.lint.unknownAtRules": "ignore",
-  "biome.configurationPath": "./portfolio/packages/configs/biome.json",
+  "biome.configurationPath": "./packages/configs/biome.json",
   "workbench.colorCustomizations": {
     "commandCenter.border": "#e7e7e799",
-    "tab.activeBorder": "#8fa575",
-    "titleBar.activeBackground": "#768c5b",
+    "tab.activeBorder": "#35ac25",
+    "titleBar.activeBackground": "#28821c",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#768c5b99",
+    "titleBar.inactiveBackground": "#28821c99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#768c5b",
-  "cSpell.words": [
-    "powerglitch"
-  ]
+  "peacock.color": "#28821c",
+  "cSpell.words": ["powerglitch"]
 }

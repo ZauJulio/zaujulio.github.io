@@ -1,11 +1,13 @@
-# OS
 .DS_Store
-Thumbs.db
-
-# Editor
-*.swp
-*.swo
-*~
-
-# Portfolio (delegated to portfolio/.gitignore)
-# This root .gitignore only covers repo-level ignores
+node_modules
+.turbo
+*.log
+dist
+dist-ssr
+*.local
+.env
+.cache
+server/dist
+public/dist
+build
+.react-router

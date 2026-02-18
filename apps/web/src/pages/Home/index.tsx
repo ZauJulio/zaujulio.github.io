@@ -62,7 +62,7 @@ export default function Home() {
       >
         <div className='absolute inset-0 z-0'>
           <img
-            src='/glitch-effect-black-background.jpg'
+            src={`${import.meta.env.BASE_URL}glitch-effect-black-background.jpg`}
             alt='Glitch Background'
             className='w-full h-full object-cover opacity-50'
           />
