@@ -1,4 +1,5 @@
 import { GithubIcon, LinkedinIcon, MailIcon, CodeIcon, HeartIcon, SendIcon, UserIcon, FileTextIcon } from 'lucide-react';
+import { Link } from 'react-router';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/components/avatar';
 import {
@@ -9,6 +10,13 @@ import {
   navigationMenuTriggerStyle,
 } from '@repo/ui/components/navigation-menu';
 
+function scrollToSection(id: string) {
+  const element = document.getElementById(id);
+  if (element) {
+    element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
 export function NavigationBar() {
   return (
     <nav className='flex flex-col items-center gap-6 mb-8'>
@@ -17,6 +25,7 @@ export function NavigationBar() {
         <AvatarFallback className='bg-brand-900 text-brand-300 text-2xl'>ZJ</AvatarFallback>
       </Avatar>
 
+      {/* Internal Navigation */}
       <NavigationMenu>
         <NavigationMenuList className='gap-1 flex-wrap justify-center'>
           <NavigationMenuItem>
@@ -24,10 +33,14 @@ export function NavigationBar() {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <a href='#about'>
+              <button 
+                type='button'
+                onClick={() => scrollToSection('about')}
+                className='bg-transparent border-none cursor-pointer'
+              >
                 <UserIcon className='size-4 mr-2' />
                 About
-              </a>
+              </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -36,10 +49,14 @@ export function NavigationBar() {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <a href='#projects'>
+              <button 
+                type='button'
+                onClick={() => scrollToSection('projects')}
+                className='bg-transparent border-none cursor-pointer'
+              >
                 <CodeIcon className='size-4 mr-2' />
                 Projects
-              </a>
+              </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -48,10 +65,14 @@ export function NavigationBar() {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <a href='#hobbies'>
+              <button 
+                type='button'
+                onClick={() => scrollToSection('hobbies')}
+                className='bg-transparent border-none cursor-pointer'
+              >
                 <HeartIcon className='size-4 mr-2' />
                 Hobbies
-              </a>
+              </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -60,10 +81,14 @@ export function NavigationBar() {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <a href='#hire'>
+              <button 
+                type='button'
+                onClick={() => scrollToSection('hire')}
+                className='bg-transparent border-none cursor-pointer'
+              >
                 <SendIcon className='size-4 mr-2' />
                 Hire Me
-              </a>
+              </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
 
@@ -72,50 +97,43 @@ export function NavigationBar() {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <a href='/articles'>
+              <Link to='/articles'>
                 <FileTextIcon className='size-4 mr-2' />
                 Articles
-              </a>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <a href='https://github.com/zaujulio' target='_blank' rel='noopener noreferrer'>
-                <GithubIcon className='size-4 mr-2' />
-                GitHub
-              </a>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <a href='https://linkedin.com/in/zaujulio' target='_blank' rel='noopener noreferrer'>
-                <LinkedinIcon className='size-4 mr-2' />
-                LinkedIn
-              </a>
-            </NavigationMenuLink>
-          </NavigationMenuItem>
-
-          <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <a href='mailto:zaujulio.dev@gmail.com'>
-                <MailIcon className='size-4 mr-2' />
-                Contact
-              </a>
+              </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
       </NavigationMenu>
+
+      {/* External Links */}
+      <div className='flex items-center gap-2'>
+        <a 
+          href='https://github.com/zaujulio' 
+          target='_blank' 
+          rel='noopener noreferrer'
+          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors'
+        >
+          <GithubIcon className='size-4' />
+          GitHub
+        </a>
+        <a 
+          href='https://linkedin.com/in/zaujulio' 
+          target='_blank' 
+          rel='noopener noreferrer'
+          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors'
+        >
+          <LinkedinIcon className='size-4' />
+          LinkedIn
+        </a>
+        <a 
+          href='mailto:zaujulio.dev@gmail.com'
+          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors'
+        >
+          <MailIcon className='size-4' />
+          Contact
+        </a>
+      </div>
     </nav>
   );
 }
