@@ -75,9 +75,20 @@ export function HobbiesSection() {
         <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>
           Hobbies
         </h2>
-        <p className='text-center text-gray-400 mb-12 max-w-2xl mx-auto'>
-          Beyond code — the things that inspire creativity and keep the balance.
-        </p>
+        <div className='text-center mb-12 max-w-3xl mx-auto space-y-4'>
+          <p className='text-gray-300 text-lg leading-relaxed'>
+            Beyond code — the things that inspire creativity and keep the balance.
+          </p>
+          <p className='text-gray-400 leading-relaxed'>
+            Hobbies aren't just pastimes; they're essential for mental health, creativity, and preventing burnout. 
+            When we step away from the screen and engage in different activities, we give our brains the space to 
+            process, innovate, and recharge. Photography teaches me to see beauty in details, cooking connects me 
+            with culture and mindfulness, and music provides the rhythm that fuels my focus.
+          </p>
+          <p className='text-gray-500 text-sm italic'>
+            "To be creative, you must give yourself permission to explore."
+          </p>
+        </div>
 
         <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
           {hobbies.map((hobby) => (

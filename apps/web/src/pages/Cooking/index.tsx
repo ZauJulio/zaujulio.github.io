@@ -1,7 +1,9 @@
 import { useState, useMemo } from 'react';
-import { ArrowLeftIcon, CookingPotIcon, ClockIcon, UsersIcon, ChefHatIcon } from 'lucide-react';
+import { ArrowLeftIcon, CookingPotIcon, ClockIcon, UsersIcon, ChefHatIcon, SearchIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import { loadMarkdownFiles, type ContentItem, type RecipeMeta } from '@repo/shared/lib/markdown';
+
+export const meta = () => [{ title: 'Zaú Júlio - Cooking' }];
 
 // Load all recipes from content/recipes/*.md at build time
 const recipeFiles = import.meta.glob('/content/recipes/*.md', { query: '?raw', import: 'default', eager: true });
@@ -132,15 +134,29 @@ export default function CookingPage() {
   const [activeCuisine, setActiveCuisine] = useState('All');
   const [activeMealType, setActiveMealType] = useState('All');
   const [activeCourseType, setActiveCourseType] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const filteredRecipes = useMemo(() => {
     return allRecipes.filter((r) => {
       if (activeCuisine !== 'All' && r.meta.cuisine !== activeCuisine) return false;
       if (activeMealType !== 'All' && r.meta.mealType !== activeMealType) return false;
       if (activeCourseType !== 'All' && r.meta.courseType !== activeCourseType) return false;
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        const searchableText = [
+          r.meta.title,
+          r.meta.description,
+          r.meta.cuisine,
+          ...(r.meta.tags || []),
+        ]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase();
+        if (!searchableText.includes(query)) return false;
+      }
       return true;
     });
-  }, [activeCuisine, activeMealType, activeCourseType]);
+  }, [activeCuisine, activeMealType, activeCourseType, searchQuery]);
 
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
@@ -177,9 +193,21 @@ export default function CookingPage() {
         </div>
       </section>
 
-      {/* Filters */}
+      {/* Search & Filters */}
       <section className='px-6 pb-8'>
-        <div className='max-w-7xl mx-auto flex flex-col gap-3'>
+        <div className='max-w-7xl mx-auto flex flex-col gap-4'>
+          {/* Search */}
+          <div className='relative max-w-md'>
+            <SearchIcon className='absolute left-3 top-1/2 -translate-y-1/2 size-4 text-gray-500' />
+            <input
+              type='text'
+              placeholder='Search recipes...'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className='w-full bg-gray-900/50 border border-gray-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-500/50 transition-colors'
+            />
+          </div>
+          {/* Filters */}
           <FilterRow label='Cuisine' options={cuisines} active={activeCuisine} onSelect={setActiveCuisine} />
           <FilterRow label='Type' options={mealTypes} active={activeMealType} onSelect={setActiveMealType} />
           <FilterRow label='Course' options={courseTypes} active={activeCourseType} onSelect={setActiveCourseType} />

@@ -1,7 +1,9 @@
 import { useState, useMemo } from 'react';
-import { ArrowLeftIcon, NewspaperIcon, CalendarIcon, ClockIcon, TagIcon } from 'lucide-react';
+import { ArrowLeftIcon, NewspaperIcon, CalendarIcon, ClockIcon, TagIcon, SearchIcon } from 'lucide-react';
 import { Link } from 'react-router';
 import { loadMarkdownFiles, estimateReadingTime, type ContentItem, type ArticleMeta } from '@repo/shared/lib/markdown';
+
+export const meta = () => [{ title: 'Zaú Júlio - Articles' }];
 
 // Load all articles from content/articles/*.md at build time
 const articleFiles = import.meta.glob('/content/articles/*.md', { query: '?raw', import: 'default', eager: true });
@@ -75,11 +77,29 @@ function ArticleCard({ article }: { article: ContentItem<ArticleMeta> }) {
 
 export default function ArticlesPage() {
   const [activeTag, setActiveTag] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState('');
 
   const filteredArticles = useMemo(() => {
-    if (!activeTag) return allArticles;
-    return allArticles.filter((a) => a.meta.tags?.includes(activeTag));
-  }, [activeTag]);
+    let result = allArticles;
+    if (activeTag) {
+      result = result.filter((a) => a.meta.tags?.includes(activeTag));
+    }
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter((a) => {
+        const searchableText = [
+          a.meta.title,
+          a.meta.description,
+          ...(a.meta.tags || []),
+        ]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase();
+        return searchableText.includes(query);
+      });
+    }
+    return result;
+  }, [activeTag, searchQuery]);
 
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
@@ -116,38 +136,52 @@ export default function ArticlesPage() {
         </div>
       </section>
 
-      {/* Tag Filters */}
-      {allTags.length > 0 && (
-        <section className='px-6 pb-8'>
-          <div className='max-w-7xl mx-auto flex flex-wrap justify-center gap-2'>
-            <button
-              type='button'
-              onClick={() => setActiveTag(null)}
-              className={`px-4 py-2 rounded-full text-sm transition-all duration-200 border cursor-pointer ${
-                activeTag === null
-                  ? 'bg-brand-500 text-black border-brand-500 font-medium'
-                  : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
-              }`}
-            >
-              All
-            </button>
-            {allTags.map((tag) => (
+      {/* Search & Tag Filters */}
+      <section className='px-6 pb-8'>
+        <div className='max-w-7xl mx-auto flex flex-col items-center gap-4'>
+          {/* Search */}
+          <div className='relative w-full max-w-md'>
+            <SearchIcon className='absolute left-3 top-1/2 -translate-y-1/2 size-4 text-gray-500' />
+            <input
+              type='text'
+              placeholder='Search articles...'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className='w-full bg-gray-900/50 border border-gray-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-500/50 transition-colors'
+            />
+          </div>
+          {/* Tag Filters */}
+          {allTags.length > 0 && (
+            <div className='flex flex-wrap justify-center gap-2'>
               <button
-                key={tag}
                 type='button'
-                onClick={() => setActiveTag(tag)}
+                onClick={() => setActiveTag(null)}
                 className={`px-4 py-2 rounded-full text-sm transition-all duration-200 border cursor-pointer ${
-                  tag === activeTag
+                  activeTag === null
                     ? 'bg-brand-500 text-black border-brand-500 font-medium'
                     : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
                 }`}
               >
-                {tag}
+                All
               </button>
-            ))}
-          </div>
-        </section>
-      )}
+              {allTags.map((tag) => (
+                <button
+                  key={tag}
+                  type='button'
+                  onClick={() => setActiveTag(tag)}
+                  className={`px-4 py-2 rounded-full text-sm transition-all duration-200 border cursor-pointer ${
+                    tag === activeTag
+                      ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                      : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
+                  }`}
+                >
+                  {tag}
+                </button>
+              ))}
+            </div>
+          )}
+        </div>
+      </section>
 
       {/* Articles Grid */}
       <section className='pb-20 px-6'>

@@ -12,7 +12,7 @@ import {
 export function NavigationBar() {
   return (
     <nav className='flex flex-col items-center gap-6 mb-8'>
-      <Avatar className='size-24 ring-2 ring-brand-500/50 ring-offset-2 ring-offset-transparent'>
+      <Avatar className='size-24 ring-2 ring-brand-500/50 ring-offset-2 ring-offset-transparent transition-transform duration-300 hover:scale-110 cursor-pointer'>
         <AvatarImage src='https://github.com/zaujulio.png' alt='@zaujulio' />
         <AvatarFallback className='bg-brand-900 text-brand-300 text-2xl'>ZJ</AvatarFallback>
       </Avatar>

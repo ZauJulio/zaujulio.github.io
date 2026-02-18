@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react';
-import { ArrowLeftIcon, Music2Icon, ExternalLinkIcon, PlayCircleIcon, Disc3Icon } from 'lucide-react';
+import { ArrowLeftIcon, Music2Icon, ExternalLinkIcon, PlayCircleIcon, Disc3Icon, SearchIcon } from 'lucide-react';
 import { Link } from 'react-router';
+
+export const meta = () => [{ title: 'Zaú Júlio - Music' }];
 
 /** Supported music platforms */
 type Platform = 'spotify' | 'youtube-music';
@@ -308,18 +310,39 @@ function FavoriteTrack({ track }: { track: MusicItem }) {
 
 export default function MusicPage() {
   const [activeGenre, setActiveGenre] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const hasContent = playlists.length > 0 || favorites.length > 0;
 
   const filteredPlaylists = useMemo(() => {
-    if (activeGenre === 'All') return playlists;
-    return playlists.filter((p) => p.genre === activeGenre);
-  }, [activeGenre]);
+    let result = playlists;
+    if (activeGenre !== 'All') {
+      result = result.filter((p) => p.genre === activeGenre);
+    }
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter((p) => {
+        const searchableText = [p.title, p.description, p.genre].filter(Boolean).join(' ').toLowerCase();
+        return searchableText.includes(query);
+      });
+    }
+    return result;
+  }, [activeGenre, searchQuery]);
 
   const filteredFavorites = useMemo(() => {
-    if (activeGenre === 'All') return favorites;
-    return favorites.filter((f) => f.genre === activeGenre);
-  }, [activeGenre]);
+    let result = favorites;
+    if (activeGenre !== 'All') {
+      result = result.filter((f) => f.genre === activeGenre);
+    }
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      result = result.filter((f) => {
+        const searchableText = [f.title, f.artist, f.album, f.genre].filter(Boolean).join(' ').toLowerCase();
+        return searchableText.includes(query);
+      });
+    }
+    return result;
+  }, [activeGenre, searchQuery]);
 
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
@@ -366,14 +389,26 @@ export default function MusicPage() {
         </div>
       </section>
 
-      {/* Filters */}
-      {genres.length > 1 && (
-        <section className='px-6 pb-8'>
-          <div className='max-w-7xl mx-auto flex flex-col gap-3'>
-            <FilterRow label='Genre' options={genres} active={activeGenre} onSelect={setActiveGenre} />
+      {/* Search & Filters */}
+      <section className='px-6 pb-8'>
+        <div className='max-w-7xl mx-auto flex flex-col gap-4'>
+          {/* Search */}
+          <div className='relative max-w-md'>
+            <SearchIcon className='absolute left-3 top-1/2 -translate-y-1/2 size-4 text-gray-500' />
+            <input
+              type='text'
+              placeholder='Search music...'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className='w-full bg-gray-900/50 border border-gray-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-500/50 transition-colors'
+            />
           </div>
-        </section>
-      )}
+          {/* Filters */}
+          {genres.length > 1 && (
+            <FilterRow label='Genre' options={genres} active={activeGenre} onSelect={setActiveGenre} />
+          )}
+        </div>
+      </section>
 
       {hasContent ? (
         <>

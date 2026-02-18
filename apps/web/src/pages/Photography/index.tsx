@@ -1,6 +1,8 @@
 import { useState, useMemo } from 'react';
-import { ArrowLeftIcon, CameraIcon, ImageIcon } from 'lucide-react';
+import { ArrowLeftIcon, CameraIcon, ImageIcon, SearchIcon } from 'lucide-react';
 import { Link } from 'react-router';
+
+export const meta = () => [{ title: 'Zaú Júlio - Photography' }];
 
 interface Photo {
   id: string;
@@ -66,15 +68,21 @@ export default function PhotographyPage() {
   const [activeTime, setActiveTime] = useState('All');
   const [activeOccasion, setActiveOccasion] = useState('All');
   const [activeTag, setActiveTag] = useState('All');
+  const [searchQuery, setSearchQuery] = useState('');
 
   const filteredPhotos = useMemo(() => {
     return photos.filter((p) => {
       if (activeTime !== 'All' && p.timeOfDay !== activeTime) return false;
       if (activeOccasion !== 'All' && p.occasion !== activeOccasion) return false;
       if (activeTag !== 'All' && !(p.tags ?? []).includes(activeTag)) return false;
+      if (searchQuery) {
+        const query = searchQuery.toLowerCase();
+        const searchableText = [p.alt, p.location, p.occasion, ...(p.tags || [])].filter(Boolean).join(' ').toLowerCase();
+        if (!searchableText.includes(query)) return false;
+      }
       return true;
     });
-  }, [activeTime, activeOccasion, activeTag]);
+  }, [activeTime, activeOccasion, activeTag, searchQuery]);
 
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
@@ -111,16 +119,30 @@ export default function PhotographyPage() {
         </div>
       </section>
 
-      {/* Filters */}
-      {(timesOfDay.length > 1 || occasions.length > 1 || tags.length > 1) && (
-        <section className='px-6 pb-8'>
-          <div className='max-w-7xl mx-auto flex flex-col gap-3'>
-            <FilterRow label='Time' options={timesOfDay} active={activeTime} onSelect={setActiveTime} />
-            <FilterRow label='Type' options={occasions} active={activeOccasion} onSelect={setActiveOccasion} />
-            <FilterRow label='Tags' options={tags} active={activeTag} onSelect={setActiveTag} />
+      {/* Search & Filters */}
+      <section className='px-6 pb-8'>
+        <div className='max-w-7xl mx-auto flex flex-col gap-4'>
+          {/* Search */}
+          <div className='relative max-w-md'>
+            <SearchIcon className='absolute left-3 top-1/2 -translate-y-1/2 size-4 text-gray-500' />
+            <input
+              type='text'
+              placeholder='Search photos...'
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className='w-full bg-gray-900/50 border border-gray-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-500/50 transition-colors'
+            />
           </div>
-        </section>
-      )}
+          {/* Filters */}
+          {(timesOfDay.length > 1 || occasions.length > 1 || tags.length > 1) && (
+            <>
+              <FilterRow label='Time' options={timesOfDay} active={activeTime} onSelect={setActiveTime} />
+              <FilterRow label='Type' options={occasions} active={activeOccasion} onSelect={setActiveOccasion} />
+              <FilterRow label='Tags' options={tags} active={activeTag} onSelect={setActiveTag} />
+            </>
+          )}
+        </div>
+      </section>
 
       {/* Gallery */}
       <section className='pb-20 px-6'>

@@ -1,15 +1,15 @@
 import { useEffect, useState } from 'react';
 import { useGlitch } from 'react-powerglitch';
 
-import { NavigationBar, AboutMeSection, ProjectsSection, HobbiesSection, HireMeSection, Footer, ScrollReveal } from './components';
+import { NavigationBar, AboutMeSection, ProjectsSection, HobbiesSection, HireMeSection, Footer, ScrollReveal, ScrollSpy } from './components';
 
-/** Gradient divider between sections */
+/** Gradient divider between sections - enhanced for better visibility */
 function SectionFade({ from, to }: { from: string; to: string }) {
   return (
     <div
-      className='h-24 w-full'
+      className='h-32 w-full relative'
       style={{
-        background: `linear-gradient(to bottom, ${from}, ${to})`,
+        background: `linear-gradient(to bottom, ${from} 0%, ${from} 30%, ${to} 70%, ${to} 100%)`,
       }}
     />
   );
@@ -53,8 +53,16 @@ export default function Home() {
   const gray950 = '#0a0a0a';
   const gray900 = '#171717';
 
+  const sections = [
+    { id: 'about', label: 'About' },
+    { id: 'projects', label: 'Projects' },
+    { id: 'hobbies', label: 'Hobbies' },
+    { id: 'hire', label: 'Hire Me' },
+  ];
+
   return (
     <div className='min-h-screen w-full bg-black text-white font-sans selection:bg-brand-500 selection:text-white'>
+      <ScrollSpy sections={sections} />
       {/* Hero */}
       <section
         ref={triggered ? glitch.ref : null}
@@ -73,7 +81,7 @@ export default function Home() {
           <NavigationBar />
 
           <h1 className='text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-lg'>
-            Zau Julio
+            Zaú Júlio
           </h1>
 
           <p className='text-xl md:text-2xl text-brand-300 font-light tracking-wide'>
