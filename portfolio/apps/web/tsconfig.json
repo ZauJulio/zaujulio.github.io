@@ -1,0 +1,7 @@
+{
+  "extends": "../../packages/configs/vite.json",
+  "compilerOptions": {
+    "rootDirs": [".", "./.react-router/types"]
+  },
+  "include": ["**/*", "**/.server/**/*", "**/.client/**/*", ".react-router/types/**/*", "src", "tailwind.config.ts"]
+}

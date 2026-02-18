@@ -1,0 +1,4 @@
+{
+  "extends": "../configs/vite.json",
+  "include": ["**/*"]
+}

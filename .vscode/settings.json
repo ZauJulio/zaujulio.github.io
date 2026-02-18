@@ -1,4 +1,6 @@
 {
+  "css.lint.unknownAtRules": "ignore",
+  "biome.configurationPath": "./portfolio/packages/configs/biome.json",
   "workbench.colorCustomizations": {
     "commandCenter.border": "#e7e7e799",
     "tab.activeBorder": "#8fa575",
@@ -7,5 +9,8 @@
     "titleBar.inactiveBackground": "#768c5b99",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#768c5b"
+  "peacock.color": "#768c5b",
+  "cSpell.words": [
+    "powerglitch"
+  ]
 }

@@ -1,0 +1,180 @@
+import { useState, useMemo } from 'react';
+import { ArrowLeftIcon, NewspaperIcon, CalendarIcon, ClockIcon, TagIcon } from 'lucide-react';
+import { Link } from 'react-router';
+import { loadMarkdownFiles, estimateReadingTime, type ContentItem, type ArticleMeta } from '@repo/shared/lib/markdown';
+
+// Load all articles from content/articles/*.md at build time
+const articleFiles = import.meta.glob('/content/articles/*.md', { query: '?raw', import: 'default', eager: true });
+const allArticles = loadMarkdownFiles<ArticleMeta>(articleFiles);
+
+// Extract unique tags from loaded articles
+const allTags = Array.from(
+  new Set(allArticles.flatMap((a) => a.meta.tags || []).filter(Boolean)),
+);
+
+function ArticleCard({ article }: { article: ContentItem<ArticleMeta> }) {
+  const { meta, content } = article;
+  const readTime = meta.readingTime || estimateReadingTime(content);
+
+  return (
+    <Link
+      to={`/articles/${meta.slug}`}
+      className='block rounded-xl border border-gray-800 bg-gray-900/50 overflow-hidden group hover:border-brand-500/50 transition-all duration-300 no-underline'
+    >
+      {meta.cover && (
+        <div className='aspect-video overflow-hidden'>
+          <img
+            src={meta.cover}
+            alt={meta.title}
+            className='w-full h-full object-cover transition-transform duration-500 group-hover:scale-105'
+          />
+        </div>
+      )}
+      <div className='p-6'>
+        <div className='flex items-center gap-3 mb-3 text-xs text-gray-500'>
+          {meta.date && (
+            <span className='inline-flex items-center gap-1'>
+              <CalendarIcon className='size-3' />
+              {new Date(meta.date).toLocaleDateString('en-US', {
+                year: 'numeric',
+                month: 'short',
+                day: 'numeric',
+              })}
+            </span>
+          )}
+          <span className='inline-flex items-center gap-1'>
+            <ClockIcon className='size-3' />
+            {readTime}
+          </span>
+        </div>
+
+        <h3 className='text-xl font-semibold text-white mb-2 group-hover:text-brand-300 transition-colors'>
+          {meta.title}
+        </h3>
+
+        <p className='text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3'>
+          {meta.description}
+        </p>
+
+        {meta.tags && meta.tags.length > 0 && (
+          <div className='flex flex-wrap gap-1.5'>
+            {meta.tags.map((tag) => (
+              <span
+                key={tag}
+                className='text-xs px-2 py-0.5 rounded-full bg-brand-500/10 text-brand-400 border border-brand-500/20'
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+        )}
+      </div>
+    </Link>
+  );
+}
+
+export default function ArticlesPage() {
+  const [activeTag, setActiveTag] = useState<string | null>(null);
+
+  const filteredArticles = useMemo(() => {
+    if (!activeTag) return allArticles;
+    return allArticles.filter((a) => a.meta.tags?.includes(activeTag));
+  }, [activeTag]);
+
+  return (
+    <div className='min-h-screen bg-black text-white font-sans'>
+      {/* Header */}
+      <header className='sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
+        <div className='max-w-7xl mx-auto px-6 py-4 flex items-center justify-between'>
+          <Link
+            to='/'
+            className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
+          >
+            <ArrowLeftIcon className='size-4' />
+            Back to Portfolio
+          </Link>
+
+          <div className='flex items-center gap-2'>
+            <NewspaperIcon className='size-5 text-brand-400' />
+            <span className='font-semibold text-white'>Articles</span>
+          </div>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className='py-20 px-6'>
+        <div className='max-w-4xl mx-auto text-center'>
+          <div className='inline-flex p-4 rounded-2xl bg-gradient-to-br from-brand-500/10 to-brand-500/5 mb-6'>
+            <NewspaperIcon className='size-10 text-brand-400' />
+          </div>
+
+          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Articles</h1>
+          <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
+            Writing about software engineering, machine learning, and the tools I use every day.
+            Deep dives, tutorials, and lessons learned from building real-world applications.
+          </p>
+        </div>
+      </section>
+
+      {/* Tag Filters */}
+      {allTags.length > 0 && (
+        <section className='px-6 pb-8'>
+          <div className='max-w-7xl mx-auto flex flex-wrap justify-center gap-2'>
+            <button
+              type='button'
+              onClick={() => setActiveTag(null)}
+              className={`px-4 py-2 rounded-full text-sm transition-all duration-200 border cursor-pointer ${
+                activeTag === null
+                  ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                  : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
+              }`}
+            >
+              All
+            </button>
+            {allTags.map((tag) => (
+              <button
+                key={tag}
+                type='button'
+                onClick={() => setActiveTag(tag)}
+                className={`px-4 py-2 rounded-full text-sm transition-all duration-200 border cursor-pointer ${
+                  tag === activeTag
+                    ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                    : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
+                }`}
+              >
+                {tag}
+              </button>
+            ))}
+          </div>
+        </section>
+      )}
+
+      {/* Articles Grid */}
+      <section className='pb-20 px-6'>
+        <div className='max-w-7xl mx-auto'>
+          {filteredArticles.length > 0 ? (
+            <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>
+              {filteredArticles.map((article) => (
+                <ArticleCard key={article.meta.slug} article={article} />
+              ))}
+            </div>
+          ) : (
+            <div className='text-center py-20'>
+              <div className='inline-flex p-4 rounded-2xl bg-gray-900/50 mb-4'>
+                <TagIcon className='size-8 text-gray-600' />
+              </div>
+              <p className='text-gray-500 text-lg mb-2'>
+                {activeTag ? `No articles tagged "${activeTag}"` : 'No articles yet'}
+              </p>
+              <p className='text-gray-600 text-sm max-w-md mx-auto'>
+                Add <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>.md</code> files
+                to <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>content/articles/</code> to
+                see them here.
+              </p>
+            </div>
+          )}
+        </div>
+      </section>
+    </div>
+  );
+}

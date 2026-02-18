@@ -8,7 +8,7 @@
   <img src="https://wakatime.com/badge/user/8435e4b0-2060-46c8-8e9d-f8a7a42880ee.svg" alt="waka" />
 </p>
 
-<img align="right" src="./thinking.svg" width=300>
+<img align="right" src="./profile/thinking.svg" width=300>
 
 I'm at university, always researching and learning something new = )
 
@@ -19,7 +19,7 @@ I am currently learning about artificial intelligence, but I am also interested 
 
 ___
 
-![info](./github-metrics.svg)
+![info](./profile/github-metrics.svg)
 
 <p align="center">
   <a id="twitter" href="https://twitter.com/zaujulio_dev" target="_blank">
@@ -36,14 +36,6 @@ ___
   
   <a id="codersrank" href="https://profile.codersrank.io/user/zaujulio" target="_blank">
     <img width="114" height="28" src="https://img.shields.io/static/v1?style=for-the-badge&message=CodersRank&color=67A4AC&logo=CodersRank&logoColor=FFFFFF&label=" alt="_" />
-  </a>
-
-  <a id="figma" href="https://www.figma.com/@zaujulio" target="_blank">
-    <img src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" alt="_" />
-  </a>
-
-  <a id="stackoverflow" href="https://stackoverflow.com/users/11448162/zaujulio" target="_blank">
-    <img src="https://img.shields.io/badge/Stack_Overflow-FE7A16?style=for-the-badge&logo=stack-overflow&logoColor=white" alt="_" />
   </a>
 </p>
 

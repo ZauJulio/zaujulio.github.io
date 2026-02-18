@@ -1,0 +1,9 @@
+node_modules
+.git
+.gitignore
+*.md
+.vscode
+.turbo
+apps/web/build
+apps/web/node_modules
+packages/*/node_modules
