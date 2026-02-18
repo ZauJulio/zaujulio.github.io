@@ -7,35 +7,49 @@ interface Section {
 
 interface ScrollSpyProps {
   sections: Section[];
-  offset?: number;
 }
 
-export function ScrollSpy({ sections, offset = 100 }: ScrollSpyProps) {
-  const [activeSection, setActiveSection] = useState<string>(sections[0]?.id || '');
+export function ScrollSpy({ sections }: ScrollSpyProps) {
+  const [activeSection, setActiveSection] = useState<string>('');
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + offset;
+      const scrollPosition = window.scrollY + window.innerHeight / 3;
 
-      for (let i = sections.length - 1; i >= 0; i--) {
-        const section = document.getElementById(sections[i].id);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(sections[i].id);
-          break;
+      // Check if we're at the top (Hero section)
+      if (window.scrollY < 100) {
+        setActiveSection('');
+        return;
+      }
+
+      // Find the active section by checking which one is in the viewport
+      let currentSection = '';
+      for (const section of sections) {
+        const element = document.getElementById(section.id);
+        if (element) {
+          const rect = element.getBoundingClientRect();
+          // Check if the section is in the upper third of the viewport
+          if (rect.top <= window.innerHeight / 3 && rect.bottom >= 0) {
+            currentSection = section.id;
+            break;
+          }
         }
       }
+      
+      setActiveSection(currentSection);
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 
     return () => window.removeEventListener('scroll', handleScroll);
-  }, [sections, offset]);
+  }, [sections]);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      // Use scrollIntoView with block: 'start' to scroll to the top of the element
+      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
     }
   };
 
