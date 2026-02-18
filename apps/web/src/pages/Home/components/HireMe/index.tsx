@@ -51,7 +51,7 @@ export function HireMeSection() {
 
           <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-5'>
             <p className='text-brand-300 font-semibold text-sm mb-1'>Experience</p>
-            <p className='text-gray-400 text-sm'>4+ years</p>
+            <p className='text-gray-400 text-sm'>5+ years</p>
             <p className='text-gray-500 text-xs mt-1'>Full Stack & Tech Lead</p>
           </div>
 

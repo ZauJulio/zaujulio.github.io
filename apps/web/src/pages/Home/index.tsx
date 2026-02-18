@@ -3,18 +3,6 @@ import { useGlitch } from 'react-powerglitch';
 
 import { NavigationBar, AboutMeSection, ProjectsSection, HobbiesSection, HireMeSection, Footer, ScrollReveal, ScrollSpy } from './components';
 
-/** Gradient divider between sections - enhanced for better visibility */
-function SectionFade({ from, to }: { from: string; to: string }) {
-  return (
-    <div
-      className='h-32 w-full relative'
-      style={{
-        background: `linear-gradient(to bottom, ${from} 0%, ${from} 30%, ${to} 70%, ${to} 100%)`,
-      }}
-    />
-  );
-}
-
 export default function Home() {
   const [triggered, setTriggered] = useState(false);
 
@@ -47,11 +35,6 @@ export default function Home() {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, [triggered]);
-
-  // Section bg colors
-  const black = '#000000';
-  const gray950 = '#0a0a0a';
-  const gray900 = '#171717';
 
   const sections = [
     { id: 'about', label: 'About' },
@@ -96,39 +79,25 @@ export default function Home() {
         </div>
       </section>
 
-      {/* No fade between Hero and About Me — both are pure black */}
-
       {/* About Me (Experience + Education + Languages + Thesis + Skills) */}
       <ScrollReveal>
         <AboutMeSection />
       </ScrollReveal>
-
-      {/* About Me(black) -> Projects(gray-950) */}
-      <SectionFade from={black} to={gray950} />
 
       {/* Projects */}
       <ScrollReveal delay={100}>
         <ProjectsSection />
       </ScrollReveal>
 
-      {/* Projects(gray-950) -> Hobbies(gray-900) */}
-      <SectionFade from={gray950} to={gray900} />
-
       {/* Hobbies */}
       <ScrollReveal delay={100}>
         <HobbiesSection />
       </ScrollReveal>
 
-      {/* Hobbies(gray-900) -> Hire Me(gray-950) */}
-      <SectionFade from={gray900} to={gray950} />
-
       {/* Hire Me */}
       <ScrollReveal delay={150}>
         <HireMeSection />
       </ScrollReveal>
-
-      {/* Hire Me(gray-950) -> Footer(black) */}
-      <SectionFade from={gray950} to={black} />
 
       {/* Footer */}
       <ScrollReveal delay={100} distance={20}>
