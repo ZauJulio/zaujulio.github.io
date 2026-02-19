@@ -89,13 +89,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         <Scripts />
         {/* Umami Analytics — self-hosted, privacy-focused, <1KB */}
-        {import.meta.env.VITE_UMAMI_WEBSITE_ID && (
-          <script
-            defer
-            src={import.meta.env.VITE_UMAMI_URL || 'https://cloud.umami.is/script.js'}
-            data-website-id={import.meta.env.VITE_UMAMI_WEBSITE_ID}
-          />
-        )}
+        <script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="70a4d918-b144-4d4f-96b3-abfa2248242e"
+        />
       </body>
     </html>
   );
