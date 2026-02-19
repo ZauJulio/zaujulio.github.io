@@ -1,8 +1,8 @@
-export { NavigationBar } from './Navigation';
 export { AboutMeSection } from './AboutMe';
-export { ProjectsSection } from './Projects';
-export { HobbiesSection } from './Hobbies';
-export { HireMeSection } from './HireMe';
 export { Footer } from './Footer';
+export { HireMeSection } from './HireMe';
+export { HobbiesSection } from './Hobbies';
+export { NavigationBar } from './Navigation';
+export { ProjectsSection } from './Projects';
 export { ScrollReveal } from './ScrollReveal';
 export { ScrollSpy } from './ScrollSpy';

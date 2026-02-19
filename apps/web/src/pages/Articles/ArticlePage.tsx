@@ -1,7 +1,8 @@
-import { ArrowLeftIcon, NewspaperIcon, CalendarIcon, ClockIcon, ExternalLinkIcon } from 'lucide-react';
+import { ArrowLeftIcon, CalendarIcon, ClockIcon, ExternalLinkIcon, NewspaperIcon } from 'lucide-react';
 import { Link, useParams } from 'react-router';
+
 import { MarkdownRenderer } from '@repo/shared/components/MarkdownRenderer';
-import { loadMarkdownFiles, findBySlug, estimateReadingTime, type ArticleMeta } from '@repo/shared/lib/markdown';
+import { type ArticleMeta, estimateReadingTime, findBySlug, loadMarkdownFiles } from '@repo/shared/lib/markdown';
 
 // Load all articles at build time
 const articleFiles = import.meta.glob('/content/articles/*.md', { query: '?raw', import: 'default', eager: true });
@@ -56,11 +57,7 @@ export default function ArticlePage() {
       {/* Cover Image */}
       {meta.cover && (
         <div className='w-full max-h-[400px] overflow-hidden'>
-          <img
-            src={meta.cover}
-            alt={meta.title}
-            className='w-full h-full object-cover'
-          />
+          <img src={meta.cover} alt={meta.title} className='w-full h-full object-cover' />
         </div>
       )}
 

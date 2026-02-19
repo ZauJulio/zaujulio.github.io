@@ -1,7 +1,8 @@
-import { ArrowLeftIcon, CookingPotIcon, ClockIcon, UsersIcon, CalendarIcon } from 'lucide-react';
+import { ArrowLeftIcon, CalendarIcon, ClockIcon, CookingPotIcon, UsersIcon } from 'lucide-react';
 import { Link, useParams } from 'react-router';
+
 import { MarkdownRenderer } from '@repo/shared/components/MarkdownRenderer';
-import { loadMarkdownFiles, findBySlug, type RecipeMeta } from '@repo/shared/lib/markdown';
+import { findBySlug, loadMarkdownFiles, type RecipeMeta } from '@repo/shared/lib/markdown';
 
 // Load all recipes at build time
 const recipeFiles = import.meta.glob('/content/recipes/*.md', { query: '?raw', import: 'default', eager: true });
@@ -55,11 +56,7 @@ export default function RecipePage() {
       {/* Cover Image */}
       {meta.cover && (
         <div className='w-full max-h-[400px] overflow-hidden'>
-          <img
-            src={meta.cover}
-            alt={meta.title}
-            className='w-full h-full object-cover'
-          />
+          <img src={meta.cover} alt={meta.title} className='w-full h-full object-cover' />
         </div>
       )}
 

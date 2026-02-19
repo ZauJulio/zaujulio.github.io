@@ -1,7 +1,8 @@
 import ReactMarkdown from 'react-markdown';
-import remarkGfm from 'remark-gfm';
-import rehypeRaw from 'rehype-raw';
+
 import rehypeHighlight from 'rehype-highlight';
+import rehypeRaw from 'rehype-raw';
+import remarkGfm from 'remark-gfm';
 import 'highlight.js/styles/github-dark.css';
 
 /**
@@ -19,23 +20,15 @@ export function MarkdownRenderer({ content }: { content: string }) {
         rehypePlugins={[rehypeRaw, rehypeHighlight]}
         components={{
           // Headings
-          h1: ({ children }) => (
-            <h1 className='text-3xl font-bold text-white mt-10 mb-4'>{children}</h1>
-          ),
+          h1: ({ children }) => <h1 className='text-3xl font-bold text-white mt-10 mb-4'>{children}</h1>,
           h2: ({ children }) => (
             <h2 className='text-2xl font-bold text-white mt-8 mb-3 border-b border-gray-800 pb-2'>{children}</h2>
           ),
-          h3: ({ children }) => (
-            <h3 className='text-xl font-semibold text-white mt-6 mb-2'>{children}</h3>
-          ),
-          h4: ({ children }) => (
-            <h4 className='text-lg font-semibold text-gray-200 mt-4 mb-2'>{children}</h4>
-          ),
+          h3: ({ children }) => <h3 className='text-xl font-semibold text-white mt-6 mb-2'>{children}</h3>,
+          h4: ({ children }) => <h4 className='text-lg font-semibold text-gray-200 mt-4 mb-2'>{children}</h4>,
 
           // Paragraphs
-          p: ({ children }) => (
-            <p className='text-gray-300 leading-relaxed mb-4'>{children}</p>
-          ),
+          p: ({ children }) => <p className='text-gray-300 leading-relaxed mb-4'>{children}</p>,
 
           // Links
           a: ({ href, children }) => (
@@ -52,15 +45,8 @@ export function MarkdownRenderer({ content }: { content: string }) {
           // Images
           img: ({ src, alt }) => (
             <figure className='my-6'>
-              <img
-                src={src}
-                alt={alt || ''}
-                className='rounded-xl border border-gray-800 w-full'
-                loading='lazy'
-              />
-              {alt && (
-                <figcaption className='text-center text-gray-500 text-sm mt-2'>{alt}</figcaption>
-              )}
+              <img src={src} alt={alt || ''} className='rounded-xl border border-gray-800 w-full' loading='lazy' />
+              {alt && <figcaption className='text-center text-gray-500 text-sm mt-2'>{alt}</figcaption>}
             </figure>
           ),
 
@@ -94,44 +80,30 @@ export function MarkdownRenderer({ content }: { content: string }) {
           ),
 
           // Lists
-          ul: ({ children }) => (
-            <ul className='list-disc list-inside space-y-1 text-gray-300 mb-4 ml-2'>{children}</ul>
-          ),
+          ul: ({ children }) => <ul className='list-disc list-inside space-y-1 text-gray-300 mb-4 ml-2'>{children}</ul>,
           ol: ({ children }) => (
             <ol className='list-decimal list-inside space-y-1 text-gray-300 mb-4 ml-2'>{children}</ol>
           ),
-          li: ({ children }) => (
-            <li className='text-gray-300 leading-relaxed'>{children}</li>
-          ),
+          li: ({ children }) => <li className='text-gray-300 leading-relaxed'>{children}</li>,
 
           // Tables
           table: ({ children }) => (
             <div className='overflow-x-auto my-6'>
-              <table className='w-full text-sm border-collapse border border-gray-800 rounded-lg'>
-                {children}
-              </table>
+              <table className='w-full text-sm border-collapse border border-gray-800 rounded-lg'>{children}</table>
             </div>
           ),
-          thead: ({ children }) => (
-            <thead className='bg-gray-900'>{children}</thead>
-          ),
+          thead: ({ children }) => <thead className='bg-gray-900'>{children}</thead>,
           th: ({ children }) => (
             <th className='text-left px-4 py-2 text-gray-300 font-semibold border border-gray-800'>{children}</th>
           ),
-          td: ({ children }) => (
-            <td className='px-4 py-2 text-gray-400 border border-gray-800'>{children}</td>
-          ),
+          td: ({ children }) => <td className='px-4 py-2 text-gray-400 border border-gray-800'>{children}</td>,
 
           // Horizontal rule
           hr: () => <hr className='border-gray-800 my-8' />,
 
           // Strong / emphasis
-          strong: ({ children }) => (
-            <strong className='text-white font-semibold'>{children}</strong>
-          ),
-          em: ({ children }) => (
-            <em className='text-gray-300 italic'>{children}</em>
-          ),
+          strong: ({ children }) => <strong className='text-white font-semibold'>{children}</strong>,
+          em: ({ children }) => <em className='text-gray-300 italic'>{children}</em>,
 
           // Iframes (for code embeds — CodeSandbox, StackBlitz, YouTube, etc.)
           // Allowed through rehype-raw. Style them with a responsive wrapper.

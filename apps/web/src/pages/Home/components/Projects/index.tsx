@@ -1,4 +1,4 @@
-import { ExternalLinkIcon, StarIcon, CodeIcon } from 'lucide-react';
+import { CodeIcon, ExternalLinkIcon, StarIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
 // Projects data
@@ -80,9 +80,7 @@ function ProjectCard({ project }: { project: Project }) {
         <ExternalLinkIcon className='size-4 text-gray-500 group-hover:text-brand-400 transition-colors flex-shrink-0 mt-1' />
       </div>
 
-      <p className='text-sm text-gray-400 mb-4 leading-relaxed line-clamp-3'>
-        {project.description}
-      </p>
+      <p className='text-sm text-gray-400 mb-4 leading-relaxed line-clamp-3'>{project.description}</p>
 
       <div className='flex flex-wrap gap-1.5 mb-4'>
         {project.topics.map((topic) => (
@@ -97,10 +95,7 @@ function ProjectCard({ project }: { project: Project }) {
 
       <div className='flex items-center gap-4 text-xs text-gray-500'>
         <span className='flex items-center gap-1.5'>
-          <span
-            className='size-3 rounded-full'
-            style={{ backgroundColor: project.languageColor }}
-          />
+          <span className='size-3 rounded-full' style={{ backgroundColor: project.languageColor }} />
           {project.language}
         </span>
 
@@ -304,18 +299,15 @@ function BubbleCluster({ cluster }: { cluster: SkillCluster }) {
   }
   const vbX = (minX || 0) - padding;
   const vbY = (minY || 0) - padding;
-  const vbW = ((maxX || containerSize) - (minX || 0)) + padding * 2;
-  const vbH = ((maxY || containerSize) - (minY || 0)) + padding * 2;
+  const vbW = (maxX || containerSize) - (minX || 0) + padding * 2;
+  const vbH = (maxY || containerSize) - (minY || 0) + padding * 2;
 
   return (
     <div className='group'>
       <h4 className='text-sm font-semibold text-brand-300 mb-3 text-center uppercase tracking-wider'>
         {cluster.label}
       </h4>
-      <div
-        ref={containerRef}
-        className='relative w-full aspect-square'
-      >
+      <div ref={containerRef} className='relative w-full aspect-square'>
         {bubbles.length > 0 && (
           <svg
             viewBox={`${vbX} ${vbY} ${vbW} ${vbH}`}
@@ -388,11 +380,10 @@ export function ProjectsSection() {
   return (
     <section id='projects' className='py-20 px-4 bg-gray-950'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>
-          Projects & Skills
-        </h2>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>Projects & Skills</h2>
         <p className='text-center text-gray-400 mb-12 max-w-2xl mx-auto'>
-          A selection of open-source projects spanning full-stack development, machine learning, Linux tooling, and system engineering.
+          A selection of open-source projects spanning full-stack development, machine learning, Linux tooling, and
+          system engineering.
         </p>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>

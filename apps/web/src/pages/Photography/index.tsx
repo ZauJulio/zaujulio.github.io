@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
 import { ArrowLeftIcon, CameraIcon, ImageIcon, SearchIcon } from 'lucide-react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
 export const meta = () => [{ title: 'Zaú Júlio - Photography' }];
@@ -35,7 +35,12 @@ const occasions = ['All', ...Array.from(new Set(photos.map((p) => p.occasion).fi
 const allTags = Array.from(new Set(photos.flatMap((p) => p.tags ?? [])));
 const tags = allTags.length > 0 ? ['All', ...allTags] : [];
 
-function FilterRow({ label, options, active, onSelect }: {
+function FilterRow({
+  label,
+  options,
+  active,
+  onSelect,
+}: {
   label: string;
   options: string[];
   active: string;
@@ -77,7 +82,10 @@ export default function PhotographyPage() {
       if (activeTag !== 'All' && !(p.tags ?? []).includes(activeTag)) return false;
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
-        const searchableText = [p.alt, p.location, p.occasion, ...(p.tags || [])].filter(Boolean).join(' ').toLowerCase();
+        const searchableText = [p.alt, p.location, p.occasion, ...(p.tags || [])]
+          .filter(Boolean)
+          .join(' ')
+          .toLowerCase();
         if (!searchableText.includes(query)) return false;
       }
       return true;
@@ -113,8 +121,8 @@ export default function PhotographyPage() {
 
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>Photography</h1>
           <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            Capturing moments, landscapes, and everyday beauty through the lens.
-            A visual journal of the places I've been and the things that caught my eye.
+            Capturing moments, landscapes, and everyday beauty through the lens. A visual journal of the places I've
+            been and the things that caught my eye.
           </p>
         </div>
       </section>
@@ -160,18 +168,18 @@ export default function PhotographyPage() {
                     className='w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105'
                   />
                   <div className='absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-                    {photo.location && (
-                      <p className='text-white text-sm font-medium'>{photo.location}</p>
-                    )}
+                    {photo.location && <p className='text-white text-sm font-medium'>{photo.location}</p>}
                     <div className='flex items-center gap-2 mt-1'>
-                      {photo.date && (
-                        <span className='text-gray-300 text-xs'>{photo.date}</span>
-                      )}
+                      {photo.date && <span className='text-gray-300 text-xs'>{photo.date}</span>}
                       {photo.timeOfDay && (
-                        <span className='text-xs px-1.5 py-0.5 rounded bg-white/10 text-gray-300'>{photo.timeOfDay}</span>
+                        <span className='text-xs px-1.5 py-0.5 rounded bg-white/10 text-gray-300'>
+                          {photo.timeOfDay}
+                        </span>
                       )}
                       {photo.occasion && (
-                        <span className='text-xs px-1.5 py-0.5 rounded bg-white/10 text-gray-300'>{photo.occasion}</span>
+                        <span className='text-xs px-1.5 py-0.5 rounded bg-white/10 text-gray-300'>
+                          {photo.occasion}
+                        </span>
                       )}
                     </div>
                     {photo.tags && photo.tags.length > 0 && (
@@ -194,8 +202,11 @@ export default function PhotographyPage() {
               </div>
               <p className='text-gray-500 text-lg mb-2'>Gallery coming soon</p>
               <p className='text-gray-600 text-sm max-w-md mx-auto'>
-                Add your photos to the <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>photos</code> array
-                in this component, and place images in the <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>public/photos/</code> directory.
+                Add your photos to the{' '}
+                <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>photos</code> array in this
+                component, and place images in the{' '}
+                <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>public/photos/</code>{' '}
+                directory.
               </p>
             </div>
           )}

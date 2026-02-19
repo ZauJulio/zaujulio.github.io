@@ -1,14 +1,4 @@
-import { useEffect, useRef, useState } from 'react';
-import {
-  BriefcaseIcon,
-  GraduationCapIcon,
-  BookOpenIcon,
-  CodeIcon,
-  GlobeIcon,
-  MicIcon,
-  EarIcon,
-  UserIcon,
-} from 'lucide-react';
+import { BookOpenIcon, BriefcaseIcon, EarIcon, GlobeIcon, GraduationCapIcon, MicIcon, UserIcon } from 'lucide-react';
 
 // ─── Shared Sub-heading ─────────────────────────────────────────────────────
 
@@ -37,26 +27,34 @@ interface TimelineItemProps {
   accentColor?: 'brand-500' | 'brand-300';
 }
 
-function TimelineItem({ title, subtitle, period, location, description, skills, accentColor = 'brand-500' }: TimelineItemProps) {
+function TimelineItem({
+  title,
+  subtitle,
+  period,
+  location,
+  description,
+  skills,
+  accentColor = 'brand-500',
+}: TimelineItemProps) {
   const hoverBorder = accentColor === 'brand-300' ? 'hover:border-brand-300' : 'hover:border-brand-500';
   const dotBg = accentColor === 'brand-300' ? 'bg-brand-300' : 'bg-brand-500';
   const glowColor = accentColor === 'brand-300' ? 'shadow-brand-300/40' : 'shadow-brand-500/40';
 
   return (
     <div className='relative group pl-8'>
-      <div className={`absolute -left-[1px] top-7 -translate-x-1/2 h-3 w-3 rounded-full ${dotBg} shadow-[0_0_8px_2px] ${glowColor} transition-all group-hover:scale-150 group-hover:shadow-[0_0_12px_4px] z-10`} />
+      <div
+        className={`absolute -left-[1px] top-7 -translate-x-1/2 h-3 w-3 rounded-full ${dotBg} shadow-[0_0_8px_2px] ${glowColor} transition-all group-hover:scale-150 group-hover:shadow-[0_0_12px_4px] z-10`}
+      />
 
-      <div className={`bg-gray-800/80 backdrop-blur-sm p-5 rounded-lg border border-gray-700/60 ${hoverBorder} transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-900/20`}>
+      <div
+        className={`bg-gray-800/80 backdrop-blur-sm p-5 rounded-lg border border-gray-700/60 ${hoverBorder} transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-900/20`}
+      >
         <h4 className='text-lg font-bold text-white'>{title}</h4>
         <h5 className='text-brand-300 font-medium text-sm'>{subtitle}</h5>
 
         <div className='flex flex-wrap items-center gap-2 mt-2 mb-3'>
-          <span className='inline-block bg-brand-900/60 text-brand-300 text-xs px-2 py-0.5 rounded'>
-            {period}
-          </span>
-          {location && (
-            <span className='text-gray-500 text-xs'>{location}</span>
-          )}
+          <span className='inline-block bg-brand-900/60 text-brand-300 text-xs px-2 py-0.5 rounded'>{period}</span>
+          {location && <span className='text-gray-500 text-xs'>{location}</span>}
         </div>
 
         <p className='text-gray-400 text-sm leading-relaxed'>{description}</p>
@@ -162,10 +160,7 @@ function LanguageCard({ language }: { language: Language }) {
           <span className='text-white font-semibold text-sm'>{language.name}</span>
           <span className='text-gray-500 text-xs'>({language.nativeName})</span>
         </div>
-        <span
-          className='text-xs font-medium shrink-0'
-          style={{ color: language.color }}
-        >
+        <span className='text-xs font-medium shrink-0' style={{ color: language.color }}>
           {language.proficiency}
         </span>
       </div>
@@ -201,7 +196,6 @@ export function AboutMeSection() {
   return (
     <section id='about' className='bg-black py-20'>
       <div className='container mx-auto px-6 max-w-6xl'>
-
         {/* Section Title */}
         <div className='flex items-center gap-3 mb-16'>
           <div className='p-2 bg-brand-900/40 rounded-lg'>
@@ -212,7 +206,6 @@ export function AboutMeSection() {
 
         {/* Two-column: Experience (left) | Education + Languages (right) */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16'>
-
           {/* Experience Timeline */}
           <div id='experience' className='scroll-mt-8'>
             <SubSectionHeader icon={BriefcaseIcon} title='Experience' />
@@ -277,8 +270,18 @@ export function AboutMeSection() {
                   subtitle='Metropole Digital - IMD/UFRN'
                   period='Jan 2018 - Sep 2019'
                   location='Natal, RN'
-                  description='Technical course at the Institute of Computing and Digital Technologies (IMD). Covered network architecture, server administration, Linux systems, and infrastructure fundamentals. Served as a Teaching Assistant (Monitor) for 1 year (2018.2 - 2019.1), supporting students in practical labs and coursework.'
-                  skills={['Computer Networks', 'Linux', 'Infrastructure', 'Teaching Assistant']}
+                  description='Technical course at the Institute of Computing and Digital Technologies (IMD). Covered network architecture, server administration, Linux systems, and infrastructure fundamentals.'
+                  skills={['Computer Networks', 'Linux', 'Infrastructure']}
+                  accentColor='brand-300'
+                />
+
+                <TimelineItem
+                  title='Teaching Assistant (Monitor)'
+                  subtitle='Metropole Digital - IMD/UFRN'
+                  period='Aug 2018 - Jul 2019'
+                  location='Natal, RN'
+                  description='Teaching Assistant for Computer Networks course. Supported students in practical labs, coursework, and network configuration exercises. Assisted professors during practical sessions and helped students understand networking concepts and troubleshooting.'
+                  skills={['Teaching', 'Computer Networks', 'Mentoring', 'Lab Assistance']}
                   accentColor='brand-300'
                 />
               </div>
@@ -299,28 +302,42 @@ export function AboutMeSection() {
                 <img
                   src='/thesis-features-analyzer.png'
                   alt='Features Analyzer Application Screenshot'
+                  width={400}
+                  height={300}
                   className='w-full h-auto rounded-lg border border-gray-700/60 shadow-lg'
                 />
               </div>
               <div className='md:w-2/3'>
-                <h4 className='text-xl font-bold text-white mb-1'>
-                  Features Analyzer
-                </h4>
+                <h4 className='text-xl font-bold text-white mb-1'>Features Analyzer</h4>
                 <h5 className='text-brand-300 font-medium text-sm mb-1'>
                   Boilerplate for Data Visualization and Analysis Tools
                 </h5>
-                <p className='text-gray-500 text-xs mb-4'>
-                  Federal University of Rio Grande do Norte (UFRN) - 2024
-                </p>
+                <p className='text-gray-500 text-xs mb-4'>Federal University of Rio Grande do Norte (UFRN) - 2024</p>
 
                 <p className='text-gray-400 text-sm leading-relaxed'>
-                  A Python desktop application for dataset feature analysis, prototyping and testing machine learning and statistical models. Built with a modular architecture using GTK for the UI, featuring a custom state management system with the Observer pattern, a typed JSON ORM with Pydantic and TinyDB, and internationalization support (i18n). Includes Docker containerization and automated documentation with MkDocs.
+                  A Python desktop application for dataset feature analysis, prototyping and testing machine learning
+                  and statistical models. Built with a modular architecture using GTK for the UI, featuring a custom
+                  state management system with the Observer pattern, a typed JSON ORM with Pydantic and TinyDB, and
+                  internationalization support (i18n). Includes Docker containerization and automated documentation with
+                  MkDocs.
                 </p>
               </div>
             </div>
 
             <div className='flex flex-wrap gap-1.5 mb-4'>
-              {['Python', 'GTK', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Pydantic', 'TinyDB', 'Docker', 'i18n'].map((skill) => (
+              {[
+                'Python',
+                'GTK',
+                'Pandas',
+                'NumPy',
+                'Scikit-learn',
+                'Matplotlib',
+                'Seaborn',
+                'Pydantic',
+                'TinyDB',
+                'Docker',
+                'i18n',
+              ].map((skill) => (
                 <span key={skill} className='text-xs bg-gray-700/50 text-gray-300 px-2 py-0.5 rounded'>
                   {skill}
                 </span>

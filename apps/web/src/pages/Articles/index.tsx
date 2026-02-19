@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
-import { ArrowLeftIcon, NewspaperIcon, CalendarIcon, ClockIcon, TagIcon, SearchIcon } from 'lucide-react';
+import { ArrowLeftIcon, CalendarIcon, ClockIcon, NewspaperIcon, SearchIcon, TagIcon } from 'lucide-react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
-import { loadMarkdownFiles, estimateReadingTime, type ContentItem, type ArticleMeta } from '@repo/shared/lib/markdown';
+
+import { type ArticleMeta, type ContentItem, estimateReadingTime, loadMarkdownFiles } from '@repo/shared/lib/markdown';
 
 export const meta = () => [{ title: 'Zaú Júlio - Articles' }];
 
@@ -10,9 +11,7 @@ const articleFiles = import.meta.glob('/content/articles/*.md', { query: '?raw',
 const allArticles = loadMarkdownFiles<ArticleMeta>(articleFiles);
 
 // Extract unique tags from loaded articles
-const allTags = Array.from(
-  new Set(allArticles.flatMap((a) => a.meta.tags || []).filter(Boolean)),
-);
+const allTags = Array.from(new Set(allArticles.flatMap((a) => a.meta.tags || []).filter(Boolean)));
 
 function ArticleCard({ article }: { article: ContentItem<ArticleMeta> }) {
   const { meta, content } = article;
@@ -54,9 +53,7 @@ function ArticleCard({ article }: { article: ContentItem<ArticleMeta> }) {
           {meta.title}
         </h3>
 
-        <p className='text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3'>
-          {meta.description}
-        </p>
+        <p className='text-sm text-gray-400 leading-relaxed mb-4 line-clamp-3'>{meta.description}</p>
 
         {meta.tags && meta.tags.length > 0 && (
           <div className='flex flex-wrap gap-1.5'>
@@ -87,11 +84,7 @@ export default function ArticlesPage() {
     if (searchQuery) {
       const query = searchQuery.toLowerCase();
       result = result.filter((a) => {
-        const searchableText = [
-          a.meta.title,
-          a.meta.description,
-          ...(a.meta.tags || []),
-        ]
+        const searchableText = [a.meta.title, a.meta.description, ...(a.meta.tags || [])]
           .filter(Boolean)
           .join(' ')
           .toLowerCase();
@@ -130,8 +123,8 @@ export default function ArticlesPage() {
 
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>Articles</h1>
           <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            Writing about software engineering, machine learning, and the tools I use every day.
-            Deep dives, tutorials, and lessons learned from building real-world applications.
+            Writing about software engineering, machine learning, and the tools I use every day. Deep dives, tutorials,
+            and lessons learned from building real-world applications.
           </p>
         </div>
       </section>
@@ -201,8 +194,8 @@ export default function ArticlesPage() {
                 {activeTag ? `No articles tagged "${activeTag}"` : 'No articles yet'}
               </p>
               <p className='text-gray-600 text-sm max-w-md mx-auto'>
-                Add <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>.md</code> files
-                to <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>content/articles/</code> to
+                Add <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>.md</code> files to{' '}
+                <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>content/articles/</code> to
                 see them here.
               </p>
             </div>

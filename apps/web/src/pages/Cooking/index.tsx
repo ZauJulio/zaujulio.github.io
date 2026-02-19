@@ -1,7 +1,8 @@
-import { useState, useMemo } from 'react';
-import { ArrowLeftIcon, CookingPotIcon, ClockIcon, UsersIcon, ChefHatIcon, SearchIcon } from 'lucide-react';
+import { ArrowLeftIcon, ChefHatIcon, ClockIcon, CookingPotIcon, SearchIcon, UsersIcon } from 'lucide-react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
-import { loadMarkdownFiles, type ContentItem, type RecipeMeta } from '@repo/shared/lib/markdown';
+
+import { type ContentItem, loadMarkdownFiles, type RecipeMeta } from '@repo/shared/lib/markdown';
 
 export const meta = () => [{ title: 'Zaú Júlio - Cooking' }];
 
@@ -12,11 +13,19 @@ const allRecipes = loadMarkdownFiles<RecipeMeta>(recipeFiles);
 // Extract unique filter values
 const cuisines = ['All', ...Array.from(new Set(allRecipes.map((r) => r.meta.cuisine).filter(Boolean) as string[]))];
 const mealTypes = ['All', ...Array.from(new Set(allRecipes.map((r) => r.meta.mealType).filter(Boolean) as string[]))];
-const courseTypes = ['All', ...Array.from(new Set(allRecipes.map((r) => r.meta.courseType).filter(Boolean) as string[]))];
+const courseTypes = [
+  'All',
+  ...Array.from(new Set(allRecipes.map((r) => r.meta.courseType).filter(Boolean) as string[])),
+];
 
 // ─── Filter Pill Row ─────────────────────────────────────────
 
-function FilterRow({ label, options, active, onSelect }: {
+function FilterRow({
+  label,
+  options,
+  active,
+  onSelect,
+}: {
   label: string;
   options: string[];
   active: string;
@@ -92,9 +101,7 @@ function RecipeCard({ recipe }: { recipe: ContentItem<RecipeMeta> }) {
           {meta.title}
         </h3>
 
-        <p className='text-sm text-gray-400 leading-relaxed mb-3 line-clamp-2'>
-          {meta.description}
-        </p>
+        <p className='text-sm text-gray-400 leading-relaxed mb-3 line-clamp-2'>{meta.description}</p>
 
         <div className='flex items-center gap-4 text-xs text-gray-500'>
           {meta.prepTime && (
@@ -143,12 +150,7 @@ export default function CookingPage() {
       if (activeCourseType !== 'All' && r.meta.courseType !== activeCourseType) return false;
       if (searchQuery) {
         const query = searchQuery.toLowerCase();
-        const searchableText = [
-          r.meta.title,
-          r.meta.description,
-          r.meta.cuisine,
-          ...(r.meta.tags || []),
-        ]
+        const searchableText = [r.meta.title, r.meta.description, r.meta.cuisine, ...(r.meta.tags || [])]
           .filter(Boolean)
           .join(' ')
           .toLowerCase();
@@ -187,8 +189,8 @@ export default function CookingPage() {
 
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>Cooking</h1>
           <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            Experimenting with flavors, techniques, and cuisines from around the world.
-            From Brazilian comfort food to international dishes — turning ingredients into experiences.
+            Experimenting with flavors, techniques, and cuisines from around the world. From Brazilian comfort food to
+            international dishes — turning ingredients into experiences.
           </p>
         </div>
       </section>
@@ -232,7 +234,8 @@ export default function CookingPage() {
               <p className='text-gray-600 text-sm max-w-md mx-auto'>
                 Try adjusting the filters above, or add more
                 <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs mx-1'>.md</code>
-                files to <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>content/recipes/</code>.
+                files to{' '}
+                <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>content/recipes/</code>.
               </p>
             </div>
           )}

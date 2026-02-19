@@ -1,4 +1,4 @@
-import { GithubIcon, LinkedinIcon, MailIcon, HeartIcon, DownloadIcon } from 'lucide-react';
+import { DownloadIcon, GithubIcon, HeartIcon, LinkedinIcon, MailIcon } from 'lucide-react';
 
 // Profile data for JSON export
 const profileData = {
@@ -17,7 +17,8 @@ const profileData = {
       company: 'Bitwise Technology',
       period: 'Aug 2025 - Present',
       location: 'Sorocaba, SP - Remote',
-      description: 'Leading the engineering efforts to build high-performance software solutions. Defining technical standards, overseeing system design from ER modeling to cloud infrastructure budgeting and deployment.',
+      description:
+        'Leading the engineering efforts to build high-performance software solutions. Defining technical standards, overseeing system design from ER modeling to cloud infrastructure budgeting and deployment.',
       skills: ['Mentoring', 'System Design', 'CI/CD', 'Cloud Architecture'],
     },
     {
@@ -25,7 +26,8 @@ const profileData = {
       company: 'Bitwise Technology',
       period: 'Mar 2023 - Present',
       location: 'Sorocaba, SP - Remote',
-      description: 'Designing and developing robust web applications across the entire software lifecycle — from planning and architecture to deployment and optimization.',
+      description:
+        'Designing and developing robust web applications across the entire software lifecycle — from planning and architecture to deployment and optimization.',
       skills: ['TypeScript', 'GraphQL', 'MongoDB', 'React', 'AWS', 'Node.js'],
     },
     {
@@ -33,7 +35,8 @@ const profileData = {
       company: 'commcepta',
       period: 'Dec 2021 - Dec 2022',
       location: 'Curitiba, PR - Remote',
-      description: 'Handled complex projects involving Big Data and GraphQL. Explored hidden insights within graph data structures, building a large-scale data lake.',
+      description:
+        'Handled complex projects involving Big Data and GraphQL. Explored hidden insights within graph data structures, building a large-scale data lake.',
       skills: ['GraphQL', 'Big Data', 'React', 'Data Lake'],
     },
     {
@@ -41,7 +44,8 @@ const profileData = {
       company: 'Byte Serido Jr',
       period: 'Jun 2021 - Nov 2022',
       location: 'Caico, RN - Hybrid',
-      description: 'Started as a Frontend Developer, later taking on the role of Project Director. Led the planning and execution of software projects.',
+      description:
+        'Started as a Frontend Developer, later taking on the role of Project Director. Led the planning and execution of software projects.',
       skills: ['Project Management', 'System Design', 'Frontend', 'Leadership'],
     },
   ],
@@ -51,7 +55,8 @@ const profileData = {
       institution: 'Federal University of Rio Grande do Norte (UFRN)',
       period: 'Jan 2019 - Jan 2025',
       location: 'Caico, RN',
-      description: '8-semester program (3000h) covering algorithms, data structures, OOP, databases, software engineering, computer networks, operating systems, web and visual programming, statistics, and systems analysis.',
+      description:
+        '8-semester program (3000h) covering algorithms, data structures, OOP, databases, software engineering, computer networks, operating systems, web and visual programming, statistics, and systems analysis.',
       skills: ['Full Stack', 'Algorithms', 'Software Engineering', 'Databases', 'Research'],
     },
     {
@@ -59,7 +64,8 @@ const profileData = {
       institution: 'Metropole Digital - IMD/UFRN',
       period: 'Jan 2018 - Sep 2019',
       location: 'Natal, RN',
-      description: 'Technical course at the Institute of Computing and Digital Technologies (IMD). Covered network architecture, server administration, Linux systems, and infrastructure fundamentals.',
+      description:
+        'Technical course at the Institute of Computing and Digital Technologies (IMD). Covered network architecture, server administration, Linux systems, and infrastructure fundamentals.',
       skills: ['Computer Networks', 'Linux', 'Infrastructure', 'Teaching Assistant'],
     },
   ],
@@ -82,8 +88,21 @@ const profileData = {
     subtitle: 'Boilerplate for Data Visualization and Analysis Tools',
     institution: 'Federal University of Rio Grande do Norte (UFRN)',
     year: '2024',
-    description: 'A Python desktop application for dataset feature analysis, prototyping and testing machine learning and statistical models.',
-    technologies: ['Python', 'GTK', 'Pandas', 'NumPy', 'Scikit-learn', 'Matplotlib', 'Seaborn', 'Pydantic', 'TinyDB', 'Docker', 'i18n'],
+    description:
+      'A Python desktop application for dataset feature analysis, prototyping and testing machine learning and statistical models.',
+    technologies: [
+      'Python',
+      'GTK',
+      'Pandas',
+      'NumPy',
+      'Scikit-learn',
+      'Matplotlib',
+      'Seaborn',
+      'Pydantic',
+      'TinyDB',
+      'Docker',
+      'i18n',
+    ],
     links: {
       source: 'https://github.com/ZauJulio/FeaturesAnalyzer',
       documentation: 'https://zaujulio.github.io/FeaturesAnalyzer/',
@@ -92,7 +111,8 @@ const profileData = {
   projects: [
     {
       name: 'FeaturesAnalyzer',
-      description: 'Python desktop application for dataset feature analysis, prototyping and testing ML and statistical models.',
+      description:
+        'Python desktop application for dataset feature analysis, prototyping and testing ML and statistical models.',
       technologies: ['GTK', 'Machine Learning', 'Pandas', 'Scikit-learn'],
       url: 'https://github.com/ZauJulio/FeaturesAnalyzer',
     },
@@ -170,9 +190,7 @@ export function Footer() {
           </button>
 
           {/* Right: copyright */}
-          <p className='text-gray-500 text-xs'>
-            &copy; {year} Zau Julio. All rights reserved.
-          </p>
+          <p className='text-gray-500 text-xs'>&copy; {year} Zau Julio. All rights reserved.</p>
         </div>
 
         {/* Social links row */}

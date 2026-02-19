@@ -1,5 +1,5 @@
-import { useState, useMemo } from 'react';
-import { ArrowLeftIcon, Music2Icon, ExternalLinkIcon, PlayCircleIcon, Disc3Icon, SearchIcon } from 'lucide-react';
+import { ArrowLeftIcon, Disc3Icon, ExternalLinkIcon, Music2Icon, PlayCircleIcon, SearchIcon } from 'lucide-react';
+import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
 export const meta = () => [{ title: 'Zaú Júlio - Music' }];
@@ -38,12 +38,16 @@ const playlists: Playlist[] = [
   {
     id: '1',
     title: 'Late Night Coding',
-    description: 'Ambient and electronic tracks for deep focus sessions. Lo-fi beats, post-rock, and atmospheric soundscapes.',
+    description:
+      'Ambient and electronic tracks for deep focus sessions. Lo-fi beats, post-rock, and atmospheric soundscapes.',
     genre: 'Ambient',
     trackCount: 48,
     links: [
       { platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j' },
-      { platform: 'youtube-music', url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_kgNMdXz9U6F0x5qXbT0jOmFb9F-qJz6Xk' },
+      {
+        platform: 'youtube-music',
+        url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_kgNMdXz9U6F0x5qXbT0jOmFb9F-qJz6Xk',
+      },
     ],
   },
   {
@@ -54,7 +58,10 @@ const playlists: Playlist[] = [
     trackCount: 65,
     links: [
       { platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DWTwzVdyRpXm1' },
-      { platform: 'youtube-music', url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_nMFasKMiG0y7GCh1j9AqD9ddvaqm6RMi8' },
+      {
+        platform: 'youtube-music',
+        url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_nMFasKMiG0y7GCh1j9AqD9ddvaqm6RMi8',
+      },
     ],
   },
   {
@@ -63,9 +70,7 @@ const playlists: Playlist[] = [
     description: 'From Pink Floyd to Explosions in the Sky. Long builds, complex arrangements, and cinematic textures.',
     genre: 'Progressive Rock',
     trackCount: 37,
-    links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DX6VdMW310YC7' },
-    ],
+    links: [{ platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DX6VdMW310YC7' }],
   },
   {
     id: '4',
@@ -75,7 +80,10 @@ const playlists: Playlist[] = [
     trackCount: 52,
     links: [
       { platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DXdLEN7aqioXM' },
-      { platform: 'youtube-music', url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_n_wfGBh7X4w8h3pMYXjwkXrMrKb_n6qqkA' },
+      {
+        platform: 'youtube-music',
+        url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_n_wfGBh7X4w8h3pMYXjwkXrMrKb_n6qqkA',
+      },
     ],
   },
 ];
@@ -118,11 +126,9 @@ const favorites: MusicItem[] = [
     id: '4',
     title: 'Midnight City',
     artist: 'M83',
-    album: 'Hurry Up, We\'re Dreaming',
+    album: "Hurry Up, We're Dreaming",
     genre: 'Synthpop',
-    links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/track/6GyFP1nfCDB8lbD2bG0Hkz' },
-    ],
+    links: [{ platform: 'spotify', url: 'https://open.spotify.com/track/6GyFP1nfCDB8lbD2bG0Hkz' }],
   },
   {
     id: '5',
@@ -141,9 +147,7 @@ const favorites: MusicItem[] = [
     artist: 'Explosions in the Sky',
     album: 'The Earth Is Not a Cold Dead Place',
     genre: 'Post-Rock',
-    links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/track/360ksfaBMz8jvhxMJ8GJfq' },
-    ],
+    links: [{ platform: 'spotify', url: 'https://open.spotify.com/track/360ksfaBMz8jvhxMJ8GJfq' }],
   },
 ];
 
@@ -158,7 +162,12 @@ const genres = allGenres.length > 0 ? ['All', ...allGenres] : [];
 
 // ─── Filter Row ──────────────────────────────────────────────
 
-function FilterRow({ label, options, active, onSelect }: {
+function FilterRow({
+  label,
+  options,
+  active,
+  onSelect,
+}: {
   label: string;
   options: string[];
   active: string;
@@ -256,12 +265,8 @@ function PlaylistCard({ playlist }: { playlist: Playlist }) {
             </span>
           )}
         </div>
-        {playlist.trackCount && (
-          <p className='text-xs text-gray-500 mb-2'>{playlist.trackCount} tracks</p>
-        )}
-        <p className='text-sm text-gray-400 leading-relaxed mb-3'>
-          {playlist.description}
-        </p>
+        {playlist.trackCount && <p className='text-xs text-gray-500 mb-2'>{playlist.trackCount} tracks</p>}
+        <p className='text-sm text-gray-400 leading-relaxed mb-3'>{playlist.description}</p>
         <PlatformLinks links={playlist.links} />
       </div>
     </div>
@@ -272,11 +277,7 @@ function FavoriteTrack({ track }: { track: MusicItem }) {
   return (
     <div className='flex items-center gap-4 p-4 rounded-xl border border-gray-800 bg-gray-900/50 hover:border-brand-500/50 transition-all duration-300 group'>
       {track.cover ? (
-        <img
-          src={track.cover}
-          alt={track.title}
-          className='size-14 rounded-lg object-cover flex-shrink-0'
-        />
+        <img src={track.cover} alt={track.title} className='size-14 rounded-lg object-cover flex-shrink-0' />
       ) : (
         <div className='size-14 rounded-lg bg-gradient-to-br from-violet-500/10 to-purple-500/5 flex items-center justify-center flex-shrink-0'>
           <Disc3Icon className='size-6 text-violet-400/50' />
@@ -288,9 +289,7 @@ function FavoriteTrack({ track }: { track: MusicItem }) {
           {track.title}
         </h4>
         <p className='text-xs text-gray-400 truncate'>{track.artist}</p>
-        {track.album && (
-          <p className='text-xs text-gray-500 truncate'>{track.album}</p>
-        )}
+        {track.album && <p className='text-xs text-gray-500 truncate'>{track.album}</p>}
       </div>
 
       {track.genre && (
@@ -373,8 +372,8 @@ export default function MusicPage() {
 
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>Music</h1>
           <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            What I listen to while coding, relaxing, and exploring. Curated playlists and
-            favorite tracks across genres — from ambient and electronic to rock and Brazilian MPB.
+            What I listen to while coding, relaxing, and exploring. Curated playlists and favorite tracks across genres
+            — from ambient and electronic to rock and Brazilian MPB.
           </p>
 
           {/* Platform badges */}
@@ -463,8 +462,8 @@ export default function MusicPage() {
             <p className='text-gray-600 text-sm max-w-lg mx-auto mb-6'>
               Add your playlists and favorite tracks to the{' '}
               <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>playlists</code> and{' '}
-              <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>favorites</code> arrays
-              in this component. Each item supports both Spotify and YouTube Music links.
+              <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>favorites</code> arrays in this
+              component. Each item supports both Spotify and YouTube Music links.
             </p>
           </div>
         </section>

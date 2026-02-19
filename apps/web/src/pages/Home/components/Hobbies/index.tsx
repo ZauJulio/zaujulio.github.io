@@ -1,4 +1,4 @@
-import { CameraIcon, CookingPotIcon, Music2Icon, ArrowRightIcon } from 'lucide-react';
+import { ArrowRightIcon, CameraIcon, CookingPotIcon, Music2Icon } from 'lucide-react';
 import { Link } from 'react-router';
 
 interface HobbyCard {
@@ -56,9 +56,7 @@ function HobbyCardComponent({ hobby }: { hobby: HobbyCard }) {
         {hobby.title}
       </h3>
 
-      <p className='text-sm text-gray-400 leading-relaxed mb-4'>
-        {hobby.description}
-      </p>
+      <p className='text-sm text-gray-400 leading-relaxed mb-4'>{hobby.description}</p>
 
       <span className='inline-flex items-center gap-1.5 text-sm text-brand-400 group-hover:text-brand-300 transition-colors'>
         Explore
@@ -72,18 +70,16 @@ export function HobbiesSection() {
   return (
     <section id='hobbies' className='py-20 px-4 bg-gray-900'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>
-          Hobbies
-        </h2>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>Hobbies</h2>
         <div className='text-center mb-12 max-w-3xl mx-auto space-y-4'>
           <p className='text-gray-300 text-lg leading-relaxed'>
             Beyond code — the things that inspire creativity and keep the balance.
           </p>
           <p className='text-gray-400 leading-relaxed'>
-            Hobbies aren't just pastimes; they're essential for mental health, creativity, and preventing burnout. 
-            When we step away from the screen and engage in different activities, we give our brains the space to 
-            process, innovate, and recharge. Photography teaches me to see beauty in details, cooking connects me 
-            with culture and mindfulness, and music provides the rhythm that fuels my focus.
+            Hobbies aren't just pastimes; they're essential for mental health, creativity, and preventing burnout. When
+            we step away from the screen and engage in different activities, we give our brains the space to process,
+            innovate, and recharge. Photography teaches me to see beauty in details, cooking connects me with culture
+            and mindfulness, and music provides the rhythm that fuels my focus.
           </p>
           <p className='text-gray-500 text-sm italic'>
             "To be creative, you must give yourself permission to explore."

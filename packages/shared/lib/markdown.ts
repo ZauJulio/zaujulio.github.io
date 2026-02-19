@@ -94,9 +94,7 @@ function parseFrontmatter(raw: string): { data: Record<string, unknown>; content
  *   const files = import.meta.glob('/content/articles/*.md', { query: '?raw', import: 'default', eager: true });
  *   const articles = loadMarkdownFiles<ArticleMeta>(files);
  */
-export function loadMarkdownFiles<T extends ContentMeta>(
-  globResult: Record<string, unknown>,
-): ContentItem<T>[] {
+export function loadMarkdownFiles<T extends ContentMeta>(globResult: Record<string, unknown>): ContentItem<T>[] {
   const items: ContentItem<T>[] = [];
 
   for (const [filepath, raw] of Object.entries(globResult)) {
@@ -137,10 +135,7 @@ export function loadMarkdownFiles<T extends ContentMeta>(
 /**
  * Find a single content item by slug.
  */
-export function findBySlug<T extends ContentMeta>(
-  items: ContentItem<T>[],
-  slug: string,
-): ContentItem<T> | undefined {
+export function findBySlug<T extends ContentMeta>(items: ContentItem<T>[], slug: string): ContentItem<T> | undefined {
   return items.find((item) => item.meta.slug === slug);
 }
 

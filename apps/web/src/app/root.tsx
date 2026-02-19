@@ -29,6 +29,9 @@ export const meta: Route.MetaFunction = () => [
   { property: 'og:description', content: SITE_DESCRIPTION },
   { property: 'og:site_name', content: 'Zau Julio' },
   { property: 'og:locale', content: 'en_US' },
+  { property: 'og:image', content: 'https://zaujulio.github.io/avatar.png' },
+  { property: 'og:image:width', content: '400' },
+  { property: 'og:image:height', content: '400' },
   { name: 'twitter:card', content: 'summary_large_image' },
   { name: 'twitter:title', content: SITE_TITLE },
   { name: 'twitter:description', content: SITE_DESCRIPTION },
@@ -67,10 +70,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               url: SITE_URL,
               jobTitle: 'Software Engineer',
               email: 'zaujulio.dev@gmail.com',
-              sameAs: [
-                'https://github.com/ZauJulio',
-                'https://linkedin.com/in/zaujulio',
-              ],
+              sameAs: ['https://github.com/ZauJulio', 'https://linkedin.com/in/zaujulio'],
               knowsAbout: [
                 'Software Engineering',
                 'Full-Stack Development',
@@ -89,11 +89,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <ScrollRestoration />
         <Scripts />
         {/* Umami Analytics — self-hosted, privacy-focused, <1KB */}
-        <script
-          defer
-          src="https://cloud.umami.is/script.js"
-          data-website-id="70a4d918-b144-4d4f-96b3-abfa2248242e"
-        />
+        <script defer src='https://cloud.umami.is/script.js' data-website-id='70a4d918-b144-4d4f-96b3-abfa2248242e' />
       </body>
     </html>
   );

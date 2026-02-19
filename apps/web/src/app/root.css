@@ -1,6 +1,6 @@
-@import 'tailwindcss';
-@import 'tw-animate-css';
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap');
+@import "tailwindcss";
+@import "tw-animate-css";
+@import url("https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap");
 
 @custom-variant dark (&:is(.dark *));
 
@@ -53,10 +53,10 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --color-brand-900: #005461;
-  --color-brand-700: #0C7779;
-  --color-brand-500: #249E94;
+  --color-brand-700: #0c7779;
+  --color-brand-500: #249e94;
   --color-brand-400: #2db5a1;
-  --color-brand-300: #3BC1A8;
+  --color-brand-300: #3bc1a8;
 }
 
 @layer base {
@@ -65,7 +65,7 @@
   }
 
   html {
-    font-family: 'Geist', system-ui, sans-serif;
+    font-family: "Geist", system-ui, sans-serif;
     scroll-behavior: smooth;
     font-size: 18px;
   }

@@ -1,7 +1,16 @@
 import { useEffect, useState } from 'react';
 import { useGlitch } from 'react-powerglitch';
 
-import { NavigationBar, AboutMeSection, ProjectsSection, HobbiesSection, HireMeSection, Footer, ScrollReveal, ScrollSpy } from './components';
+import {
+  AboutMeSection,
+  Footer,
+  HireMeSection,
+  HobbiesSection,
+  NavigationBar,
+  ProjectsSection,
+  ScrollReveal,
+  ScrollSpy,
+} from './components';
 
 export default function Home() {
   const [triggered, setTriggered] = useState(false);
@@ -63,12 +72,11 @@ export default function Home() {
         <div className='relative z-10 flex flex-col items-center text-center px-4'>
           <NavigationBar />
 
-          <h1 className='text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-lg'>
-            Zaú Júlio
-          </h1>
+          <h1 className='text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-lg'>Zaú Júlio</h1>
 
           <p className='text-xl md:text-2xl text-brand-300 font-light tracking-wide'>
-            Full Stack Developer <span className='text-brand-500'>|</span> Tech Lead <span className='text-brand-500'>|</span> Systems Engineer
+            Full Stack Developer <span className='text-brand-500'>|</span> Tech Lead{' '}
+            <span className='text-brand-500'>|</span> Systems Engineer
           </p>
         </div>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 interface Section {
   id: string;
@@ -33,14 +33,14 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
 
       // Find the active section - check which section's top is closest to the trigger offset
       let currentSection = '';
-      let minDistance = Infinity;
-      
+      let minDistance = Number.POSITIVE_INFINITY;
+
       for (const section of sections) {
         const element = document.getElementById(section.id);
         if (element) {
           const rect = element.getBoundingClientRect();
           const distance = Math.abs(rect.top - triggerOffset);
-          
+
           // If section top is at or above trigger offset and closer than current
           if (rect.top <= triggerOffset && distance < minDistance) {
             minDistance = distance;
@@ -48,7 +48,7 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
           }
         }
       }
-      
+
       // If no section found above trigger, use the first visible one
       if (!currentSection) {
         for (const section of sections) {
@@ -62,7 +62,7 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
           }
         }
       }
-      
+
       setActiveSection(currentSection);
     };
 
@@ -95,9 +95,7 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
           >
             <span
               className={`block w-2 h-2 rounded-full transition-all duration-300 ${
-                activeSection === section.id
-                  ? 'bg-brand-500 scale-125'
-                  : 'bg-gray-600 group-hover:bg-gray-400'
+                activeSection === section.id ? 'bg-brand-500 scale-125' : 'bg-gray-600 group-hover:bg-gray-400'
               }`}
             />
             <span
@@ -108,7 +106,7 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
               }`}
               style={{
                 WebkitTextStroke: '1px white',
-                textShadow: '0 0 2px rgba(255,255,255,0.5)'
+                textShadow: '0 0 2px rgba(255,255,255,0.5)',
               }}
             >
               {section.label}

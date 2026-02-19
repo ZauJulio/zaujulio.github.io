@@ -1,4 +1,4 @@
-import { SendIcon, MailIcon, LinkedinIcon, GithubIcon } from 'lucide-react';
+import { GithubIcon, LinkedinIcon, MailIcon, SendIcon } from 'lucide-react';
 
 export function HireMeSection() {
   return (
@@ -10,14 +10,11 @@ export function HireMeSection() {
           </div>
         </div>
 
-        <h2 className='text-4xl font-bold text-white mb-4'>
-          Let's Work Together
-        </h2>
+        <h2 className='text-4xl font-bold text-white mb-4'>Let's Work Together</h2>
 
         <p className='text-gray-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto'>
-          I'm open to new opportunities, freelance projects, and technical collaborations.
-          If you're looking for a full-stack developer with experience in system design,
-          cloud architecture, and AI — let's connect.
+          I'm open to new opportunities, freelance projects, and technical collaborations. If you're looking for a
+          full-stack developer with experience in system design, cloud architecture, and AI — let's connect.
         </p>
 
         {/* CTA Buttons */}
