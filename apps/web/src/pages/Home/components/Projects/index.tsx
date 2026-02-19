@@ -285,7 +285,7 @@ function BubbleCluster({ cluster }: { cluster: SkillCluster }) {
 
   useEffect(() => {
     if (containerSize > 0) {
-      const maxRadius = containerSize * 0.13;
+      const maxRadius = containerSize * 0.11;
       const packed = packBubbles(cluster.skills, containerSize, maxRadius);
       setBubbles(packed);
     }
@@ -326,7 +326,7 @@ function BubbleCluster({ cluster }: { cluster: SkillCluster }) {
           >
             {bubbles.map((bubble) => {
               const opacity = 0.15 + (bubble.level / 100) * 0.55;
-              const fontSize = Math.max(7, bubble.r * 0.32);
+              const fontSize = Math.max(6, bubble.r * 0.28);
 
               return (
                 <g key={bubble.name} className='transition-all duration-300'>

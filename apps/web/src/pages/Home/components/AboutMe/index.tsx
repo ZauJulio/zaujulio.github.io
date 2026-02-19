@@ -184,7 +184,7 @@ function LanguagesBlock() {
     <div id='languages' className='scroll-mt-8 mt-12'>
       <SubSectionHeader icon={GlobeIcon} title='Languages' />
 
-      <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-6 divide-y divide-gray-700/30'>
+      <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-6 divide-y divide-gray-700/30 hover:border-brand-500 transition-all duration-300 hover:shadow-lg hover:shadow-brand-900/20'>
         {LANGUAGES.map((lang) => (
           <LanguageCard key={lang.name} language={lang} />
         ))}
@@ -293,11 +293,7 @@ export function AboutMeSection() {
         <div id='thesis' className='scroll-mt-8 mt-20'>
           <SubSectionHeader icon={BookOpenIcon} title='Thesis' />
 
-          <div className='relative border-l-2 border-brand-700/50'>
-            <div className='relative group pl-8'>
-              <div className='absolute -left-[1px] top-7 -translate-x-1/2 h-3 w-3 rounded-full bg-brand-500 shadow-[0_0_8px_2px] shadow-brand-500/40 transition-all group-hover:scale-150 group-hover:shadow-[0_0_12px_4px] z-10' />
-
-              <div className='bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg border border-gray-700/60 hover:border-brand-500 transition-all duration-300 group-hover:shadow-lg group-hover:shadow-brand-900/20'>
+          <div className='bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg border border-gray-700/60 hover:border-brand-500 transition-all duration-300 hover:shadow-lg hover:shadow-brand-900/20'>
                 <div className='flex flex-col md:flex-row gap-6 mb-4'>
                   <div className='md:w-1/3'>
                     <img
@@ -353,7 +349,6 @@ export function AboutMeSection() {
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

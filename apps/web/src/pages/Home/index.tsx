@@ -38,7 +38,7 @@ export default function Home() {
 
   const sections = [
     { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects' },
+    { id: 'projects', label: 'Projects/Skills' },
     { id: 'hobbies', label: 'Hobbies' },
     { id: 'hire', label: 'Hire Me' },
   ];
