@@ -1,4 +1,6 @@
-import { DownloadIcon, GithubIcon, HeartIcon, LinkedinIcon, MailIcon } from 'lucide-react';
+import { DownloadIcon, HeartIcon, MailIcon } from 'lucide-react';
+
+import { GitHubIcon, LinkedInIcon } from '../../../../components/SocialIcons';
 
 // Profile data for JSON export
 const profileData = {
@@ -70,10 +72,26 @@ const profileData = {
     },
   ],
   languages: [
-    { name: 'Portuguese', level: 'Native', proficiency: { speaking: 100, listening: 100, reading: 100 } },
-    { name: 'English', level: 'Intermediate', proficiency: { speaking: 35, listening: 60, reading: 95 } },
-    { name: 'Spanish', level: 'Basic', proficiency: { speaking: 20, listening: 40, reading: 45 } },
-    { name: 'French', level: 'Beginner', proficiency: { speaking: 10, listening: 25, reading: 30 } },
+    {
+      name: 'Portuguese',
+      level: 'Native',
+      proficiency: { speaking: 100, listening: 100, reading: 100 },
+    },
+    {
+      name: 'English',
+      level: 'Intermediate',
+      proficiency: { speaking: 35, listening: 60, reading: 95 },
+    },
+    {
+      name: 'Spanish',
+      level: 'Basic',
+      proficiency: { speaking: 20, listening: 40, reading: 45 },
+    },
+    {
+      name: 'French',
+      level: 'Beginner',
+      proficiency: { speaking: 10, listening: 25, reading: 30 },
+    },
   ],
   skills: {
     databases: ['MongoDB', 'PostgreSQL', 'Mongoose', 'TypeORM', 'SQL', 'Psycopg'],
@@ -202,7 +220,7 @@ export function Footer() {
             className='text-gray-500 hover:text-brand-300 transition-colors'
             aria-label='GitHub'
           >
-            <GithubIcon className='size-5' />
+            <GitHubIcon className='size-5' />
           </a>
           <a
             href='https://linkedin.com/in/zaujulio'
@@ -211,7 +229,7 @@ export function Footer() {
             className='text-gray-500 hover:text-brand-300 transition-colors'
             aria-label='LinkedIn'
           >
-            <LinkedinIcon className='size-5' />
+            <LinkedInIcon className='size-5' />
           </a>
           <a
             href='mailto:zaujulio.dev@gmail.com'

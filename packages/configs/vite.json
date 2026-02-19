@@ -19,7 +19,8 @@
     "noUnusedParameters": true,
     "paths": {
       "@app": ["./app"],
-      "@pages/*": ["./pages/*"]
+      "@pages/*": ["./pages/*"],
+      "@components/*": ["./components/*"]
     },
     "preserveSymlinks": true,
     "resolveJsonModule": true,

@@ -5,7 +5,11 @@ import { MarkdownRenderer } from '@repo/shared/components/MarkdownRenderer';
 import { type ArticleMeta, estimateReadingTime, findBySlug, loadMarkdownFiles } from '@repo/shared/lib/markdown';
 
 // Load all articles at build time
-const articleFiles = import.meta.glob('/content/articles/*.md', { query: '?raw', import: 'default', eager: true });
+const articleFiles = import.meta.glob('/content/articles/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
 const allArticles = loadMarkdownFiles<ArticleMeta>(articleFiles);
 
 export default function ArticlePage() {

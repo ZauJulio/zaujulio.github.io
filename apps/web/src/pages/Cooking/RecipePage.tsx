@@ -5,7 +5,11 @@ import { MarkdownRenderer } from '@repo/shared/components/MarkdownRenderer';
 import { findBySlug, loadMarkdownFiles, type RecipeMeta } from '@repo/shared/lib/markdown';
 
 // Load all recipes at build time
-const recipeFiles = import.meta.glob('/content/recipes/*.md', { query: '?raw', import: 'default', eager: true });
+const recipeFiles = import.meta.glob('/content/recipes/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
 const allRecipes = loadMarkdownFiles<RecipeMeta>(recipeFiles);
 
 export default function RecipePage() {

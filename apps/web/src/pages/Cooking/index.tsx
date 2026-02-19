@@ -7,7 +7,11 @@ import { type ContentItem, loadMarkdownFiles, type RecipeMeta } from '@repo/shar
 export const meta = () => [{ title: 'Zaú Júlio - Cooking' }];
 
 // Load all recipes from content/recipes/*.md at build time
-const recipeFiles = import.meta.glob('/content/recipes/*.md', { query: '?raw', import: 'default', eager: true });
+const recipeFiles = import.meta.glob('/content/recipes/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
 const allRecipes = loadMarkdownFiles<RecipeMeta>(recipeFiles);
 
 // Extract unique filter values

@@ -112,7 +112,10 @@ export function MarkdownRenderer({ content }: { content: string }) {
               <iframe
                 {...props}
                 className='w-full'
-                style={{ minHeight: '400px', ...((props.style as React.CSSProperties) || {}) }}
+                style={{
+                  minHeight: '400px',
+                  ...((props.style as React.CSSProperties) || {}),
+                }}
                 loading='lazy'
                 sandbox='allow-scripts allow-same-origin allow-forms allow-popups allow-presentation'
               />

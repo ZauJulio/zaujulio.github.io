@@ -43,7 +43,10 @@ const playlists: Playlist[] = [
     genre: 'Ambient',
     trackCount: 48,
     links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j' },
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j',
+      },
       {
         platform: 'youtube-music',
         url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_kgNMdXz9U6F0x5qXbT0jOmFb9F-qJz6Xk',
@@ -57,7 +60,10 @@ const playlists: Playlist[] = [
     genre: 'MPB',
     trackCount: 65,
     links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DWTwzVdyRpXm1' },
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/playlist/37i9dQZF1DWTwzVdyRpXm1',
+      },
       {
         platform: 'youtube-music',
         url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_nMFasKMiG0y7GCh1j9AqD9ddvaqm6RMi8',
@@ -70,7 +76,12 @@ const playlists: Playlist[] = [
     description: 'From Pink Floyd to Explosions in the Sky. Long builds, complex arrangements, and cinematic textures.',
     genre: 'Progressive Rock',
     trackCount: 37,
-    links: [{ platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DX6VdMW310YC7' }],
+    links: [
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/playlist/37i9dQZF1DX6VdMW310YC7',
+      },
+    ],
   },
   {
     id: '4',
@@ -79,7 +90,10 @@ const playlists: Playlist[] = [
     genre: 'Synthpop',
     trackCount: 52,
     links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/playlist/37i9dQZF1DXdLEN7aqioXM' },
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/playlist/37i9dQZF1DXdLEN7aqioXM',
+      },
       {
         platform: 'youtube-music',
         url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_n_wfGBh7X4w8h3pMYXjwkXrMrKb_n6qqkA',
@@ -96,8 +110,14 @@ const favorites: MusicItem[] = [
     album: 'The Dark Side of the Moon',
     genre: 'Progressive Rock',
     links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/track/2ctvdKmETyOzPb2GiJJT53' },
-      { platform: 'youtube-music', url: 'https://music.youtube.com/watch?v=mrojrDCI02k' },
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/track/2ctvdKmETyOzPb2GiJJT53',
+      },
+      {
+        platform: 'youtube-music',
+        url: 'https://music.youtube.com/watch?v=mrojrDCI02k',
+      },
     ],
   },
   {
@@ -107,8 +127,14 @@ const favorites: MusicItem[] = [
     album: 'Construcao',
     genre: 'MPB',
     links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/track/5weVRbJJLJOEMKOhOSYJJg' },
-      { platform: 'youtube-music', url: 'https://music.youtube.com/watch?v=nmMmMYOe--g' },
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/track/5weVRbJJLJOEMKOhOSYJJg',
+      },
+      {
+        platform: 'youtube-music',
+        url: 'https://music.youtube.com/watch?v=nmMmMYOe--g',
+      },
     ],
   },
   {
@@ -118,8 +144,14 @@ const favorites: MusicItem[] = [
     album: 'Currents',
     genre: 'Psychedelic',
     links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ' },
-      { platform: 'youtube-music', url: 'https://music.youtube.com/watch?v=2SUwOgmvzK4' },
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ',
+      },
+      {
+        platform: 'youtube-music',
+        url: 'https://music.youtube.com/watch?v=2SUwOgmvzK4',
+      },
     ],
   },
   {
@@ -128,7 +160,12 @@ const favorites: MusicItem[] = [
     artist: 'M83',
     album: "Hurry Up, We're Dreaming",
     genre: 'Synthpop',
-    links: [{ platform: 'spotify', url: 'https://open.spotify.com/track/6GyFP1nfCDB8lbD2bG0Hkz' }],
+    links: [
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/track/6GyFP1nfCDB8lbD2bG0Hkz',
+      },
+    ],
   },
   {
     id: '5',
@@ -137,8 +174,14 @@ const favorites: MusicItem[] = [
     album: 'Aquarela',
     genre: 'MPB',
     links: [
-      { platform: 'spotify', url: 'https://open.spotify.com/track/6tMCnmmNRSig8aBDp2TiAo' },
-      { platform: 'youtube-music', url: 'https://music.youtube.com/watch?v=qVk6qN0HNYI' },
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/track/6tMCnmmNRSig8aBDp2TiAo',
+      },
+      {
+        platform: 'youtube-music',
+        url: 'https://music.youtube.com/watch?v=qVk6qN0HNYI',
+      },
     ],
   },
   {
@@ -147,7 +190,12 @@ const favorites: MusicItem[] = [
     artist: 'Explosions in the Sky',
     album: 'The Earth Is Not a Cold Dead Place',
     genre: 'Post-Rock',
-    links: [{ platform: 'spotify', url: 'https://open.spotify.com/track/360ksfaBMz8jvhxMJ8GJfq' }],
+    links: [
+      {
+        platform: 'spotify',
+        url: 'https://open.spotify.com/track/360ksfaBMz8jvhxMJ8GJfq',
+      },
+    ],
   },
 ];
 

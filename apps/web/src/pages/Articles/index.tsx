@@ -1,4 +1,13 @@
-import { ArrowLeftIcon, CalendarIcon, ClockIcon, NewspaperIcon, SearchIcon, TagIcon } from 'lucide-react';
+import {
+  ArrowLeftIcon,
+  CalendarIcon,
+  ChevronRightIcon,
+  ClockIcon,
+  HomeIcon,
+  NewspaperIcon,
+  SearchIcon,
+  TagIcon,
+} from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
@@ -6,8 +15,38 @@ import { type ArticleMeta, type ContentItem, estimateReadingTime, loadMarkdownFi
 
 export const meta = () => [{ title: 'Zaú Júlio - Articles' }];
 
+// Breadcrumb component
+function Breadcrumbs({ items }: { items: Array<{ label: string; href?: string }> }) {
+  return (
+    <nav aria-label='Breadcrumb' className='py-4'>
+      <ol className='flex items-center gap-2 text-sm'>
+        {items.map((item, index) => (
+          <li key={`${item.label}-${index}`} className='flex items-center gap-2'>
+            {index > 0 && <ChevronRightIcon className='size-4 text-gray-600' />}
+            {item.href ? (
+              <Link
+                to={item.href}
+                className='text-gray-400 hover:text-brand-300 transition-colors flex items-center gap-1'
+              >
+                {index === 0 && <HomeIcon className='size-4' />}
+                {item.label}
+              </Link>
+            ) : (
+              <span className='text-brand-300 font-medium'>{item.label}</span>
+            )}
+          </li>
+        ))}
+      </ol>
+    </nav>
+  );
+}
+
 // Load all articles from content/articles/*.md at build time
-const articleFiles = import.meta.glob('/content/articles/*.md', { query: '?raw', import: 'default', eager: true });
+const articleFiles = import.meta.glob('/content/articles/*.md', {
+  query: '?raw',
+  import: 'default',
+  eager: true,
+});
 const allArticles = loadMarkdownFiles<ArticleMeta>(articleFiles);
 
 // Extract unique tags from loaded articles
@@ -113,6 +152,11 @@ export default function ArticlesPage() {
           </div>
         </div>
       </header>
+
+      {/* Breadcrumbs */}
+      <div className='max-w-7xl mx-auto px-6'>
+        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Articles' }]} />
+      </div>
 
       {/* Hero */}
       <section className='py-20 px-6'>

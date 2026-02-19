@@ -34,7 +34,10 @@ export interface ContentItem<T extends ContentMeta = ContentMeta> {
 // ─── Lightweight Frontmatter Parser ──────────────────────────
 // Replaces gray-matter to avoid Node.js Buffer dependency in the browser.
 
-function parseFrontmatter(raw: string): { data: Record<string, unknown>; content: string } {
+function parseFrontmatter(raw: string): {
+  data: Record<string, unknown>;
+  content: string;
+} {
   const match = raw.match(/^---\r?\n([\s\S]*?)\r?\n---\r?\n([\s\S]*)$/);
   if (!match) return { data: {}, content: raw };
 
