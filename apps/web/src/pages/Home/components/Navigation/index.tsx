@@ -55,7 +55,7 @@ export function NavigationBar() {
                 className='bg-transparent border-none cursor-pointer'
               >
                 <CodeIcon className='size-4 mr-2' />
-                Projects
+                Projects/Skills
               </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
