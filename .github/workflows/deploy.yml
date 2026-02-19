@@ -25,6 +25,9 @@ jobs:
       - name: Install dependencies
         run: bun install --frozen-lockfile
 
+      - name: Generate sitemap
+        run: bun run sitemap
+
       - name: Build
         working-directory: apps/web
         run: bunx react-router build

@@ -8,9 +8,10 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "turbo run build",
+    "build": "bun run sitemap && turbo run build",
     "dev": "turbo run dev",
-    "check": "biome check --write --config-path ./packages/configs/biome.json ."
+    "check": "biome check --write --config-path ./packages/configs/biome.json .",
+    "sitemap": "bun scripts/generate-sitemap.ts"
   },
   "devDependencies": {
     "@biomejs/biome": "^2.3.11",
