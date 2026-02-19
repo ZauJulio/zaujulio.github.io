@@ -33,6 +33,8 @@ export const meta: Route.MetaFunction = () => [
   { name: 'twitter:title', content: SITE_TITLE },
   { name: 'twitter:description', content: SITE_DESCRIPTION },
   { name: 'twitter:creator', content: '@zaujulio' },
+  // Google Search Console verification
+  { name: 'google-site-verification', content: 'qKO2zDnD0jBRfjllKQ9bog58eXzZzALYVKsB2ACU-ic' },
 ];
 
 export const links: Route.LinksFunction = () => [
