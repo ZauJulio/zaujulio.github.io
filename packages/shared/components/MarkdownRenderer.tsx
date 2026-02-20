@@ -80,12 +80,12 @@ export function MarkdownRenderer({ content }: { content: string }) {
             </blockquote>
           ),
 
-          // Lists
+          // Lists - use inline style to override prose reset
           ul: ({ children }) => (
-            <ul className='!list-disc !list-inside space-y-2 text-gray-300 my-6 ml-4 marker:!text-brand-400'>{children}</ul>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '1.5rem' }} className='space-y-2 text-gray-300 my-6 marker:text-brand-400'>{children}</ul>
           ),
           ol: ({ children }) => (
-            <ol className='!list-decimal !list-inside space-y-2 text-gray-300 my-6 ml-4 marker:!text-brand-400'>{children}</ol>
+            <ol style={{ listStyleType: 'decimal', paddingLeft: '1.5rem' }} className='space-y-2 text-gray-300 my-6 marker:text-brand-400'>{children}</ol>
           ),
           li: ({ children, ...props }) => {
             // Check if this li has nested ul/ol
