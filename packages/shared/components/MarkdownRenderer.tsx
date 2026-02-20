@@ -1,3 +1,4 @@
+import React from 'react';
 import ReactMarkdown from 'react-markdown';
 
 import rehypeHighlight from 'rehype-highlight';
@@ -81,12 +82,18 @@ export function MarkdownRenderer({ content }: { content: string }) {
 
           // Lists
           ul: ({ children }) => (
-            <ul className='list-disc list-inside space-y-2 text-gray-300 my-6 ml-4 marker:text-brand-400'>{children}</ul>
+            <ul className='!list-disc !list-inside space-y-2 text-gray-300 my-6 ml-4 marker:!text-brand-400'>{children}</ul>
           ),
           ol: ({ children }) => (
-            <ol className='list-decimal list-inside space-y-2 text-gray-300 my-6 ml-4 marker:text-brand-400'>{children}</ol>
+            <ol className='!list-decimal !list-inside space-y-2 text-gray-300 my-6 ml-4 marker:!text-brand-400'>{children}</ol>
           ),
-          li: ({ children }) => <li className='text-gray-300 leading-relaxed pl-1'>{children}</li>,
+          li: ({ children, ...props }) => {
+            // Check if this li has nested ul/ol
+            const hasNestedList = React.Children.toArray(children).some(
+              (child) => React.isValidElement(child) && (child.type === 'ul' || child.type === 'ol')
+            );
+            return <li className={hasNestedList ? 'text-gray-300 leading-relaxed' : 'text-gray-300 leading-relaxed list-item'} {...props}>{children}</li>;
+          },
 
           // Tables
           table: ({ children }) => (
