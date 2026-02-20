@@ -21,12 +21,12 @@ export function MarkdownRenderer({ content }: { content: string }) {
         rehypePlugins={[rehypeRaw, rehypeHighlight]}
         components={{
           // Headings
-          h1: ({ children }) => <h1 className='text-3xl font-bold text-white mt-10 mb-4 px-2'>{children}</h1>,
+          h1: ({ children }) => <h1 className='text-3xl font-bold text-white mt-10 mb-4 px-4'>{children}</h1>,
           h2: ({ children }) => (
-            <h2 className='text-2xl font-bold text-white mt-10 mb-4 px-2 border-b border-gray-800 pb-2'>{children}</h2>
+            <h2 className='text-2xl font-bold text-white mt-10 mb-4 px-4 border-b border-gray-800 pb-2'>{children}</h2>
           ),
-          h3: ({ children }) => <h3 className='text-xl font-semibold text-white mt-8 mb-3 px-2'>{children}</h3>,
-          h4: ({ children }) => <h4 className='text-lg font-semibold text-gray-200 mt-6 mb-2 px-2'>{children}</h4>,
+          h3: ({ children }) => <h3 className='text-xl font-semibold text-white mt-8 mb-3 px-4'>{children}</h3>,
+          h4: ({ children }) => <h4 className='text-lg font-semibold text-gray-200 mt-6 mb-2 px-4'>{children}</h4>,
 
           // Paragraphs
           p: ({ children }) => <p className='text-gray-300 leading-relaxed mb-4'>{children}</p>,
@@ -75,17 +75,17 @@ export function MarkdownRenderer({ content }: { content: string }) {
 
           // Blockquotes
           blockquote: ({ children }) => (
-            <blockquote className='border-l-4 border-brand-500/50 bg-gray-900/50 px-4 py-4 my-6 rounded-r-lg text-gray-400 italic'>
+            <blockquote className='border-l-4 border-brand-500/50 bg-gray-900/50 px-6 py-4 my-6 rounded-r-lg text-gray-400 italic'>
               {children}
             </blockquote>
           ),
 
           // Lists - use inline style to override prose reset
           ul: ({ children }) => (
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2.5rem' }} className='space-y-3 text-gray-300 my-8 mx-2 marker:text-brand-400'>{children}</ul>
+            <ul style={{ listStyleType: 'disc', paddingLeft: '2.5rem' }} className='space-y-3 text-gray-300 my-8 mx-4 marker:text-brand-400'>{children}</ul>
           ),
           ol: ({ children }) => (
-            <ol style={{ listStyleType: 'decimal', paddingLeft: '2.5rem' }} className='space-y-3 text-gray-300 my-8 mx-2 marker:text-brand-400'>{children}</ol>
+            <ol style={{ listStyleType: 'decimal', paddingLeft: '2.5rem' }} className='space-y-3 text-gray-300 my-8 mx-4 marker:text-brand-400'>{children}</ol>
           ),
           li: ({ children, ...props }) => {
             // Check if this li has nested ul/ol
