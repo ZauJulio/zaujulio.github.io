@@ -3,12 +3,12 @@
   "biome.configurationPath": "./packages/configs/biome.json",
   "workbench.colorCustomizations": {
     "commandCenter.border": "#e7e7e799",
-    "tab.activeBorder": "#35ac25",
-    "titleBar.activeBackground": "#28821c",
+    "tab.activeBorder": "#008094",
+    "titleBar.activeBackground": "#005461",
     "titleBar.activeForeground": "#e7e7e7",
-    "titleBar.inactiveBackground": "#28821c99",
+    "titleBar.inactiveBackground": "#00546199",
     "titleBar.inactiveForeground": "#e7e7e799"
   },
-  "peacock.color": "#28821c",
+  "peacock.color": "#005461",
   "cSpell.words": ["powerglitch"]
 }

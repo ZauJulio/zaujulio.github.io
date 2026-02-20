@@ -1,213 +1,169 @@
-# Zau Julio | Portfolio
+# 🚀 Zau Julio | Portfolio
 
-Personal portfolio website built as a Turborepo monorepo with React Router v7, Vite 5, Tailwind CSS v4, and shadcn/ui.
+[![GitHub Pages](https://img.shields.io/github/deployments/zaujulio/zaujulio.github.io/github-pages?label=github-pages&logo=github)](https://zaujulio.github.io)
+[![Build](https://img.shields.io/github/workflow/status/zaujulio/zaujulio.github.io/Deploy%20to%20GitHub%20Pages?style=flat&logo=github-actions)](https://github.com/zaujulio/zaujulio.github.io/actions)
+[![License: MIT](https://img.shields.io/github/license/zaujulio/zaujulio.github.io?color=green)](./LICENSE)
+[![Bun](https://img.shields.io/badge/Bun-1.3.5-blue?logo=Bun)](https://bun.sh)
+[![Vite](https://img.shields.io/badge/Vite-5-purple?logo=vite)](https://vitejs.dev/)
+[![React](https://img.shields.io/badge/React%20Router-v7-61DAFB?logo=react)](https://reactrouter.com/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)](https://typescriptlang.org/)
+[![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker)](https://hub.docker.com)
+
+---
+
+✨ **Personal, modular, and blazing-fast portfolio.**
+Built as an ultra-modern Turborepo monorepo with React Router v7, Vite 5, Tailwind CSS 4, shadcn/ui, and strict TypeScript. Deploys anywhere (GH Pages, Docker, Nginx) with SEO, analytics, and strong typed content. 
 
 **Live:** [zaujulio.github.io](https://zaujulio.github.io)
 
-## Tech Stack
+---
 
-| Layer | Technology |
-|---|---|
-| Framework | [React Router v7](https://reactrouter.com/) (SPA mode) |
-| Build | [Vite 5](https://vitejs.dev/) |
-| Styling | [Tailwind CSS v4](https://tailwindcss.com/) |
-| Components | [shadcn/ui](https://ui.shadcn.com/) |
-| Monorepo | [Turborepo](https://turbo.build/) |
-| Package Manager | [Bun](https://bun.sh/) 1.3.5 |
-| Linting | [Biome](https://biomejs.dev/) |
-| Language | TypeScript 5 |
-| Deployment | GitHub Pages / Docker + Nginx |
-| Analytics | [Umami](https://umami.is/) (optional, self-hosted) |
+## 🏗️ Monorepo Structure
 
-## Project Structure
+This project uses [Turborepo](https://turbo.build/) and [Bun](https://bun.sh/) to manage everything:
 
 ```
 .
 ├── apps/
-│   └── web/                        # Main portfolio SPA
-│       ├── content/                # Markdown content
-│       │   ├── recipes/            # Cooking recipes (.md)
-│       │   └── articles/           # Technical articles (.md)
-│       ├── public/                 # Static assets
-│       │   ├── sitemap.xml
-│       │   └── robots.txt
+│   └── web/              # 🎨 Main portfolio SPA (React Router, Vite, SEO, SSG)
+│       ├── content/      # 📦 Structured JSON or markdown content
+│       │   ├── projects/ #   - Typed projects (JSON, .d.ts)
+│       │   ├── skills/   #   - Skill clusters, levels
+│       │   ├── profile/  #   - Bio, socials, experience
+│       │   ├── education/#   - Education history
+│       │   ├── articles/ #   - Tech articles (markdown)
+│       │   ├── recipes/  #   - Cooking posts (markdown)
+│       │   ├── hobbies/  #   - Hobbies data (JSON)
+│       │   └── languages/#   - Language fluency
 │       └── src/
-│           ├── app/                # React Router app shell
-│           │   ├── root.tsx        # Layout, SEO meta, JSON-LD, Umami
-│           │   ├── root.css        # Brand colors, Tailwind theme
-│           │   └── routes.ts       # Route definitions
-│           └── pages/
-│               ├── Home/           # Landing page (hero, about, projects, hobbies, hire me)
-│               ├── Cooking/        # Recipe listing + detail pages
-│               ├── Photography/    # Photo gallery
-│               ├── Music/          # Music hobby page
-│               └── Articles/       # Technical articles listing + detail
+│           ├── pages/    #   - Route-level React pages
+│           ├── app/      #   - App shell, layout, meta, SEO, analytics
+│           └── ...
 │
 ├── packages/
-│   ├── configs/                    # Shared TypeScript, Biome, Tailwind configs
-│   ├── ui/                         # shadcn/ui components (Avatar, NavigationMenu)
-│   └── shared/                     # Shared utilities
-│       ├── lib/markdown.ts         # Frontmatter parser, content loaders
-│       └── components/             # MarkdownRenderer
+│   ├── configs/          # 🛠️ Shared tsconfig, Tailwind, Biome configs
+│   ├── ui/               # 🎛️ Custom UI library (shadcn/ui components)
+│   └── shared/           # 📦 Shared utilities (markdown, components)
 │
-├── Dockerfile                      # Multi-stage: Bun build -> Nginx serve
-├── docker-compose.yml
-├── nginx.conf                      # SPA routing, gzip, caching, security headers
-└── .github/workflows/deploy.yml    # GitHub Pages CI/CD
+├── Dockerfile            # 🐳 Nginx-static multi-stage build, tiny production image
+├── nginx.conf            # 🔒 Security, cache, SPA fallback, robots, gzip
+├── .github/workflows/    # 🤖 CI/CD for deploy/tests (GitHub Pages/Actions)
+...
 ```
 
-## Getting Started
+**Key points:**
+- All content/sections (projects, articles, profile, education, skills, hobbies, etc) live as JSON or markdown in `/apps/web/content/`, strictly typed by TypeScript (`.d.ts`)
+- Separate, reusable UI/packages for shared logic/components
+- One `apps/web/` subapp: everything SSG-ready
+- Build output: `/apps/web/build/client` → deploys cleanly to any static host
+
+---
+
+## 🛠️ Tech Stack
+
+| Layer         | Technology                       |
+|---------------|----------------------------------|
+| Framework     | [React Router v7](https://reactrouter.com/)     |
+| Build         | [Vite 5](https://vitejs.dev/)                  |
+| Styling       | [Tailwind CSS v4](https://tailwindcss.com/)    |
+| Components    | [shadcn/ui](https://ui.shadcn.com/)            |
+| Monorepo      | [Turborepo](https://turbo.build/)              |
+| Package Mgmt  | [Bun](https://bun.sh/) 1.3.5                   |
+| Linting       | [Biome](https://biomejs.dev/)                  |
+| Language      | TypeScript 5                                   |
+| Static Host   | GitHub Pages / Docker + Nginx                  |
+| Analytics     | [Umami](https://umami.is/) (optional)          |
+
+---
+
+## 🚀 Getting Started
 
 ### Prerequisites
-
-- [Bun](https://bun.sh/) >= 1.3.5
-- [Node.js](https://nodejs.org/) >= 18 (for npx compatibility)
+- 🥖 [Bun](https://bun.sh/) >= 1.3.5
+- 🟦 [Node.js](https://nodejs.org/) >= 18
 
 ### Install & Run
-
 ```bash
-# Install dependencies
-bun install
-
-# Start development server
-bun run dev
-
-# The site will be available at http://localhost:5173
+bun install        # Install all dependencies
+bun run dev        # Start dev server (http://localhost:5173)
 ```
 
-### Build
-
+### Build for Production
 ```bash
-# Production build (outputs to apps/web/build/client/)
-bun run build
+bun run build      # Outputs to apps/web/build/client/
 ```
 
 ### Preview Production Build
-
 ```bash
-# Preview build
 cd apps/web && bun run preview
 ```
 
-## Docker
-
-```bash
-# Build and run with Docker Compose
-docker compose up --build
-
-# Site available at http://localhost:3000
-```
-
-Or manually:
-
+### Docker (Self-Hosted/Nginx)
 ```bash
 docker build -t portfolio .
-docker run -p 3000:80 portfolio
+docker run -p 8080:80 portfolio   # Site at http://localhost:8080
 ```
-
-## Deployment
-
-### GitHub Pages (Automatic)
-
-Push to `main` triggers the GitHub Actions workflow (`.github/workflows/deploy.yml`):
-
-1. Installs deps with Bun
-2. Builds with `react-router build`
-3. Copies `index.html` to `404.html` for SPA routing
-4. Deploys to GitHub Pages
-
-Enable GitHub Pages in repo settings: **Settings > Pages > Source: GitHub Actions**.
-
-### Docker / Self-Hosted
-
-The Dockerfile produces a lightweight Nginx image (~30MB) that serves the static SPA with:
-- Gzip compression
-- Aggressive caching for hashed assets (1 year, immutable)
-- SPA fallback routing
-- Security headers (X-Frame-Options, X-Content-Type-Options, Referrer-Policy)
-
-## Content
-
-### Adding Recipes
-
-Create a markdown file in `apps/web/content/recipes/`:
-
-```md
----
-title: "Recipe Name"
-description: "Short description"
-date: "2025-01-15"
-cuisine: "Brazilian"
-mealType: "savory"
-courseType: "Dinner"
-prepTime: "20 min"
-cookTime: "45 min"
-servings: "4"
-difficulty: "medium"
-cover: "/recipes/my-recipe.jpg"
-tags: ["comfort food", "traditional"]
----
-
-Your recipe content in markdown...
-```
-
-### Adding Articles
-
-Create a markdown file in `apps/web/content/articles/`:
-
-```md
----
-title: "Article Title"
-description: "Short description"
-date: "2025-01-15"
-author: "Zau Julio"
-tags: ["typescript", "react"]
----
-
-Your article content in markdown...
-```
-
-## Analytics (Optional)
-
-This project supports [Umami](https://umami.is/) for privacy-focused analytics (<1KB script, no cookies, GDPR compliant).
-
-To enable, set environment variables:
-
+Or using Compose (edits available):
 ```bash
-VITE_UMAMI_WEBSITE_ID=your-website-id
-VITE_UMAMI_URL=https://your-umami-instance.example.com/script.js
+docker compose up --build
 ```
 
-See `apps/web/.env.example` for reference.
+---
+## 📦 Content & Customization
 
-## SEO
+- Edit all structured data (projects, skills, hobbies, education, profile, languages) in `apps/web/content/` as JSON (type-safe).
+- Markdown blog and recipe posts: `apps/web/content/articles/`, `apps/web/content/recipes/`
+- Update theme/colors in `apps/web/src/app/root.css` & Tailwind config.
+- SEO, sitemap, robots.txt: edit in `apps/web/public/` and component meta tags.
 
-The site includes comprehensive SEO optimization:
+---
 
-- **Meta tags**: title, description, author, robots, theme-color
-- **Open Graph**: type, URL, title, description, site name, locale
-- **Twitter Cards**: summary_large_image with title, description, creator
-- **JSON-LD**: Person structured data (schema.org)
-- **Canonical URL**: `<link rel="canonical">`
-- **Sitemap**: `public/sitemap.xml`
-- **Robots**: `public/robots.txt`
+## 🔎 SEO & Analytics
+- Fully static HTML for core pages, ready for Google
+- Meta, Open Graph, Twitter Card, JSON-LD, canonical, sitemap.xml, robots.txt
+- [Umami](https://umami.is/) analytics built-in (enable via `.env`)
 
-## Monorepo Packages
+---
 
-| Package | Name | Purpose |
-|---|---|---|
-| `packages/configs` | `@repo/configs` | Shared tsconfig, Biome, Tailwind configs |
-| `packages/ui` | `@repo/ui` | shadcn/ui components (Avatar, NavigationMenu) |
-| `packages/shared` | `@repo/shared` | Markdown parser, MarkdownRenderer component |
+## 📦 Packages
 
-## Scripts
+| Package             | Name           | Purpose                                                            |
+|---------------------|----------------|--------------------------------------------------------------------|
+| packages/configs    | @repo/configs  | Shared tsconfig, Biome, Tailwind configs                           |
+| packages/ui         | @repo/ui       | Custom UI library (shadcn/ui-powered, extends, themeables)         |
+| packages/shared     | @repo/shared   | Markdown parser, MarkdownRenderer component, generic utilities     |
 
-| Command | Description |
-|---|---|
-| `bun run dev` | Start all apps in development mode |
-| `bun run build` | Build all apps for production |
-| `bun run check` | Run Biome linting and formatting |
+---
 
-## License
+## 📜 Scripts
+| Command           | Description                 |
+|-------------------|----------------------------|
+| bun run dev       | Start dev mode (all apps)  |
+| bun run build     | Build all apps             |
+| bun run check     | Lint + format (Biome)      |
+
+---
+
+## 📢 Deployment
+
+### ☁️ GitHub Pages
+- Push to `main` triggers auto-build via Actions (see `.github/workflows/deploy.yml`)
+- SPA fallback (`index.html` copied to `404.html` automatically)
+- Enable Pages in repo settings → **Settings > Pages > Source: GitHub Actions**
+
+### 🐳 Docker/Nginx
+- Multi-stage Dockerfile → static `nginx:alpine` image with gzip, cache, SEO headers
+
+---
+
+## 📄 License
 
 MIT
+
+---
+
+> ⭐ **Like what you see? [Star this repo!](https://github.com/zaujulio/zaujulio.github.io) or fork your own!**
+
+---
+
+_Made with ❤️ by [Zau Julio](https://github.com/zaujulio) — open source, type-safe, portable._
