@@ -10,11 +10,12 @@
   "scripts": {
     "build": "bun run sitemap && turbo run build",
     "dev": "turbo run dev",
-    "check": "biome check --write --config-path ./packages/configs/biome.json .",
+    "typecheck": "turbo run typecheck",
+    "check": "biome check --write --config-path ./packages/configs/biome.json . --css-parse-tailwind-directives=true",
     "sitemap": "bun scripts/generate-sitemap.ts"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.3.11",
+    "@biomejs/biome": "^2.4.2",
     "@types/node": "^25.0.8",
     "@types/react": "^18.3.3",
     "@types/react-dom": "^18.3.0",

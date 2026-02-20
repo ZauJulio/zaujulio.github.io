@@ -7,7 +7,8 @@
     "dev": "vite --clearScreen false",
     "build": "react-router build",
     "preview": "vite preview",
-    "lint": "biome lint ."
+    "lint": "biome lint .",
+    "typecheck": "tsc -p tsconfig.json --pretty --noEmit"
   },
   "dependencies": {
     "@fontsource/geist-sans": "^5.2.5",
