@@ -21,12 +21,12 @@ export function MarkdownRenderer({ content }: { content: string }) {
         rehypePlugins={[rehypeRaw, rehypeHighlight]}
         components={{
           // Headings
-          h1: ({ children }) => <h1 className='text-3xl font-bold text-white mt-10 mb-4 px-4 pb-2'>{children}</h1>,
+          h1: ({ children }) => <h1 className='text-3xl font-bold text-white mt-10 mb-4 px-4 pb-4'>{children}</h1>,
           h2: ({ children }) => (
-            <h2 className='text-2xl font-bold text-white mt-10 mb-4 px-4 border-b border-gray-800 pb-2'>{children}</h2>
+            <h2 className='text-2xl font-bold text-white mt-10 mb-4 px-4 border-b border-gray-800 pb-4'>{children}</h2>
           ),
-          h3: ({ children }) => <h3 className='text-xl font-semibold text-white mt-8 mb-3 px-4 pb-2'>{children}</h3>,
-          h4: ({ children }) => <h4 className='text-lg font-semibold text-gray-200 mt-6 mb-2 px-4 pb-2'>{children}</h4>,
+          h3: ({ children }) => <h3 className='text-xl font-semibold text-white mt-8 mb-3 px-4 pb-4'>{children}</h3>,
+          h4: ({ children }) => <h4 className='text-lg font-semibold text-gray-200 mt-6 mb-2 px-4 pb-4'>{children}</h4>,
 
           // Paragraphs
           p: ({ children }) => <p className='text-gray-300 leading-relaxed'>{children}</p>,
