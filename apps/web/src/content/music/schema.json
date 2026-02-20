@@ -1,0 +1,47 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MusicDataStore",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "oneOf": [{ "$ref": "#/definitions/playlist" }, { "$ref": "#/definitions/favorite" }]
+      }
+    }
+  },
+  "required": ["items"],
+  "definitions": {
+    "platform": { "type": "string", "enum": ["spotify", "youtube-music"] },
+    "musicLink": {
+      "type": "object",
+      "required": ["platform", "url"],
+      "properties": {
+        "platform": { "$ref": "#/definitions/platform" },
+        "url": { "type": "string", "format": "uri" }
+      }
+    },
+    "playlist": {
+      "type": "object",
+      "required": ["id", "title", "links"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "genre": { "type": "string" },
+        "trackCount": { "type": "number" },
+        "links": { "type": "array", "items": { "$ref": "#/definitions/musicLink" } }
+      }
+    },
+    "favorite": {
+      "type": "object",
+      "required": ["id", "title", "artist", "links"],
+      "properties": {
+        "id": { "type": "string" },
+        "title": { "type": "string" },
+        "artist": { "type": "string" },
+        "links": { "type": "array", "items": { "$ref": "#/definitions/musicLink" } }
+      }
+    }
+  }
+}

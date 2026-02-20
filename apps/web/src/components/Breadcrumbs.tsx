@@ -1,16 +1,12 @@
 import { ChevronRightIcon, HomeIcon } from 'lucide-react';
 import { Link } from 'react-router';
 
-interface BreadcrumbItem {
+export interface BreadcrumbItem {
   label: string;
   href?: string;
 }
 
-interface BreadcrumbsProps {
-  items: BreadcrumbItem[];
-}
-
-export function Breadcrumbs({ items }: BreadcrumbsProps) {
+export function Breadcrumbs({ items }: { items: BreadcrumbItem[] }) {
   return (
     <nav aria-label='Breadcrumb' className='py-4'>
       <ol className='flex items-center gap-2 text-sm'>
