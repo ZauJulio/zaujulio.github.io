@@ -2,38 +2,9 @@ import { ArrowLeftIcon, CameraIcon, ImageIcon, SearchIcon } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
 
+import { occasions, photos, tags, timesOfDay } from './data';
+
 export const meta = () => [{ title: 'Zaú Júlio - Photography' }];
-
-interface Photo {
-  id: string;
-  src: string;
-  alt: string;
-  location?: string;
-  date?: string;
-  timeOfDay?: 'Dawn' | 'Morning' | 'Afternoon' | 'Golden Hour' | 'Night';
-  occasion?: string;
-  tags?: string[];
-}
-
-// Placeholder data — replace with your actual photos
-const photos: Photo[] = [
-  // {
-  //   id: '1',
-  //   src: '/photos/photo-1.jpg',
-  //   alt: 'Landscape at sunset',
-  //   location: 'Pipa, RN',
-  //   date: '2024',
-  //   timeOfDay: 'Golden Hour',
-  //   occasion: 'Travel',
-  //   tags: ['Landscape', 'Beach'],
-  // },
-];
-
-// Extract unique filter values
-const timesOfDay = ['All', ...Array.from(new Set(photos.map((p) => p.timeOfDay).filter(Boolean) as string[]))];
-const occasions = ['All', ...Array.from(new Set(photos.map((p) => p.occasion).filter(Boolean) as string[]))];
-const allTags = Array.from(new Set(photos.flatMap((p) => p.tags ?? [])));
-const tags = allTags.length > 0 ? ['All', ...allTags] : [];
 
 function FilterRow({
   label,

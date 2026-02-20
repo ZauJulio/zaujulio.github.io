@@ -1,5 +1,5 @@
 {
-  "$schema": "https://turborepo.dev/schema.json",
+  "$schema": "https://turborepo.com/schema.v2.json",
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
@@ -9,7 +9,12 @@
     "lint": {},
     "dev": {
       "cache": false,
+      "interactive": true,
       "persistent": true
+    },
+    "typecheck": {
+      "cache": true,
+      "dependsOn": ["^build"]
     }
   }
 }

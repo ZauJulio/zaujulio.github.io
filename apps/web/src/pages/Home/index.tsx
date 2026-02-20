@@ -1,16 +1,11 @@
 import { useEffect, useState } from 'react';
 import { useGlitch } from 'react-powerglitch';
 
-import {
-  AboutMeSection,
-  Footer,
-  HireMeSection,
-  HobbiesSection,
-  NavigationBar,
-  ProjectsSection,
-  ScrollReveal,
-  ScrollSpy,
-} from './components';
+import { NavigationBar } from '@components/Navigation';
+import { ScrollReveal } from '@components/ScrollReveal';
+import { ScrollSpy } from '@components/ScrollSpy';
+
+import { AboutMeSection, ArticlesSection, Footer, HireMeSection, HobbiesSection, ProjectsSection } from './sections';
 
 export default function Home() {
   const [triggered, setTriggered] = useState(false);
@@ -48,6 +43,7 @@ export default function Home() {
   const sections = [
     { id: 'about', label: 'About' },
     { id: 'projects', label: 'Projects/Skills' },
+    { id: 'articles', label: 'Articles' },
     { id: 'hobbies', label: 'Hobbies' },
     { id: 'hire', label: 'Hire Me' },
   ];
@@ -95,6 +91,11 @@ export default function Home() {
       {/* Projects */}
       <ScrollReveal delay={100}>
         <ProjectsSection />
+      </ScrollReveal>
+
+      {/* Articles */}
+      <ScrollReveal delay={100}>
+        <ArticlesSection />
       </ScrollReveal>
 
       {/* Hobbies */}

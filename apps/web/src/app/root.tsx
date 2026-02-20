@@ -6,6 +6,7 @@ import '@fontsource/geist-sans/700.css';
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import type { Route } from './+types/root';
+import { ToastProvider } from '../components';
 
 import './root.css';
 
@@ -14,8 +15,6 @@ const SITE_URL = 'https://zaujulio.github.io';
 const SITE_TITLE = 'Zau Julio | Software Engineer';
 const SITE_DESCRIPTION =
   'Software Engineer specializing in full-stack development, machine learning, and creative side projects. Explore my work, articles, and hobbies.';
-
-// <a href="https://br.freepik.com/fotos-gratis/efeito-de-falha-em-fundo-preto_16018490.htm#fromView=keyword&page=1&position=1&uuid=d4f7574d-e0d6-45ea-ba27-bdb75730c7b5&query=Vhs+texture">Imagem de rawpixel.com no Freepik</a>
 
 export const meta: Route.MetaFunction = () => [
   { title: SITE_TITLE },
@@ -65,6 +64,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {/* JSON-LD Structured Data */}
         <script
           type='application/ld+json'
+          // biome-ignore lint/security/noDangerouslySetInnerHtml: ignore
           dangerouslySetInnerHTML={{
             __html: JSON.stringify({
               '@context': 'https://schema.org',
@@ -125,5 +125,9 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 }
 
 export default function App() {
-  return <Outlet />;
+  return (
+    <ToastProvider>
+      <Outlet />
+    </ToastProvider>
+  );
 }

@@ -138,6 +138,10 @@ export function loadMarkdownFiles<T extends ContentMeta>(globResult: Record<stri
 /**
  * Find a single content item by slug.
  */
+export function findBySlugJson<T extends { slug: string }>(items: T[], slug: string): T | undefined {
+  return items.find((item) => item.slug === slug);
+}
+
 export function findBySlug<T extends ContentMeta>(items: ContentItem<T>[], slug: string): ContentItem<T> | undefined {
   return items.find((item) => item.meta.slug === slug);
 }
