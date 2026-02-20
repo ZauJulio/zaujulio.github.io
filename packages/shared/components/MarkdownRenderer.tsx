@@ -14,7 +14,7 @@ import 'highlight.js/styles/github-dark.css';
  */
 export function MarkdownRenderer({ content }: { content: string }) {
   return (
-    <div className='prose prose-invert max-w-none'>
+    <div className='prose prose-invert prose-ul:list-disc prose-ol:list-decimal prose-li:marker:text-brand-400 max-w-none'>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         rehypePlugins={[rehypeRaw, rehypeHighlight]}
@@ -80,11 +80,13 @@ export function MarkdownRenderer({ content }: { content: string }) {
           ),
 
           // Lists
-          ul: ({ children }) => <ul className='list-disc list-inside space-y-1 text-gray-300 mb-4 ml-2'>{children}</ul>,
-          ol: ({ children }) => (
-            <ol className='list-decimal list-inside space-y-1 text-gray-300 mb-4 ml-2'>{children}</ol>
+          ul: ({ children }) => (
+            <ul className='list-disc list-inside space-y-2 text-gray-300 my-6 ml-4 marker:text-brand-400'>{children}</ul>
           ),
-          li: ({ children }) => <li className='text-gray-300 leading-relaxed'>{children}</li>,
+          ol: ({ children }) => (
+            <ol className='list-decimal list-inside space-y-2 text-gray-300 my-6 ml-4 marker:text-brand-400'>{children}</ol>
+          ),
+          li: ({ children }) => <li className='text-gray-300 leading-relaxed pl-1'>{children}</li>,
 
           // Tables
           table: ({ children }) => (

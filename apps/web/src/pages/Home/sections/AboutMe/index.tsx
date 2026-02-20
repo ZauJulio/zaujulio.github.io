@@ -190,7 +190,7 @@ function LanguageCard({ language }: { language: Language }) {
 
 function LanguagesBlock() {
   return (
-    <div id='languages' className='scroll-mt-8 mt-12'>
+    <div id='languages' className='scroll-mt-8 mt-8'>
       <SubSectionHeader icon={GlobeIcon} title='Languages' />
 
       <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-6 divide-y divide-gray-700/30 hover:border-brand-500 transition-all duration-300 hover:shadow-lg hover:shadow-brand-900/20'>
