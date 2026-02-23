@@ -5,16 +5,26 @@ export interface Photo {
   id: string;
   src: string;
   alt: string;
-  location?: string;
   date?: string;
-  timeOfDay?: 'Dawn' | 'Morning' | 'Afternoon' | 'Golden Hour' | 'Night';
+  location?: string;
+  timeOfDay?: string;
   occasion?: string;
   tags?: string[];
 }
 
+export interface Album {
+  id: string;
+  name: string;
+  description: string;
+  date: string;
+  location?: string;
+  cover?: string;
+  photos: Photo[];
+}
+
 export interface PhotographyJson {
   $schema: string;
-  photos: Photo[];
+  albums: Album[];
 }
 
 declare const value: PhotographyJson;
