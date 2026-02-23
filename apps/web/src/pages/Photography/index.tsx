@@ -3,7 +3,7 @@ import { ArrowLeftIcon, CameraIcon, ImageIcon } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router';
 
-import { albums } from './data';
+import { useAlbums } from './data';
 import type { Album, Photo } from 'content/photography/photography.json.d.ts';
 
 export const meta = () => [{ title: 'Zaú Júlio - Photography' }];
@@ -138,15 +138,16 @@ export default function PhotographyPage() {
   const { t } = useTranslation();
   const params = useParams();
   const [selectedAlbumId, setSelectedAlbumId] = useState<string | null>(params.albumId || null);
+  const albums = useAlbums();
 
   const sortedAlbums = useMemo(() => {
     return [...albums].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
-  }, []);
+  }, [albums]);
 
   const selectedAlbum = useMemo(() => {
     if (!selectedAlbumId) return null;
     return albums.find((a) => a.id === selectedAlbumId) || null;
-  }, [selectedAlbumId]);
+  }, [albums, selectedAlbumId]);
 
   useEffect(() => {
     if (params.albumId) {
