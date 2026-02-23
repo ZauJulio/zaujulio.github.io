@@ -10,6 +10,8 @@ export interface Photo {
   timeOfDay?: string;
   occasion?: string;
   tags?: string[];
+  title?: string;
+  description?: string;
 }
 
 export interface Album {

@@ -77,7 +77,8 @@ function PhotoGrid({ photos }: { photos: Photo[] }) {
               className='w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105'
             />
             <div className='absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300'>
-              {photo.location && <p className='text-white text-sm font-medium'>{photo.location}</p>}
+              {photo.title && <p className='text-white text-sm font-medium'>{photo.title}</p>}
+              {photo.location && <p className='text-gray-300 text-sm'>{photo.location}</p>}
               <div className='flex items-center gap-2 mt-1'>
                 {photo.date && <span className='text-gray-300 text-xs'>{photo.date}</span>}
                 {photo.timeOfDay && (
@@ -121,8 +122,9 @@ function PhotoGrid({ photos }: { photos: Photo[] }) {
             onClick={(e) => e.stopPropagation()}
           />
           <div className='absolute bottom-4 left-4 right-4 text-center'>
-            {selectedPhoto.alt && <p className='text-white font-medium'>{selectedPhoto.alt}</p>}
-            {selectedPhoto.location && <p className='text-gray-400 text-sm mt-1'>{selectedPhoto.location}</p>}
+            {selectedPhoto.title && <p className='text-white font-medium text-lg'>{selectedPhoto.title}</p>}
+            {selectedPhoto.description && <p className='text-gray-400 text-sm mt-1'>{selectedPhoto.description}</p>}
+            {selectedPhoto.location && <p className='text-gray-500 text-sm mt-1'>{selectedPhoto.location}</p>}
           </div>
         </div>
       )}
