@@ -2,7 +2,7 @@ import { index, type RouteConfig, route } from '@react-router/dev/routes';
 
 export default [
   index('../pages/Home/index.tsx'),
-  route('photography', '../pages/Photography/index.tsx'),
+  route('photography/:albumId?', '../pages/Photography/index.tsx'),
   route('cooking', '../pages/Cooking/index.tsx'),
   route('cooking/:slug', '../pages/Cooking/RecipePage.tsx'),
   route('articles', '../pages/Articles/index.tsx'),

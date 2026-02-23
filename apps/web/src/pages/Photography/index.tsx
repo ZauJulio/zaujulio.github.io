@@ -1,6 +1,6 @@
 import { ArrowLeftIcon, CameraIcon, ImageIcon } from 'lucide-react';
-import { useMemo, useState } from 'react';
-import { Link } from 'react-router';
+import { useEffect, useMemo, useState } from 'react';
+import { Link, useParams } from 'react-router';
 
 import { albums } from './data';
 import type { Album, Photo } from 'content/photography/photography.json.d.ts';
@@ -131,7 +131,8 @@ function PhotoGrid({ photos }: { photos: Photo[] }) {
 }
 
 export default function PhotographyPage() {
-  const [selectedAlbumId, setSelectedAlbumId] = useState<string | null>(null);
+  const params = useParams();
+  const [selectedAlbumId, setSelectedAlbumId] = useState<string | null>(params.albumId || null);
 
   const sortedAlbums = useMemo(() => {
     return [...albums].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
@@ -141,6 +142,12 @@ export default function PhotographyPage() {
     if (!selectedAlbumId) return null;
     return albums.find((a) => a.id === selectedAlbumId) || null;
   }, [selectedAlbumId]);
+
+  useEffect(() => {
+    if (params.albumId) {
+      setSelectedAlbumId(params.albumId);
+    }
+  }, [params.albumId]);
 
   if (selectedAlbum) {
     return (
