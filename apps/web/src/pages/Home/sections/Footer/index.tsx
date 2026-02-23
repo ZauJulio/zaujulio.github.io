@@ -1,4 +1,5 @@
 import { CopyIcon, HeartIcon, MailIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import profileDataJson from '@content/profile/profile.json';
 
@@ -16,6 +17,7 @@ function exportProfileJSON() {
 }
 
 export function Footer() {
+  const { t } = useTranslation();
   const { showToast } = useToast();
   const year = new Date().getFullYear();
 
@@ -35,9 +37,9 @@ export function Footer() {
         <div className='flex flex-col md:flex-row items-center justify-between gap-6'>
           {/* Left: branding */}
           <div className='flex items-center gap-2 text-gray-400 text-sm'>
-            <span>Built with</span>
+            <span>{t('footer.builtWith')}</span>
             <HeartIcon className='size-3.5 text-brand-500 fill-brand-500' />
-            <span>by</span>
+            <span>{t('footer.and')}</span>
             <a
               href='https://github.com/zaujulio'
               target='_blank'
@@ -59,7 +61,9 @@ export function Footer() {
           </button>
 
           {/* Right: copyright */}
-          <p className='text-gray-500 text-xs'>&copy; {year} Zau Julio. All rights reserved.</p>
+          <p className='text-gray-500 text-xs'>
+            &copy; {year} Zau Julio. {t('footer.copyright')}
+          </p>
         </div>
 
         {/* Social links row */}

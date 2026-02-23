@@ -7,6 +7,7 @@ import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration }
 
 import type { Route } from './+types/root';
 import { ToastProvider } from '../components';
+import '../i18n';
 
 import './root.css';
 

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { BookOpenIcon, BriefcaseIcon, EarIcon, GlobeIcon, GraduationCapIcon, MicIcon, UserIcon } from 'lucide-react';
 
 // ─── Shared Sub-heading ─────────────────────────────────────────────────────
@@ -189,9 +190,11 @@ function LanguageCard({ language }: { language: Language }) {
 }
 
 function LanguagesBlock() {
+  const { t } = useTranslation();
+  
   return (
     <div id='languages' className='scroll-mt-8 mt-8'>
-      <SubSectionHeader icon={GlobeIcon} title='Languages' />
+      <SubSectionHeader icon={GlobeIcon} title={t('about.languages')} />
 
       <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-6 divide-y divide-gray-700/30 hover:border-brand-500 transition-all duration-300 hover:shadow-lg hover:shadow-brand-900/20'>
         {LANGUAGES.map((lang) => (
@@ -207,6 +210,8 @@ function LanguagesBlock() {
 // ═══════════════════════════════════════════════════════════════════════════════
 
 export function AboutMeSection() {
+  const { t } = useTranslation();
+  
   return (
     <section id='about' className='bg-black py-20'>
       <div className='container mx-auto px-6 max-w-6xl'>
@@ -215,14 +220,14 @@ export function AboutMeSection() {
           <div className='p-2 bg-brand-900/40 rounded-lg'>
             <UserIcon className='size-7 text-brand-300' />
           </div>
-          <h2 className='text-4xl font-bold text-white'>About Me</h2>
+          <h2 className='text-4xl font-bold text-white'>{t('about.title')}</h2>
         </div>
 
         {/* Two-column: Experience (left) | Education + Languages (right) */}
         <div className='grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16'>
           {/* Experience Timeline */}
           <div id='experience' className='scroll-mt-8'>
-            <SubSectionHeader icon={BriefcaseIcon} title='Experience' />
+            <SubSectionHeader icon={BriefcaseIcon} title={t('about.experience')} />
             <div className='relative border-l-2 border-brand-700/50 space-y-8'>
               {profile.experience.map((exp) => (
                 <TimelineItem
@@ -241,7 +246,7 @@ export function AboutMeSection() {
           {/* Education Timeline + Languages (same column) */}
           <div>
             <div id='education' className='scroll-mt-8'>
-              <SubSectionHeader icon={GraduationCapIcon} title='Education' />
+              <SubSectionHeader icon={GraduationCapIcon} title={t('about.education')} />
               <div className='relative border-l-2 border-brand-700/50 space-y-8'>
                 {education.items.map((edu) => (
                   <TimelineItem
@@ -265,7 +270,7 @@ export function AboutMeSection() {
 
         {/* Thesis — full width below the two columns */}
         <div id='thesis' className='scroll-mt-8 mt-20'>
-          <SubSectionHeader icon={BookOpenIcon} title='Thesis' />
+          <SubSectionHeader icon={BookOpenIcon} title={t('about.thesis')} />
 
           <div className='bg-gray-800/80 backdrop-blur-sm p-6 rounded-lg border border-gray-700/60 hover:border-brand-500 transition-all duration-300 hover:shadow-lg hover:shadow-brand-900/20'>
             <div className='flex flex-col md:flex-row gap-6 mb-4'>

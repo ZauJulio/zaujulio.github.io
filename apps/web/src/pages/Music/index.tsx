@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, Disc3Icon, ExternalLinkIcon, Music2Icon, PlayCircleIcon, SearchIcon } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Link } from 'react-router';
@@ -356,6 +357,7 @@ function FavoriteTrack({ track }: { track: MusicItem }) {
 // ─── Page ────────────────────────────────────────────────────
 
 export default function MusicPage() {
+  const { t } = useTranslation();
   const [activeGenre, setActiveGenre] = useState('All');
   const [searchQuery, setSearchQuery] = useState('');
 

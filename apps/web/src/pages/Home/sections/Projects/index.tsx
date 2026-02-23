@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { CodeIcon, ExternalLinkIcon, StarIcon } from 'lucide-react';
 import { useEffect, useRef, useState } from 'react';
 
@@ -222,13 +223,15 @@ function BubbleCluster({ cluster }: { cluster: SkillCluster }) {
 }
 
 function SkillsSection() {
+  const { t } = useTranslation();
+  
   return (
     <div id='skills' className='mt-20 pt-10 border-t border-gray-800'>
       <div className='flex items-center gap-3 mb-10'>
         <div className='p-2 bg-brand-900/40 rounded-lg'>
           <CodeIcon className='size-5 text-brand-300' />
         </div>
-        <h3 className='text-2xl font-bold text-white'>Skills</h3>
+        <h3 className='text-2xl font-bold text-white'>{t('about.skills')}</h3>
       </div>
 
       <div className='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8'>
@@ -241,14 +244,13 @@ function SkillsSection() {
 }
 
 export function ProjectsSection() {
+  const { t } = useTranslation();
+  
   return (
     <section id='projects' className='py-20 px-4 bg-gray-950'>
       <div className='max-w-6xl mx-auto'>
-        <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>Projects & Skills</h2>
-        <p className='text-center text-gray-400 mb-12 max-w-2xl mx-auto'>
-          A selection of open-source projects spanning full-stack development, machine learning, Linux tooling, and
-          system engineering.
-        </p>
+        <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>{t('projects.title')}</h2>
+        <p className='text-center text-gray-400 mb-12 max-w-2xl mx-auto'>{t('projects.description')}</p>
 
         <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6'>
           {projects.map((project) => (

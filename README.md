@@ -118,6 +118,36 @@ docker compose up --build
 
 ---
 
+## 🌍 Internationalization (i18n)
+
+The site supports English (default) and Portuguese (pt-BR).
+
+### Language Switcher
+- A language switcher is available in the navigation bar
+- Language preference is saved to localStorage and persists across sessions
+
+### Adding New Translations
+Translation files are located in `apps/web/src/i18n/locales/`:
+- `en.json` - English (default)
+- `pt-BR.json` - Portuguese (Brazil)
+
+To add a new translation key:
+1. Add the key to both `en.json` and `pt-BR.json`
+2. Use the translation in any component:
+
+```tsx
+import { useTranslation } from 'react-i18next';
+
+function MyComponent() {
+  const { t } = useTranslation();
+  return <h1>{t('myKey')}</h1>;
+}
+```
+
+Translation keys follow a nested structure (e.g., `nav.about`, `photography.title`).
+
+---
+
 ## 🔎 SEO & Analytics
 - Fully static HTML for core pages, ready for Google
 - Meta, Open Graph, Twitter Card, JSON-LD, canonical, sitemap.xml, robots.txt

@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, CameraIcon, ImageIcon } from 'lucide-react';
 import { useEffect, useMemo, useState } from 'react';
 import { Link, useParams } from 'react-router';
@@ -8,6 +9,7 @@ import type { Album, Photo } from 'content/photography/photography.json.d.ts';
 export const meta = () => [{ title: 'Zaú Júlio - Photography' }];
 
 function AlbumCard({ album }: { album: Album }) {
+  const { t } = useTranslation();
   const coverPhoto = album.photos[0];
   const photoCount = album.photos.length;
 
@@ -38,7 +40,7 @@ function AlbumCard({ album }: { album: Album }) {
         <div className='flex items-center gap-3 mt-3 text-xs text-gray-500'>
           {album.date && <span>{new Date(album.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>}
           {album.location && <span>• {album.location}</span>}
-          <span>• {photoCount} photos</span>
+          <span>• {photoCount} {t('photography.photos')}</span>
         </div>
       </div>
     </Link>
@@ -133,6 +135,7 @@ function PhotoGrid({ photos }: { photos: Photo[] }) {
 }
 
 export default function PhotographyPage() {
+  const { t } = useTranslation();
   const params = useParams();
   const [selectedAlbumId, setSelectedAlbumId] = useState<string | null>(params.albumId || null);
 
@@ -162,7 +165,7 @@ export default function PhotographyPage() {
               className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm cursor-pointer'
             >
               <ArrowLeftIcon className='size-4' />
-              Back to Albums
+              {t('common.backToAlbums')}
             </button>
             <div className='flex items-center gap-2'>
               <CameraIcon className='size-5 text-amber-400' />
@@ -180,7 +183,7 @@ export default function PhotographyPage() {
                 <span>{new Date(selectedAlbum.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>
               )}
               {selectedAlbum.location && <span>• {selectedAlbum.location}</span>}
-              <span>• {selectedAlbum.photos.length} photos</span>
+              <span>• {selectedAlbum.photos.length} {t('photography.photos')}</span>
             </div>
           </div>
         </section>
@@ -203,12 +206,12 @@ export default function PhotographyPage() {
             className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
           >
             <ArrowLeftIcon className='size-4' />
-            Back to Portfolio
+            {t('common.backToPortfolio')}
           </Link>
 
           <div className='flex items-center gap-2'>
             <CameraIcon className='size-5 text-amber-400' />
-            <span className='font-semibold text-white'>Photography</span>
+            <span className='font-semibold text-white'>{t('photography.title')}</span>
           </div>
         </div>
       </header>
@@ -219,10 +222,9 @@ export default function PhotographyPage() {
             <CameraIcon className='size-10 text-amber-400' />
           </div>
 
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Photography</h1>
+          <h1 className='text-4xl md:text-5xl font-bold mb-4'>{t('photography.title')}</h1>
           <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            Capturing moments, landscapes, and everyday beauty through the lens. A visual journal of the places I've been
-            and the things that caught my eye.
+            {t('photography.description')}
           </p>
         </div>
       </section>
@@ -240,9 +242,9 @@ export default function PhotographyPage() {
               <div className='inline-flex p-4 rounded-2xl bg-gray-900/50 mb-4'>
                 <ImageIcon className='size-8 text-gray-600' />
               </div>
-              <p className='text-gray-500 text-lg mb-2'>No albums yet</p>
+              <p className='text-gray-500 text-lg mb-2'>{t('photography.noAlbums')}</p>
               <p className='text-gray-600 text-sm max-w-md mx-auto'>
-                Add your albums to the photography.json file and place images in the public/photos/ directory.
+                {t('photography.addAlbumsHint')}
               </p>
             </div>
           )}

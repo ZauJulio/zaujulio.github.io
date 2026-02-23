@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, CalendarIcon, ClockIcon, ExternalLinkIcon, NewspaperIcon } from 'lucide-react';
 import { Link, useParams } from 'react-router';
 
@@ -9,6 +10,7 @@ import { Breadcrumbs } from '@components/Breadcrumbs';
 import { articles } from './data';
 
 export default function ArticlePage() {
+  const { t } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? findBySlugJson(articles, slug) : undefined;
 

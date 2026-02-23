@@ -1,8 +1,11 @@
+import { useTranslation } from 'react-i18next';
 import { MailIcon, SendIcon } from 'lucide-react';
 
 import { GithubIcon, LinkedinIcon } from '../../../../../../../packages/ui/components/Icons';
 
 export function HireMeSection() {
+  const { t } = useTranslation();
+  
   return (
     <section id='hire' className='bg-gray-950 py-24'>
       <div className='container mx-auto px-6 max-w-3xl text-center'>
@@ -12,12 +15,9 @@ export function HireMeSection() {
           </div>
         </div>
 
-        <h2 className='text-4xl font-bold text-white mb-4'>Let's Work Together</h2>
+        <h2 className='text-4xl font-bold text-white mb-4'>{t('hire.title')}</h2>
 
-        <p className='text-gray-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto'>
-          I'm open to new opportunities, freelance projects, and technical collaborations. If you're looking for a
-          full-stack developer with experience in system design, cloud architecture, and AI — let's connect.
-        </p>
+        <p className='text-gray-400 text-lg leading-relaxed mb-10 max-w-xl mx-auto'>{t('hire.description')}</p>
 
         {/* CTA Buttons */}
         <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-12'>
@@ -26,7 +26,7 @@ export function HireMeSection() {
             className='inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-300 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25 no-underline'
           >
             <MailIcon className='size-5' />
-            Send me an Email
+            {t('hire.email')}
           </a>
 
           <a
@@ -36,7 +36,7 @@ export function HireMeSection() {
             className='inline-flex items-center gap-2 bg-gray-800 hover:bg-gray-700 text-white font-semibold px-8 py-3 rounded-lg border border-gray-700 hover:border-brand-500/50 transition-all duration-300 no-underline'
           >
             <LinkedinIcon className='size-5' />
-            Connect on LinkedIn
+            {t('hire.linkedin')}
           </a>
         </div>
 

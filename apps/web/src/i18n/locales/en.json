@@ -1,0 +1,101 @@
+{
+  "common": {
+    "backToPortfolio": "Back to Portfolio",
+    "backToAlbums": "Back to Albums",
+    "home": "Home",
+    "close": "Close",
+    "loading": "Loading..."
+  },
+  "nav": {
+    "about": "About",
+    "projects": "Projects/Skills",
+    "hobbies": "Hobbies",
+    "hire": "Hire Me",
+    "articles": "Articles",
+    "photography": "Photography",
+    "cooking": "Cooking",
+    "music": "Music",
+    "github": "GitHub",
+    "linkedin": "LinkedIn",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Zaú Júlio",
+    "subtitle": "Full Stack Developer | Tech Lead | Systems Engineer"
+  },
+  "about": {
+    "title": "About Me",
+    "summary": "Software engineer with 6+ years of experience building scalable web applications and distributed systems. Passionate about clean code, cloud architecture, and mentoring junior developers.",
+    "experience": "Experience",
+    "education": "Education",
+    "skills": "Skills",
+    "languages": "Languages",
+    "thesis": "Thesis",
+    "thesisTitle": "Thesis: Analysis of the use of cloud computing in startups in the Brazilian market",
+    "thesisLink": "View Thesis"
+  },
+  "projects": {
+    "title": "Projects & Skills",
+    "description": "A collection of projects showcasing my technical expertise and problem-solving abilities."
+  },
+  "articles": {
+    "title": "Articles",
+    "description": "Thoughts on software development, cloud architecture, and technology.",
+    "readMore": "Read More",
+    "publishedOn": "Published on"
+  },
+  "hobbies": {
+    "title": "Hobbies & Interests",
+    "subtitle": "Beyond code — the things that inspire creativity and keep the balance.",
+    "quote": "\"To be creative, you must give yourself permission to explore.\"",
+    "photography": {
+      "title": "Photography",
+      "description": "Capturing moments and landscapes through the lens. From street photography to nature shots, exploring light, composition, and storytelling."
+    },
+    "cooking": {
+      "title": "Cooking",
+      "description": "Exploring culinary traditions from around the world. Love experimenting with new flavors and techniques in the kitchen."
+    },
+    "music": {
+      "title": "Music",
+      "description": "Playing guitar and exploring different genres. Music is a constant source of inspiration and creativity."
+    }
+  },
+  "hire": {
+    "title": "Hire Me",
+    "description": "Available for freelance projects and consulting. Let's build something amazing together.",
+    "email": "Email Me",
+    "linkedin": "Connect on LinkedIn"
+  },
+  "footer": {
+    "copyright": "All rights reserved.",
+    "builtWith": "Built with",
+    "and": "and"
+  },
+  "photography": {
+    "title": "Photography",
+    "description": "Capturing moments, landscapes, and everyday beauty through the lens. A visual journal of the places I've been and the things that caught my eye.",
+    "photos": "photos",
+    "noAlbums": "No albums yet",
+    "addAlbumsHint": "Add your albums to the photography.json file and place images in the public/photos/ directory."
+  },
+  "cooking": {
+    "title": "Cooking",
+    "description": "A collection of recipes I've collected and created over the years.",
+    "ingredients": "Ingredients",
+    "instructions": "Instructions",
+    "prepTime": "Prep Time",
+    "cookTime": "Cook Time",
+    "servings": "Servings",
+    "noRecipes": "No recipes found"
+  },
+  "music": {
+    "title": "Music",
+    "description": "A collection of my musical explorations and favorite tracks."
+  },
+  "notFound": {
+    "title": "404",
+    "message": "Page not found",
+    "backHome": "Back to Home"
+  }
+}

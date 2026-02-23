@@ -1,6 +1,8 @@
+import { useTranslation } from 'react-i18next';
 import { CodeIcon, FileTextIcon, HeartIcon, MailIcon, SendIcon, UserIcon } from 'lucide-react';
 import { Link } from 'react-router';
 
+import { LanguageSwitcher } from '@components/LanguageSwitcher';
 import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/components/avatar';
 import { GithubIcon, LinkedinIcon } from '@repo/ui/components/Icons';
 import {
@@ -19,6 +21,8 @@ function scrollToSection(id: string) {
 }
 
 export function NavigationBar() {
+  const { t } = useTranslation();
+  
   return (
     <nav className='flex flex-col items-center gap-6 mb-8'>
       <Avatar className='size-24 ring-2 ring-brand-500/50 ring-offset-2 ring-offset-transparent transition-transform duration-300 hover:scale-110 cursor-pointer'>
@@ -37,7 +41,7 @@ export function NavigationBar() {
                 className='bg-transparent border-none cursor-pointer'
               >
                 <UserIcon className='size-4 mr-2' />
-                About
+                {t('nav.about')}
               </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -50,7 +54,7 @@ export function NavigationBar() {
                 className='bg-transparent border-none cursor-pointer'
               >
                 <CodeIcon className='size-4 mr-2' />
-                Projects/Skills
+                {t('nav.projects')}
               </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -63,7 +67,7 @@ export function NavigationBar() {
                 className='bg-transparent border-none cursor-pointer'
               >
                 <HeartIcon className='size-4 mr-2' />
-                Hobbies
+                {t('nav.hobbies')}
               </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -76,7 +80,7 @@ export function NavigationBar() {
                 className='bg-transparent border-none cursor-pointer'
               >
                 <SendIcon className='size-4 mr-2' />
-                Hire Me
+                {t('nav.hire')}
               </button>
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -85,7 +89,7 @@ export function NavigationBar() {
             <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
               <Link to='/articles'>
                 <FileTextIcon className='size-4 mr-2' />
-                Articles
+                {t('nav.articles')}
               </Link>
             </NavigationMenuLink>
           </NavigationMenuItem>
@@ -101,7 +105,7 @@ export function NavigationBar() {
           className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors'
         >
           <GithubIcon className='size-4' />
-          GitHub
+          {t('nav.github')}
         </a>
         <a
           href='https://linkedin.com/in/zaujulio'
@@ -110,15 +114,16 @@ export function NavigationBar() {
           className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors'
         >
           <LinkedinIcon className='size-4' />
-          LinkedIn
+          {t('nav.linkedin')}
         </a>
         <a
           href='mailto:zaujulio.dev@gmail.com'
           className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-800/50 rounded-md transition-colors'
         >
           <MailIcon className='size-4' />
-          Contact
+          {t('nav.contact')}
         </a>
+        <LanguageSwitcher />
       </div>
     </nav>
   );

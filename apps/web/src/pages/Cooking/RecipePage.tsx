@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, CalendarIcon, ClockIcon, CookingPotIcon, UsersIcon } from 'lucide-react';
 import { Link, useParams } from 'react-router';
 
@@ -11,6 +12,7 @@ const recipeFiles = import.meta.glob('../../content/recipes/*.md', { query: '?ra
 const allRecipes = loadMarkdownFiles<RecipeMeta>(recipeFiles);
 
 export default function RecipePage() {
+  const { t } = useTranslation();
   const { slug } = useParams<{ slug: string }>();
   const recipe = slug ? findBySlug(allRecipes, slug) : undefined;
 

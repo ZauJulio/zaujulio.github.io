@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import {
   ArrowLeftIcon,
   CalendarIcon,
@@ -103,6 +104,7 @@ function ArticleCard({ article }: { article: Article }) {
 }
 
 export default function ArticlesPage() {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const activeTag = searchParams.get('tag');
   const [searchQuery, setSearchQuery] = useState('');

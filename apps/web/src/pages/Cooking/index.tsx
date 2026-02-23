@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, ChefHatIcon, CookingPotIcon, SearchIcon } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
@@ -10,6 +11,7 @@ export const meta = () => [{ title: 'Zaú Júlio - Cooking' }];
 // ─── Cooking Page ────────────────────────────────────────────
 
 export default function CookingPage() {
+  const { t } = useTranslation();
   const [searchParams] = useSearchParams();
   const activeCuisine = searchParams.get('cuisine') || 'All';
   const activeMealType = searchParams.get('mealType') || 'All';

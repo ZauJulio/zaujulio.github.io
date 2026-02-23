@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { useGlitch } from 'react-powerglitch';
 
 import { NavigationBar } from '@components/Navigation';
@@ -8,6 +9,7 @@ import { ScrollSpy } from '@components/ScrollSpy';
 import { AboutMeSection, ArticlesSection, Footer, HireMeSection, HobbiesSection, ProjectsSection } from './sections';
 
 export default function Home() {
+  const { t } = useTranslation();
   const [triggered, setTriggered] = useState(false);
 
   const glitch = useGlitch({
@@ -41,11 +43,11 @@ export default function Home() {
   }, [triggered]);
 
   const sections = [
-    { id: 'about', label: 'About' },
-    { id: 'projects', label: 'Projects/Skills' },
-    { id: 'articles', label: 'Articles' },
-    { id: 'hobbies', label: 'Hobbies' },
-    { id: 'hire', label: 'Hire Me' },
+    { id: 'about', label: t('nav.about') },
+    { id: 'projects', label: t('nav.projects') },
+    { id: 'articles', label: t('nav.articles') },
+    { id: 'hobbies', label: t('nav.hobbies') },
+    { id: 'hire', label: t('nav.hire') },
   ];
 
   return (
@@ -68,12 +70,9 @@ export default function Home() {
         <div className='relative z-10 flex flex-col items-center text-center px-4'>
           <NavigationBar />
 
-          <h1 className='text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-lg'>Zaú Júlio</h1>
+          <h1 className='text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-lg'>{t('hero.title')}</h1>
 
-          <p className='text-xl md:text-2xl text-brand-300 font-light tracking-wide'>
-            Full Stack Developer <span className='text-brand-500'>|</span> Tech Lead{' '}
-            <span className='text-brand-500'>|</span> Systems Engineer
-          </p>
+          <p className='text-xl md:text-2xl text-brand-300 font-light tracking-wide'>{t('hero.subtitle')}</p>
         </div>
 
         <div className='absolute bottom-8 z-10 animate-bounce'>
