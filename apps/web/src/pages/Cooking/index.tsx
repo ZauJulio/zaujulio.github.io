@@ -4,7 +4,7 @@ import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import { RecipeCard } from './components/RecipeCard';
-import { courseTypes, cuisines, mealTypes, recipes } from './data';
+import { useRecipes, useRecipeFilters } from './data';
 
 export const meta = () => [{ title: 'Zaú Júlio - Cooking' }];
 
@@ -12,6 +12,8 @@ export const meta = () => [{ title: 'Zaú Júlio - Cooking' }];
 
 export default function CookingPage() {
   const { t } = useTranslation();
+  const recipes = useRecipes();
+  const { cuisines, mealTypes, courseTypes } = useRecipeFilters();
   const [searchParams] = useSearchParams();
   const activeCuisine = searchParams.get('cuisine') || 'All';
   const activeMealType = searchParams.get('mealType') || 'All';
@@ -43,7 +45,7 @@ export default function CookingPage() {
       }
       return true;
     });
-  }, [activeCuisine, activeMealType, activeCourseType, searchQuery]);
+  }, [recipes, activeCuisine, activeMealType, activeCourseType, searchQuery]);
 
   return (
     <div className='min-h-screen bg-black text-white font-sans'>

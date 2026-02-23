@@ -26,7 +26,6 @@ const PUBLIC_DIR = join(import.meta.dir, '..', 'apps', 'web', 'public');
 
 const STATIC_ROUTES = [
   { path: '/', priority: '1.0', changefreq: 'weekly' },
-  { path: '/projects', priority: '0.9', changefreq: 'weekly' },
   { path: '/cooking', priority: '0.8', changefreq: 'weekly' },
   { path: '/articles', priority: '0.8', changefreq: 'weekly' },
   { path: '/photography', priority: '0.7', changefreq: 'monthly' },

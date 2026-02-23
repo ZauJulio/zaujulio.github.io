@@ -13,8 +13,7 @@ import { useMemo, useState } from 'react';
 import { Link, useSearchParams } from 'react-router';
 
 import type { Article } from './data';
-
-import { allTags, articles } from './data';
+import { useArticles, useAllTags } from './data';
 
 export const meta = () => [{ title: 'Zaú Júlio - Articles' }];
 
@@ -105,6 +104,8 @@ function ArticleCard({ article }: { article: Article }) {
 
 export default function ArticlesPage() {
   const { t } = useTranslation();
+  const articles = useArticles();
+  const allTags = useAllTags();
   const [searchParams] = useSearchParams();
   const activeTag = searchParams.get('tag');
   const [searchQuery, setSearchQuery] = useState('');
@@ -126,7 +127,7 @@ export default function ArticlesPage() {
       });
     }
     return result;
-  }, [activeTag, searchQuery]);
+  }, [articles, activeTag, searchQuery]);
 
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
