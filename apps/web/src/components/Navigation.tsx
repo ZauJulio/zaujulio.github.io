@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next';
 import { CodeIcon, FileTextIcon, HeartIcon, MailIcon, SendIcon, UserIcon } from 'lucide-react';
 import { Link } from 'react-router';
 
-import { LanguageSwitcher } from '@components/LanguageSwitcher';
 import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/components/avatar';
 import { GithubIcon, LinkedinIcon } from '@repo/ui/components/Icons';
 import {
@@ -123,7 +122,6 @@ export function NavigationBar() {
           <MailIcon className='size-4' />
           {t('nav.contact')}
         </a>
-        <LanguageSwitcher />
       </div>
     </nav>
   );

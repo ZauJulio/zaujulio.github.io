@@ -32,11 +32,14 @@
     "languages": "Idiomas",
     "thesis": "Tese",
     "thesisTitle": "Tese: Análise do uso de computação em nuvem em startups no mercado brasileiro",
+    "thesisName": "Features Analyzer",
+    "thesisSubtitle": "Boilerplate para Ferramentas de Visualização e Análise de Dados",
+    "thesisDescription": "Uma aplicação desktop Python para análise de features de datasets, prototipagem e teste de modelos de machine learning e estatísticos. Construída com uma arquitetura modular usando GTK para a UI, apresentando um sistema customizado de gerenciamento de estado com o padrão Observer, um ORM JSON tipado com Pydantic e TinyDB, e suporte a internacionalização (i18n). Inclui containerização Docker e documentação automatizada com MkDocs.",
     "thesisLink": "Ver Tese"
   },
   "projects": {
     "title": "Projetos e Habilidades",
-    "description": "Uma coleção de projetos que demonstram minha expertise técnica e habilidades de resolução de problemas."
+    "description": "Uma seleção de projetos open-source abrangendo desenvolvimento full-stack, machine learning, ferramentas Linux e engenharia de sistemas."
   },
   "articles": {
     "title": "Artigos",
@@ -47,6 +50,7 @@
   "hobbies": {
     "title": "Hobbies e Interesses",
     "subtitle": "Além do código — as coisas que inspiram criatividade e mantêm o equilíbrio.",
+    "description": "Hobbies não são apenas passatempos; são essenciais para a saúde mental, criatividade e prevenção do burnout. Quando nos afastamos da tela e nos engajamos em diferentes atividades, damos ao nosso cérebro o espaço para processar, inovar e recarregar. A fotografia me ensina a ver a beleza nos detalhes, a culinária me conecta com cultura e atenção plena, e a música fornece o ritmo que alimenta meu foco.",
     "quote": "\"Para ser criativo, você deve se dar permissão para explorar.\"",
     "photography": {
       "title": "Fotografia",
@@ -63,7 +67,7 @@
   },
   "hire": {
     "title": "Contrate-me",
-    "description": "Disponível para projetos freelance e consultoria. Vamos construir algo incrível juntos.",
+    "description": "Estou aberto a novas oportunidades, projetos freelancer e colaborações técnicas. Se você está procurando um desenvolvedor full-stack com experiência em design de sistemas, arquitetura em nuvem e IA — vamos conversar.",
     "email": "Enviar Email",
     "linkedin": "Conectar no LinkedIn"
   },

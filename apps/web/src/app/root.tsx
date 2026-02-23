@@ -6,7 +6,7 @@ import '@fontsource/geist-sans/700.css';
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from 'react-router';
 
 import type { Route } from './+types/root';
-import { ToastProvider } from '../components';
+import { LanguageSwitcher, ToastProvider } from '../components';
 import '../i18n';
 
 import './root.css';
@@ -128,6 +128,7 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 export default function App() {
   return (
     <ToastProvider>
+      <LanguageSwitcher />
       <Outlet />
     </ToastProvider>
   );

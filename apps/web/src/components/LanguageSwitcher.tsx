@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 
 const languages = [
-  { code: 'en', label: 'EN', flag: '🇺🇸' },
-  { code: 'pt-BR', label: 'PT', flag: '🇧🇷' },
+  { code: 'en', label: 'EN' },
+  { code: 'pt-BR', label: 'PT' },
 ];
 
 export function LanguageSwitcher() {
@@ -14,7 +14,7 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <div className='flex items-center gap-1'>
+    <div className='fixed top-4 right-4 z-50 flex items-center gap-1 bg-black/80 backdrop-blur-md border border-gray-800 rounded-lg px-2 py-1'>
       {languages.map((lang) => (
         <button
           key={lang.code}
@@ -23,7 +23,7 @@ export function LanguageSwitcher() {
           className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
             i18n.language === lang.code
               ? 'bg-brand-500 text-white'
-              : 'text-gray-400 hover:text-white hover:bg-gray-800/50'
+              : 'text-gray-400 hover:text-white'
           }`}
           aria-label={`Switch to ${lang.label}`}
         >

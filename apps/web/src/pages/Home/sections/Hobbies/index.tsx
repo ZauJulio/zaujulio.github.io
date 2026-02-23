@@ -78,6 +78,7 @@ export function HobbiesSection() {
         <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>{t('hobbies.title')}</h2>
         <div className='text-center mb-12 max-w-3xl mx-auto space-y-4'>
           <p className='text-gray-300 text-lg leading-relaxed'>{t('hobbies.subtitle')}</p>
+          <p className='text-gray-400 leading-relaxed'>{t('hobbies.description')}</p>
           <p className='text-gray-500 text-sm italic'>{t('hobbies.quote')}</p>
         </div>
 

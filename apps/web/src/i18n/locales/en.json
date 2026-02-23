@@ -32,11 +32,14 @@
     "languages": "Languages",
     "thesis": "Thesis",
     "thesisTitle": "Thesis: Analysis of the use of cloud computing in startups in the Brazilian market",
+    "thesisName": "Features Analyzer",
+    "thesisSubtitle": "Boilerplate for Data Visualization and Analysis Tools",
+    "thesisDescription": "A Python desktop application for dataset feature analysis, prototyping and testing machine learning and statistical models. Built with a modular architecture using GTK for the UI, featuring a custom state management system with the Observer pattern, a typed JSON ORM with Pydantic and TinyDB, and internationalization support (i18n). Includes Docker containerization and automated documentation with MkDocs.",
     "thesisLink": "View Thesis"
   },
   "projects": {
     "title": "Projects & Skills",
-    "description": "A collection of projects showcasing my technical expertise and problem-solving abilities."
+    "description": "A selection of open-source projects spanning full-stack development, machine learning, Linux tooling, and system engineering."
   },
   "articles": {
     "title": "Articles",
@@ -47,6 +50,7 @@
   "hobbies": {
     "title": "Hobbies & Interests",
     "subtitle": "Beyond code — the things that inspire creativity and keep the balance.",
+    "description": "Hobbies aren't just pastimes; they're essential for mental health, creativity, and preventing burnout. When we step away from the screen and engage in different activities, we give our brains the space to process, innovate, and recharge. Photography teaches me to see beauty in details, cooking connects me with culture and mindfulness, and music provides the rhythm that fuels my focus.",
     "quote": "\"To be creative, you must give yourself permission to explore.\"",
     "photography": {
       "title": "Photography",
@@ -63,7 +67,7 @@
   },
   "hire": {
     "title": "Hire Me",
-    "description": "Available for freelance projects and consulting. Let's build something amazing together.",
+    "description": "I'm open to new opportunities, freelance projects, and technical collaborations. If you're looking for a full-stack developer with experience in system design, cloud architecture, and AI — let's connect.",
     "email": "Email Me",
     "linkedin": "Connect on LinkedIn"
   },

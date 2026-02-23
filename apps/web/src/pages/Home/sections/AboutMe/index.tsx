@@ -1,5 +1,6 @@
 import { useTranslation } from 'react-i18next';
 import { BookOpenIcon, BriefcaseIcon, EarIcon, GlobeIcon, GraduationCapIcon, MicIcon, UserIcon } from 'lucide-react';
+import { useMemo } from 'react';
 
 // ─── Shared Sub-heading ─────────────────────────────────────────────────────
 
@@ -94,7 +95,20 @@ interface Language {
 }
 
 import educationJson from '@content/education/education.json';
+import educationPtBRJson from '@content/education/education.pt-BR.json';
 import profileJson from '@content/profile/profile.json';
+
+const enEducation = educationJson as EducationJson;
+const ptBREducation = educationPtBRJson as EducationJson;
+
+function useEducation() {
+  const { i18n } = useTranslation();
+  const lang = i18n.language || 'en';
+
+  return useMemo(() => {
+    return lang === 'pt-BR' ? ptBREducation : enEducation;
+  }, [lang]);
+}
 
 // Inlined for TypeScript reliability
 interface ExperienceItem {
@@ -132,7 +146,6 @@ interface EducationJson {
 }
 
 const profile = profileJson as ProfileJson;
-const education = educationJson as EducationJson;
 
 import languagesJson from '@content/languages/languages.json';
 
@@ -211,6 +224,7 @@ function LanguagesBlock() {
 
 export function AboutMeSection() {
   const { t } = useTranslation();
+  const education = useEducation();
   
   return (
     <section id='about' className='bg-black py-20'>
