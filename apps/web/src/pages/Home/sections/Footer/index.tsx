@@ -1,4 +1,4 @@
-import { CopyIcon, HeartIcon, MailIcon } from 'lucide-react';
+import { CopyIcon, DownloadIcon, HeartIcon, MailIcon } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 import profileDataJson from '@content/profile/profile.json';
@@ -50,15 +50,25 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Center: export button */}
-          <button
-            type='button'
-            onClick={handleExport}
-            className='inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-brand-300 border border-gray-700 hover:border-brand-500/50 rounded-lg transition-colors'
-          >
-            <CopyIcon className='size-4' />
-            Export Profile (JSON)
-          </button>
+          {/* Center: export buttons */}
+          <div className='flex items-center gap-3'>
+            <a
+              href='/resume.pdf'
+              download
+              className='inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-brand-300 border border-gray-700 hover:border-brand-500/50 rounded-lg transition-colors'
+            >
+              <DownloadIcon className='size-4' />
+              {t('nav.resume')}
+            </a>
+            <button
+              type='button'
+              onClick={handleExport}
+              className='inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-brand-300 border border-gray-700 hover:border-brand-500/50 rounded-lg transition-colors'
+            >
+              <CopyIcon className='size-4' />
+              Export Profile (JSON)
+            </button>
+          </div>
 
           {/* Right: copyright */}
           <p className='text-gray-500 text-xs'>
@@ -85,6 +95,15 @@ export function Footer() {
             aria-label='LinkedIn'
           >
             <LinkedinIcon className='size-5' />
+          </a>
+          <a
+            href='/resume.pdf'
+            download
+            className='text-gray-500 hover:text-brand-300 transition-colors'
+            aria-label={t('nav.resume')}
+            title={t('nav.resume')}
+          >
+            <DownloadIcon className='size-5' />
           </a>
           <a
             href='mailto:zaujulio.dev@gmail.com'

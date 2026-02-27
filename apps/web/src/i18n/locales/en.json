@@ -17,7 +17,8 @@
     "music": "Music",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "contact": "Contact"
+    "contact": "Contact",
+    "resume": "Resume"
   },
   "hero": {
     "title": "Zaú Júlio",
@@ -43,9 +44,17 @@
   },
   "articles": {
     "title": "Articles",
-    "description": "Thoughts on software development, cloud architecture, and technology.",
+    "latest": "Latest Articles",
+    "latestDescription": "Random musings, digital curiosities and stuff I just felt like writing",
+    "description": "Writing about software engineering, machine learning, and the tools I use every day. Deep dives, tutorials, and lessons learned from building real-world applications.",
+    "descriptionHome": "Thoughts on software development, cloud architecture, and technology.",
     "readMore": "Read More",
-    "publishedOn": "Published on"
+    "publishedOn": "Published on",
+    "backTo": "Back to Articles",
+    "article": "Article",
+    "notFound": "Article not found",
+    "notFoundDesc": "The article you're looking for doesn't exist.",
+    "originallyPublished": "Originally published"
   },
   "hobbies": {
     "title": "Hobbies & Interests",
@@ -85,17 +94,33 @@
   },
   "cooking": {
     "title": "Cooking",
-    "description": "A collection of recipes I've collected and created over the years.",
+    "description": "Experimenting with flavors, techniques, and cuisines from around the world. From Brazilian comfort food to international dishes — turning ingredients into experiences.",
     "ingredients": "Ingredients",
     "instructions": "Instructions",
     "prepTime": "Prep Time",
     "cookTime": "Cook Time",
     "servings": "Servings",
-    "noRecipes": "No recipes found"
+    "noRecipes": "No recipes found",
+    "searchPlaceholder": "Search recipes...",
+    "allCuisines": "All Cuisines",
+    "allMealTypes": "All Meal Types",
+    "allCourseTypes": "All Course Types",
+    "all": "All",
+    "backTo": "Back to Cooking",
+    "recipe": "Recipe",
+    "notFound": "Recipe not found",
+    "notFoundDesc": "The recipe you're looking for doesn't exist.",
+    "noRecipesMatch": "No recipes match your filters",
+    "tryAdjusting": "Try adjusting the filters above, or add more"
   },
   "music": {
     "title": "Music",
-    "description": "A collection of my musical explorations and favorite tracks."
+    "description": "What I listen to while coding, relaxing, and exploring. Curated playlists and favorite tracks across genres — from ambient and electronic to rock and Brazilian MPB.",
+    "searchPlaceholder": "Search music...",
+    "genre": "Genre",
+    "playlists": "Playlists",
+    "favorites": "Favorites",
+    "all": "All"
   },
   "notFound": {
     "title": "404",

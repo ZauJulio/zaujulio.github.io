@@ -17,7 +17,8 @@
     "music": "Música",
     "github": "GitHub",
     "linkedin": "LinkedIn",
-    "contact": "Contato"
+    "contact": "Contato",
+    "resume": "Currículo"
   },
   "hero": {
     "title": "Zaú Júlio",
@@ -43,9 +44,17 @@
   },
   "articles": {
     "title": "Artigos",
-    "description": "Reflexões sobre desenvolvimento de software, arquitetura em nuvem e tecnologia.",
+    "latest": "Últimos Artigos",
+    "latestDescription": "Reflexões aleatórias, curiosidades digitais e coisas que eu quis escrever",
+    "description": "Escrevendo sobre engenharia de software, machine learning e as ferramentas que uso todos os dias. Mergulhos profundos, tutoriais e lições aprendidas construindo aplicações reais.",
+    "descriptionHome": "Reflexões sobre desenvolvimento de software, arquitetura em nuvem e tecnologia.",
     "readMore": "Ler Mais",
-    "publishedOn": "Publicado em"
+    "publishedOn": "Publicado em",
+    "backTo": "Voltar para Artigos",
+    "article": "Artigo",
+    "notFound": "Artigo não encontrado",
+    "notFoundDesc": "O artigo que você está procurando não existe.",
+    "originallyPublished": "Originalmente publicado"
   },
   "hobbies": {
     "title": "Hobbies e Interesses",
@@ -58,7 +67,7 @@
     },
     "cooking": {
       "title": "Culinária",
-      "description": "Explorando tradições culinárias de todo o mundo. Adoro experimentar novos sabores e técnicas na cozinha."
+      "description": "Experimentando com sabores, técnicas e culinárias de todo o mundo. Da comida de conforto brasileira a pratos internacionais — transformando ingredientes em experiências."
     },
     "music": {
       "title": "Música",
@@ -85,17 +94,33 @@
   },
   "cooking": {
     "title": "Culinária",
-    "description": "Uma coleção de receitas que coletei e criei ao longo dos anos.",
+    "description": "Experimentando com sabores, técnicas e culinárias de todo o mundo. Da comida de conforto brasileira a pratos internacionais — transformando ingredientes em experiências.",
     "ingredients": "Ingredientes",
     "instructions": "Instruções",
     "prepTime": "Tempo de Preparo",
     "cookTime": "Tempo de Cozimento",
     "servings": "Porções",
-    "noRecipes": "Nenhuma receita encontrada"
+    "noRecipes": "Nenhuma receita encontrada",
+    "searchPlaceholder": "Buscar receitas...",
+    "allCuisines": "Todas as Cozinhas",
+    "allMealTypes": "Todos os Tipos de Refeição",
+    "allCourseTypes": "Todos os Pratos",
+    "all": "Todos",
+    "backTo": "Voltar para Culinária",
+    "recipe": "Receita",
+    "notFound": "Receita não encontrada",
+    "notFoundDesc": "A receita que você está procurando não existe.",
+    "noRecipesMatch": "Nenhuma receita corresponde aos filtros",
+    "tryAdjusting": "Tente ajustar os filtros acima, ou adicione mais"
   },
   "music": {
     "title": "Música",
-    "description": "Uma coleção das minhas explorações musicais e faixas favoritas."
+    "description": "O que eu ouço enquanto codifico, relaxo e exploro. Playlists selecionadas e faixas favoritas entre gêneros — do ambient e eletrônico ao rock e MPB brasileira.",
+    "searchPlaceholder": "Buscar música...",
+    "genre": "Gênero",
+    "playlists": "Playlists",
+    "favorites": "Favoritos",
+    "all": "Todos"
   },
   "notFound": {
     "title": "404",
