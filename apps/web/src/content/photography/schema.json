@@ -1,0 +1,46 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Photography Content Schema",
+  "type": "object",
+  "properties": {
+    "albums": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+          "location": { "type": "string" },
+          "cover": { "type": "string" },
+          "photos": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "id": { "type": "string" },
+                "src": { "type": "string" },
+                "alt": { "type": "string" },
+                "date": { "type": "string", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+                "location": { "type": "string" },
+                "timeOfDay": { "type": "string" },
+                "occasion": { "type": "string" },
+                "tags": {
+                  "type": "array",
+                  "items": { "type": "string" }
+                }
+              },
+              "required": ["id", "src", "alt"],
+              "additionalProperties": false
+            }
+          }
+        },
+        "required": ["id", "name", "description", "date", "photos"],
+        "additionalProperties": false
+      }
+    }
+  },
+  "required": ["albums"],
+  "additionalProperties": false
+}

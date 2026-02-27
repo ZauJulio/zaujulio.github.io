@@ -1,0 +1,27 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Projects",
+  "type": "object",
+  "properties": {
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "url": { "type": "string", "format": "uri" },
+          "language": { "type": "string" },
+          "languageColor": { "type": "string" },
+          "stars": { "type": "integer" },
+          "topics": {
+            "type": "array",
+            "items": { "type": "string" }
+          }
+        },
+        "required": ["name", "description", "url", "language", "languageColor", "stars", "topics"]
+      }
+    }
+  },
+  "required": ["projects"]
+}

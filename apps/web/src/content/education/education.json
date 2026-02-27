@@ -1,0 +1,35 @@
+{
+  "$schema": "./schema.json",
+  "items": [
+    {
+      "id": "1",
+      "degree": "Bachelor's Degree in Information Systems",
+      "institution": "Federal University of Rio Grande do Norte (UFRN)",
+      "period": "Jan 2019 - Jan 2025",
+      "location": "Caico, RN",
+      "description": "8-semester program (3000h) covering algorithms, data structures, OOP, databases, software engineering, computer networks, operating systems, web and visual programming, statistics, and systems analysis. Engaged in research and scientific initiation.",
+      "skills": ["Full Stack", "Algorithms", "Software Engineering", "Databases", "Research"],
+      "accentColor": "brand-300"
+    },
+    {
+      "id": "2",
+      "degree": "Technician in Computer Networks",
+      "institution": "Metropole Digital - IMD/UFRN",
+      "period": "Jan 2018 - Sep 2019",
+      "location": "Natal, RN",
+      "description": "Technical course at the Institute of Computing and Digital Technologies (IMD). Covered network architecture, server administration, Linux systems, and infrastructure fundamentals.",
+      "skills": ["Computer Networks", "Linux", "Infrastructure", "Teaching Assistant"],
+      "accentColor": "brand-300"
+    },
+    {
+      "id": "3",
+      "degree": "Teaching Assistant (Monitor)",
+      "institution": "Metropole Digital - IMD/UFRN",
+      "period": "Aug 2018 - Jul 2019",
+      "location": "Natal, RN",
+      "description": "Teaching Assistant for Computer Networks course. Supported students in practical labs, coursework, and network configuration exercises. Assisted professors during practical sessions and helped students understand networking concepts and troubleshooting.",
+      "skills": ["Teaching", "Computer Networks", "Mentoring", "Lab Assistance"],
+      "accentColor": "brand-300"
+    }
+  ]
+}

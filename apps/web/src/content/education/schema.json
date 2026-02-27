@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Education",
+  "type": "object",
+  "properties": {
+    "items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "degree", "institution", "period", "location", "description"],
+        "properties": {
+          "id": { "type": "string" },
+          "degree": { "type": "string" },
+          "institution": { "type": "string" },
+          "period": { "type": "string" },
+          "location": { "type": "string" },
+          "description": { "type": "string" },
+          "skills": { "type": "array", "items": { "type": "string" } },
+          "accentColor": { "type": "string", "enum": ["brand-500", "brand-300"] }
+        }
+      }
+    }
+  }
+}

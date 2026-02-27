@@ -1,0 +1,166 @@
+{
+  "$schema": "../../public/profile-schema.json",
+  "name": "Zau Julio",
+  "title": "Software Engineer",
+  "location": "Brazil (UTC-3)",
+  "email": "zaujulio.dev@gmail.com",
+  "website": "https://zaujulio.github.io",
+  "social": {
+    "github": "https://github.com/zaujulio",
+    "linkedin": "https://linkedin.com/in/zaujulio"
+  },
+  "experience": [
+    {
+      "id": "1",
+      "role": "Tech Lead",
+      "company": "Bitwise Technology",
+      "period": "Aug 2025 - Present",
+      "location": "Sorocaba, SP - Remote",
+      "description": "Leading the engineering efforts to build high-performance software solutions. Defining technical standards, overseeing system design from ER modeling to cloud infrastructure budgeting and deployment.",
+      "skills": ["Mentoring", "System Design", "CI/CD", "Cloud Architecture"]
+    },
+    {
+      "id": "2",
+      "role": "Full Stack Developer",
+      "company": "Bitwise Technology",
+      "period": "Mar 2023 - Present",
+      "location": "Sorocaba, SP - Remote",
+      "description": "Designing and developing robust web applications across the entire software lifecycle — from planning and architecture to deployment and optimization.",
+      "skills": ["TypeScript", "GraphQL", "MongoDB", "React", "AWS", "Node.js"]
+    },
+    {
+      "id": "3",
+      "role": "Full Stack Developer",
+      "company": "commcepta",
+      "period": "Dec 2021 - Dec 2022",
+      "location": "Curitiba, PR - Remote",
+      "description": "Handled complex projects involving Big Data and GraphQL. Explored hidden insights within graph data structures, building a large-scale data lake.",
+      "skills": ["GraphQL", "Big Data", "React", "Data Lake"]
+    },
+    {
+      "id": "4",
+      "role": "Project Director",
+      "company": "Byte Serido Jr",
+      "period": "Jun 2021 - Nov 2022",
+      "location": "Caico, RN - Hybrid",
+      "description": "Started as a Frontend Developer, later taking on the role of Project Director. Led the planning and execution of software projects.",
+      "skills": ["Project Management", "System Design", "Frontend", "Leadership"]
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "degree": "Bachelor's Degree in Information Systems",
+      "institution": "Federal University of Rio Grande do Norte (UFRN)",
+      "period": "Jan 2019 - Jan 2025",
+      "location": "Caico, RN",
+      "description": "8-semester program (3000h) covering algorithms, data structures, OOP, databases, software engineering, computer networks, operating systems, web and visual programming, statistics, and systems analysis.",
+      "skills": ["Full Stack", "Algorithms", "Software Engineering", "Databases", "Research"]
+    },
+    {
+      "id": "2",
+      "degree": "Technician in Computer Networks",
+      "institution": "Metropole Digital - IMD/UFRN",
+      "period": "Jan 2018 - Sep 2019",
+      "location": "Natal, RN",
+      "description": "Technical course at the Institute of Computing and Digital Technologies (IMD). Covered network architecture, server administration, Linux systems, and infrastructure fundamentals.",
+      "skills": ["Computer Networks", "Linux", "Infrastructure", "Teaching Assistant"]
+    }
+  ],
+  "languages": [
+    {
+      "id": "1",
+      "name": "Portuguese",
+      "level": "Native",
+      "proficiency": { "speaking": 100, "listening": 100, "reading": 100 }
+    },
+    {
+      "id": "2",
+      "name": "English",
+      "level": "Intermediate",
+      "proficiency": { "speaking": 35, "listening": 60, "reading": 95 }
+    },
+    {
+      "id": "3",
+      "name": "Spanish",
+      "level": "Basic",
+      "proficiency": { "speaking": 20, "listening": 40, "reading": 45 }
+    },
+    {
+      "id": "4",
+      "name": "French",
+      "level": "Beginner",
+      "proficiency": { "speaking": 10, "listening": 25, "reading": 30 }
+    }
+  ],
+  "skills": {
+    "databases": ["MongoDB", "PostgreSQL", "Mongoose", "TypeORM", "SQL", "Psycopg"],
+    "backend": ["Node.js", "GraphQL", "ExpressJS", "Socket.io", "FastAPI", "Flask", "Django"],
+    "python": ["Python", "Pandas", "NumPy", "Scikit-Learn", "Matplotlib", "PyQt", "Data Analysis"],
+    "devops": ["Docker", "CI/CD", "Testing", "Git", "Linux", "Bash"],
+    "typescript": ["TypeScript", "React", "Next.js", "Redux", "GraphQL"],
+    "ml": ["Machine Learning", "SOM", "Neural Nets", "Data Science", "Scipy"]
+  },
+  "thesis": {
+    "title": "Features Analyzer",
+    "subtitle": "Boilerplate for Data Visualization and Analysis Tools",
+    "institution": "Federal University of Rio Grande do Norte (UFRN)",
+    "year": "2024",
+    "description": "A Python desktop application for dataset feature analysis, prototyping and testing machine learning and statistical models.",
+    "technologies": [
+      "Python",
+      "GTK",
+      "Pandas",
+      "NumPy",
+      "Scikit-learn",
+      "Matplotlib",
+      "Seaborn",
+      "Pydantic",
+      "TinyDB",
+      "Docker",
+      "i18n"
+    ],
+    "links": {
+      "source": "https://github.com/ZauJulio/FeaturesAnalyzer",
+      "documentation": "https://zaujulio.github.io/FeaturesAnalyzer/"
+    }
+  },
+  "projects": [
+    {
+      "id": "1",
+      "name": "FeaturesAnalyzer",
+      "description": "Python desktop application for dataset feature analysis, prototyping and testing ML and statistical models.",
+      "technologies": ["GTK", "Machine Learning", "Pandas", "Scikit-learn"],
+      "url": "https://github.com/ZauJulio/FeaturesAnalyzer"
+    },
+    {
+      "id": "2",
+      "name": "ZSOM",
+      "description": "Implementation of the Self-Organizing Maps algorithm in Python.",
+      "technologies": ["SOM", "AI", "Visualization"],
+      "url": "https://github.com/ZauJulio/ZSOM"
+    },
+    {
+      "id": "3",
+      "name": "weasyprint-pdf-render",
+      "description": "High-performance HTML-to-PDF rendering Dockerized microservice.",
+      "technologies": ["Docker", "Microservice", "CI/CD", "WeasyPrint"],
+      "url": "https://github.com/ZauJulio/weasyprint-pdf-render"
+    },
+    {
+      "id": "4",
+      "name": "AutoThrottleSetup",
+      "description": "Manual configuration tool for unexpected thermal throttle on Linux.",
+      "technologies": ["Linux", "Thermal", "Power Management"],
+      "url": "https://github.com/ZauJulio/AutoThrottleSetup"
+    },
+    {
+      "id": "5",
+      "name": "linuwu-sense-dkms",
+      "description": "DKMS kernel module for Linux hardware sensor monitoring.",
+      "technologies": ["Linux", "DKMS", "Kernel Module", "Hardware Sensors"],
+      "url": "https://github.com/ZauJulio/linuwu-sense-dkms"
+    }
+  ],
+  "hobbies": ["Photography", "Cooking", "Music"]
+}
