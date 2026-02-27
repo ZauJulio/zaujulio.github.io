@@ -1,0 +1,115 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Profile",
+  "type": "object",
+  "required": ["name", "title", "email", "social"],
+  "properties": {
+    "name": { "type": "string" },
+    "title": { "type": "string" },
+    "location": { "type": "string" },
+    "email": { "type": "string", "format": "email" },
+    "website": { "type": "string", "format": "uri" },
+    "social": {
+      "type": "object",
+      "properties": {
+        "github": { "type": "string", "format": "uri" },
+        "linkedin": { "type": "string", "format": "uri" }
+      }
+    },
+    "experience": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "role", "company", "period", "description"],
+        "properties": {
+          "id": { "type": "string" },
+          "role": { "type": "string" },
+          "company": { "type": "string" },
+          "period": { "type": "string" },
+          "location": { "type": "string" },
+          "description": { "type": "string" },
+          "skills": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "degree", "institution", "period", "description"],
+        "properties": {
+          "id": { "type": "string" },
+          "degree": { "type": "string" },
+          "institution": { "type": "string" },
+          "period": { "type": "string" },
+          "location": { "type": "string" },
+          "description": { "type": "string" },
+          "skills": { "type": "array", "items": { "type": "string" } }
+        }
+      }
+    },
+    "languages": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "level"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "level": { "type": "string" },
+          "proficiency": {
+            "type": "object",
+            "properties": {
+              "speaking": { "type": "number" },
+              "listening": { "type": "number" },
+              "reading": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "skills": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": { "type": "string" }
+      }
+    },
+    "thesis": {
+      "type": "object",
+      "properties": {
+        "title": { "type": "string" },
+        "subtitle": { "type": "string" },
+        "institution": { "type": "string" },
+        "year": { "type": "string" },
+        "description": { "type": "string" },
+        "technologies": { "type": "array", "items": { "type": "string" } },
+        "links": {
+          "type": "object",
+          "properties": {
+            "source": { "type": "string" },
+            "documentation": { "type": "string" }
+          }
+        }
+      }
+    },
+    "projects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "description", "url"],
+        "properties": {
+          "id": { "type": "string" },
+          "name": { "type": "string" },
+          "description": { "type": "string" },
+          "technologies": { "type": "array", "items": { "type": "string" } },
+          "url": { "type": "string" }
+        }
+      }
+    },
+    "hobbies": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

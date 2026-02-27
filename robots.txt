@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://zaujulio.github.io/sitemap.xml
