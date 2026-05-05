@@ -1,8 +1,8 @@
 {
   "$schema": "https://openapi.vercel.sh/schema.json",
-  "buildCommand": "npm run build",
+  "buildCommand": "bun run build",
   "outputDirectory": "apps/web/build/client",
-  "installCommand": "npm install --legacy-peer-deps",
-  "devCommand": "npm run dev",
+  "installCommand": "bun install",
+  "devCommand": "bun run dev",
   "framework": null
 }
