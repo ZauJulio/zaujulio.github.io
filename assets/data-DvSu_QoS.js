@@ -1,9 +1,9 @@
-import{c as e}from"./useTranslation-DeY4xK7r.js";/**
+import{c as l,u as d}from"./useTranslation-DeY4xK7r.js";import{r}from"./chunk-EPOLDU6W-gU6CAgNk.js";import{l as i}from"./markdown-D11RIb10.js";/**
  * @license lucide-react v0.562.0 - ISC
  *
  * This source code is licensed under the ISC license.
  * See the LICENSE file in the root directory of this source tree.
- */const a=[["path",{d:"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",key:"1yyitq"}],["path",{d:"M16 3.128a4 4 0 0 1 0 7.744",key:"16gr8j"}],["path",{d:"M22 21v-2a4 4 0 0 0-3-3.87",key:"kshegd"}],["circle",{cx:"9",cy:"7",r:"4",key:"nufk8"}]],o=e("users",a),i=`---
+ */const m=[["path",{d:"M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2",key:"1yyitq"}],["path",{d:"M16 3.128a4 4 0 0 1 0 7.744",key:"16gr8j"}],["path",{d:"M22 21v-2a4 4 0 0 0-3-3.87",key:"kshegd"}],["circle",{cx:"9",cy:"7",r:"4",key:"nufk8"}]],T=l("users",m),u=`---
 title: "Carne de Sol com Macaxeira"
 description: "Classic northeastern Brazilian dish — sun-dried beef with cassava, butter, and coalho cheese."
 date: "2025-12-01"
@@ -47,7 +47,7 @@ A staple of northeastern Brazilian cuisine. Sun-dried beef paired with creamy ca
 
 - You can substitute macaxeira with regular potatoes if cassava is unavailable
 - Queijo coalho can be replaced with halloumi for a similar texture
-`,r=`---
+`,p=`---
 title: "Carne de Sol com Macaxeira"
 description: "Prato clássico do nordeste brasileiro — carne de sol com macaxeira, manteiga e queijo coalho."
 date: "2025-12-01"
@@ -91,4 +91,4 @@ Um prato típico da culinária nordestina. Carne de sol cremosa acompanhada de m
 
 - Você pode substituir a macaxeira por batatas comuns se não tiver macaxeira
 - O queijo coalho pode ser substituído por halloumi para uma textura similar
-`;export{o as U,r as _,i as a};
+`,h=Object.assign({"../../content/recipes/carne-de-sol-com-macaxeira.md":u}),g=Object.assign({"../../content/recipes/carne-de-sol-com-macaxeira.pt-BR.md":p}),s=i(h),f=i(g);function y(){const{i18n:e}=d(),n=e.language||"en";return r.useMemo(()=>n==="pt-BR"?f:s,[n])}function A(){const e=y();return r.useMemo(()=>{const n=["All",...Array.from(new Set(e.map(a=>a.meta.cuisine).filter(Boolean)))],t=["All",...Array.from(new Set(e.map(a=>a.meta.mealType).filter(Boolean)))],c=["All",...Array.from(new Set(e.map(a=>a.meta.courseType).filter(Boolean)))];return{cuisines:n,mealTypes:t,courseTypes:c}},[e])}const o=s;[...Array.from(new Set(o.map(e=>e.meta.cuisine).filter(Boolean)))];[...Array.from(new Set(o.map(e=>e.meta.mealType).filter(Boolean)))];[...Array.from(new Set(o.map(e=>e.meta.courseType).filter(Boolean)))];export{T as U,A as a,y as u};
