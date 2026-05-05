@@ -19,8 +19,8 @@ const hobbies: HobbyCard[] = [
     descriptionKey: 'hobbies.photography.description',
     icon: CameraIcon,
     to: '/photography',
-    gradient: 'from-amber-500/10 to-orange-500/5',
-    iconColor: 'text-amber-400',
+    gradient: 'from-brand-400/15 to-brand-300/5',
+    iconColor: 'text-brand-300',
   },
   {
     key: 'cooking',
@@ -28,8 +28,8 @@ const hobbies: HobbyCard[] = [
     descriptionKey: 'hobbies.cooking.description',
     icon: CookingPotIcon,
     to: '/cooking',
-    gradient: 'from-red-500/10 to-rose-500/5',
-    iconColor: 'text-red-400',
+    gradient: 'from-brand-500/15 to-brand-400/5',
+    iconColor: 'text-brand-400',
   },
   {
     key: 'music',
@@ -37,8 +37,8 @@ const hobbies: HobbyCard[] = [
     descriptionKey: 'hobbies.music.description',
     icon: Music2Icon,
     to: '/music',
-    gradient: 'from-violet-500/10 to-purple-500/5',
-    iconColor: 'text-violet-400',
+    gradient: 'from-brand-700/20 to-brand-500/5',
+    iconColor: 'text-brand-300',
   },
 ];
 
@@ -73,7 +73,10 @@ export function HobbiesSection() {
   const { t } = useTranslation();
 
   return (
-    <section id='hobbies' className='py-20 px-4 bg-gray-900'>
+    <section
+      id='hobbies'
+      className='py-20 px-4 relative'
+    >
       <div className='max-w-6xl mx-auto'>
         <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>{t('hobbies.title')}</h2>
         <div className='text-center mb-12 max-w-3xl mx-auto space-y-4'>

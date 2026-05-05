@@ -8,7 +8,7 @@
       "flag": "BR",
       "emojiFlag": "🇧🇷",
       "proficiency": "Native",
-      "color": "#22c55e",
+      "color": "#EE4540",
       "levels": { "speaking": 100, "listening": 100, "reading": 100 }
     },
     {
@@ -18,7 +18,7 @@
       "flag": "US",
       "emojiFlag": "🇺🇸",
       "proficiency": "Intermediate",
-      "color": "#3b82f6",
+      "color": "#C72C41",
       "levels": { "speaking": 35, "listening": 60, "reading": 95 }
     },
     {
@@ -28,7 +28,7 @@
       "flag": "ES",
       "emojiFlag": "🇪🇸",
       "proficiency": "Basic",
-      "color": "#f59e0b",
+      "color": "#801336",
       "levels": { "speaking": 20, "listening": 40, "reading": 45 }
     },
     {
@@ -38,7 +38,7 @@
       "flag": "FR",
       "emojiFlag": "🇫🇷",
       "proficiency": "Beginner",
-      "color": "#a855f7",
+      "color": "#F47370",
       "levels": { "speaking": 10, "listening": 25, "reading": 30 }
     }
   ]

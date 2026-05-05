@@ -44,6 +44,8 @@ function Breadcrumbs({ items }: { items: Array<{ label: string; href?: string }>
 }
 
 function ArticleCard({ article }: { article: Article }) {
+  const { i18n } = useTranslation();
+  const locale = i18n.language === 'pt-BR' ? 'pt-BR' : 'en-US';
   const readTime = article.readingTime;
 
   return (
@@ -65,7 +67,7 @@ function ArticleCard({ article }: { article: Article }) {
           {article.date && (
             <span className='inline-flex items-center gap-1'>
               <CalendarIcon className='size-3' />
-              {new Date(article.date).toLocaleDateString('en-US', {
+              {new Date(article.date).toLocaleDateString(locale, {
                 year: 'numeric',
                 month: 'short',
                 day: 'numeric',
@@ -132,26 +134,26 @@ export default function ArticlesPage() {
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
       {/* Header */}
-      <header className='sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
+      <header className='sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
         <div className='max-w-7xl mx-auto px-6 py-4 flex items-center justify-between'>
           <Link
             to='/'
             className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
           >
             <ArrowLeftIcon className='size-4' />
-            Back to Portfolio
+            {t('common.backToPortfolio')}
           </Link>
 
           <div className='flex items-center gap-2'>
             <NewspaperIcon className='size-5 text-brand-400' />
-            <span className='font-semibold text-white'>Articles</span>
+            <span className='font-semibold text-white'>{t('articles.title')}</span>
           </div>
         </div>
       </header>
 
       {/* Breadcrumbs */}
       <div className='max-w-7xl mx-auto px-6'>
-        <Breadcrumbs items={[{ label: 'Home', href: '/' }, { label: 'Articles' }]} />
+        <Breadcrumbs items={[{ label: t('common.home'), href: '/' }, { label: t('articles.title') }]} />
       </div>
 
       {/* Hero */}
@@ -161,10 +163,9 @@ export default function ArticlesPage() {
             <NewspaperIcon className='size-10 text-brand-400' />
           </div>
 
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Articles</h1>
+          <h1 className='text-4xl md:text-5xl font-bold mb-4'>{t('articles.title')}</h1>
           <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            Writing about software engineering, machine learning, and the tools I use every day. Deep dives, tutorials,
-            and lessons learned from building real-world applications.
+            {t('articles.description')}
           </p>
         </div>
       </section>
@@ -177,7 +178,7 @@ export default function ArticlesPage() {
             <SearchIcon className='absolute left-3 top-1/2 -translate-y-1/2 size-4 text-gray-500' />
             <input
               type='text'
-              placeholder='Search articles...'
+              placeholder={t('articles.title') + '...'}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className='w-full bg-gray-900/50 border border-gray-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-500/50 transition-colors'
@@ -191,11 +192,11 @@ export default function ArticlesPage() {
                 to={`${import.meta.env.BASE_URL}articles`}
                 className={`px-4 py-2 rounded-full text-sm transition-all duration-200 border no-underline ${
                   activeTag === null
-                    ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                    ? 'bg-brand-500 text-white border-brand-500 font-medium'
                     : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
                 }`}
               >
-                All
+                {t('cooking.all')}
               </Link>
 
               {allTags.map((tag) => (
@@ -204,7 +205,7 @@ export default function ArticlesPage() {
                   to={`${import.meta.env.BASE_URL}articles?tag=${encodeURIComponent(tag)}`}
                   className={`px-4 py-2 rounded-full text-sm transition-all duration-200 border no-underline ${
                     tag === activeTag
-                      ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                      ? 'bg-brand-500 text-white border-brand-500 font-medium'
                       : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
                   }`}
                 >

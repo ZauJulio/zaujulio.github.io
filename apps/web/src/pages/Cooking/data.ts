@@ -2,7 +2,7 @@ import { useMemo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { loadMarkdownFiles, type RecipeMeta } from '@repo/shared/lib/markdown';
 
-const enRecipeFiles = import.meta.glob('../../content/recipes/*.md', {
+const enRecipeFiles = import.meta.glob(['../../content/recipes/*.md', '!../../content/recipes/*.pt-BR.md'], {
   query: '?raw',
   import: 'default',
   eager: true,

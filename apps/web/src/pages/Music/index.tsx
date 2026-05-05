@@ -396,7 +396,7 @@ export default function MusicPage() {
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
       {/* Header */}
-      <header className='sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
+      <header className='sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
         <div className='max-w-7xl mx-auto px-6 py-4 flex items-center justify-between'>
           <Link
             to='/'

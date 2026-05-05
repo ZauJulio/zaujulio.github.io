@@ -97,15 +97,23 @@ export default function Home() {
         <ArticlesSection />
       </ScrollReveal>
 
-      {/* Hobbies */}
-      <ScrollReveal delay={100}>
-        <HobbiesSection />
-      </ScrollReveal>
+      {/* Hobbies + Hire Me — shared background */}
+      <div
+        className='relative overflow-hidden'
+        style={{
+          background: '#0a0a0a',
+          backgroundImage:
+            'radial-gradient(ellipse at 30% 20%, rgba(128,19,54,0.12) 0%, transparent 50%), radial-gradient(ellipse at 70% 70%, rgba(199,44,65,0.08) 0%, transparent 45%), radial-gradient(ellipse at 50% 100%, rgba(45,19,44,0.06) 0%, transparent 40%)',
+        }}
+      >
+        <ScrollReveal delay={100}>
+          <HobbiesSection />
+        </ScrollReveal>
 
-      {/* Hire Me */}
-      <ScrollReveal delay={150}>
-        <HireMeSection />
-      </ScrollReveal>
+        <ScrollReveal delay={150}>
+          <HireMeSection />
+        </ScrollReveal>
+      </div>
 
       {/* Footer */}
       <ScrollReveal delay={100} distance={20}>

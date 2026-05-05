@@ -7,7 +7,10 @@ export function HireMeSection() {
   const { t } = useTranslation();
   
   return (
-    <section id='hire' className='bg-gray-950 py-24'>
+    <section
+      id='hire'
+      className='py-24 relative'
+    >
       <div className='container mx-auto px-6 max-w-3xl text-center'>
         <div className='flex justify-center mb-6'>
           <div className='p-3 bg-brand-900/40 rounded-xl'>

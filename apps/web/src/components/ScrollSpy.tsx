@@ -106,7 +106,7 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
               }`}
               style={{
                 WebkitTextStroke: '1px white',
-                textShadow: '0 0 2px rgba(255,255,255,0.5)',
+                
               }}
             >
               {section.label}

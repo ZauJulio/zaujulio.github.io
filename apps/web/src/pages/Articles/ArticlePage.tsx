@@ -7,26 +7,28 @@ import { findBySlugJson } from '@repo/shared/lib/markdown';
 
 import { Breadcrumbs } from '@components/Breadcrumbs';
 
-import { articles } from './data';
+import { useArticles } from './data';
 
 export default function ArticlePage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const articles = useArticles();
   const { slug } = useParams<{ slug: string }>();
   const article = slug ? findBySlugJson(articles, slug) : undefined;
+  const locale = i18n.language === 'pt-BR' ? 'pt-BR' : 'en-US';
 
   if (!article) {
     return (
       <div className='min-h-screen bg-black text-white font-sans flex items-center justify-center'>
         <div className='text-center'>
           <NewspaperIcon className='size-12 text-gray-600 mx-auto mb-4' />
-          <h1 className='text-2xl font-bold mb-2'>Article not found</h1>
-          <p className='text-gray-400 mb-6'>The article you're looking for doesn't exist.</p>
+          <h1 className='text-2xl font-bold mb-2'>{t('articles.notFound')}</h1>
+          <p className='text-gray-400 mb-6'>{t('articles.notFoundDesc')}</p>
           <Link
             to={`${import.meta.env.BASE_URL}articles`}
             className='inline-flex items-center gap-2 text-brand-300 hover:text-brand-500 transition-colors no-underline'
           >
             <ArrowLeftIcon className='size-4' />
-            Back to Articles
+            {t('articles.backTo')}
           </Link>
         </div>
       </div>
@@ -38,19 +40,19 @@ export default function ArticlePage() {
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
       {/* Header */}
-      <header className='sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
+      <header className='sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
         <div className='max-w-4xl mx-auto px-6 py-4 flex items-center justify-between'>
           <Link
             to={`${import.meta.env.BASE_URL}articles`}
             className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
           >
             <ArrowLeftIcon className='size-4' />
-            Back to Articles
+            {t('articles.backTo')}
           </Link>
 
           <div className='flex items-center gap-2'>
             <NewspaperIcon className='size-5 text-brand-400' />
-            <span className='font-semibold text-white'>Article</span>
+            <span className='font-semibold text-white'>{t('articles.article')}</span>
           </div>
         </div>
       </header>
@@ -58,7 +60,11 @@ export default function ArticlePage() {
       {/* Breadcrumbs */}
       <div className='max-w-4xl mx-auto px-6'>
         <Breadcrumbs
-          items={[{ label: 'Home', href: '/' }, { label: 'Articles', href: '/articles' }, { label: article.title }]}
+          items={[
+            { label: t('common.home'), href: '/' },
+            { label: t('articles.title'), href: '/articles' },
+            { label: article.title },
+          ]}
         />
       </div>
 
@@ -90,7 +96,7 @@ export default function ArticlePage() {
             {article.date && (
               <span className='inline-flex items-center gap-1.5'>
                 <CalendarIcon className='size-4' />
-                {new Date(article.date).toLocaleDateString('en-US', {
+                {new Date(article.date).toLocaleDateString(locale, {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
@@ -109,7 +115,7 @@ export default function ArticlePage() {
                 className='inline-flex items-center gap-1.5 text-brand-300 hover:text-brand-500 transition-colors no-underline'
               >
                 <ExternalLinkIcon className='size-4' />
-                Originally published
+                {t('articles.originallyPublished')}
               </a>
             )}
           </div>

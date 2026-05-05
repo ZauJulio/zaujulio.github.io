@@ -126,5 +126,60 @@
     "title": "404",
     "message": "Página não encontrada",
     "backHome": "Voltar ao Início"
+  },
+  "softSkills": {
+    "title": "Soft Skills",
+    "items": [
+      {
+        "name": "Resolução Analítica de Problemas",
+        "description": "Diagnóstico de gargalos, debugging de arquiteturas complexas e otimização de latência/carga em sistemas de alta demanda."
+      },
+      {
+        "name": "Visão Sistêmica e Planejamento",
+        "description": "Gerenciamento de roadmaps de engenharia e desenho de arquiteturas de ecossistemas completos, conectando regras de negócio à infraestrutura."
+      },
+      {
+        "name": "Pragmatismo e Foco em Eficiência",
+        "description": "Priorização de performance, estabilidade e baixo consumo de recursos na tomada de decisão técnica e implementação de soluções."
+      },
+      {
+        "name": "Comunicação e Feedback",
+        "description": "Condução de code reviews construtivos focados em mitigação de vulnerabilidades e manutenção de relações sólidas com equipes de pesquisa e desenvolvimento."
+      },
+      {
+        "name": "Adaptabilidade Multidisciplinar",
+        "description": "Transição eficiente entre múltiplas stacks (Node.js, C#, Python), ambientes de infraestrutura (CI/CD, DevOps) e otimizações a nível de sistema operacional e hardware."
+      },
+      {
+        "name": "Autonomia e Pró-atividade",
+        "description": "Identificação independente de gargalos em infraestrutura e antecipação de necessidades de escalabilidade (ex: implementação preemptiva de cache e load balancing)."
+      },
+      {
+        "name": "Atenção aos Detalhes",
+        "description": "Revisão minuciosa em rotinas críticas, garantindo a integridade e precisão de dados em sistemas de relatórios institucionais e geração de documentos."
+      },
+      {
+        "name": "Aprendizado Contínuo",
+        "description": "Pesquisa ativa e integração de novas tecnologias, runtimes e ferramentas de automação para modernização de stacks e melhoria contínua de performance."
+      },
+      {
+        "name": "Colaboração Técnica",
+        "description": "Articulação de soluções entre desenvolvimento, infraestrutura e produto, disseminando boas práticas de engenharia e padrões de segurança com a equipe."
+      },
+      {
+        "name": "Gestão de Tempo e Priorização",
+        "description": "Equilíbrio entre o desenvolvimento de novas features complexas (ex: dashboards de indicadores) e a refatoração necessária para manter o baixo consumo de recursos e a estabilidade."
+      }
+    ]
+  },
+  "links": {
+    "pageTitle": "@ZauJulio — Links",
+    "pageDescription": "Desenvolvedor de Software — Todos os meus links em um só lugar.",
+    "bio": "Desenvolvedor de Software",
+    "resume": "Currículo",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "codersrank": "CodersRank",
+    "discord": "Discord"
   }
 }

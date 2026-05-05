@@ -97,6 +97,7 @@ interface Language {
 import educationJson from '@content/education/education.json';
 import educationPtBRJson from '@content/education/education.pt-BR.json';
 import profileJson from '@content/profile/profile.json';
+import profilePtBRJson from '@content/profile/profile.pt-BR.json';
 
 const enEducation = educationJson as EducationJson;
 const ptBREducation = educationPtBRJson as EducationJson;
@@ -107,6 +108,16 @@ function useEducation() {
 
   return useMemo(() => {
     return lang === 'pt-BR' ? ptBREducation : enEducation;
+  }, [lang]);
+}
+
+function useExperience() {
+  const { i18n } = useTranslation();
+  const lang = i18n.language || 'en';
+
+  return useMemo(() => {
+    const data = lang === 'pt-BR' ? profilePtBRJson : profileJson;
+    return (data as ProfileJson).experience;
   }, [lang]);
 }
 
@@ -146,6 +157,7 @@ interface EducationJson {
 }
 
 const profile = profileJson as ProfileJson;
+const profilePtBR = profilePtBRJson as Partial<ProfileJson>;
 
 import languagesJson from '@content/languages/languages.json';
 
@@ -225,9 +237,18 @@ function LanguagesBlock() {
 export function AboutMeSection() {
   const { t } = useTranslation();
   const education = useEducation();
+  const experience = useExperience();
   
   return (
-    <section id='about' className='bg-black py-20'>
+    <section
+      id='about'
+      className='py-20 relative overflow-hidden'
+      style={{
+        background: '#000',
+        backgroundImage:
+          'radial-gradient(ellipse at 20% 50%, rgba(45,19,44,0.08) 0%, transparent 50%), radial-gradient(ellipse at 80% 30%, rgba(128,19,54,0.05) 0%, transparent 45%)',
+      }}
+    >
       <div className='container mx-auto px-6 max-w-6xl'>
         {/* Section Title */}
         <div className='flex items-center gap-3 mb-16'>
@@ -243,7 +264,7 @@ export function AboutMeSection() {
           <div id='experience' className='scroll-mt-8'>
             <SubSectionHeader icon={BriefcaseIcon} title={t('about.experience')} />
             <div className='relative border-l-2 border-brand-700/50 space-y-8'>
-              {profile.experience.map((exp) => (
+              {experience.map((exp) => (
                 <TimelineItem
                   key={exp.id}
                   title={exp.role}
@@ -304,18 +325,14 @@ export function AboutMeSection() {
                 </picture>
               </div>
               <div className='md:w-2/3'>
-                <h4 className='text-xl font-bold text-white mb-1'>Features Analyzer</h4>
+                <h4 className='text-xl font-bold text-white mb-1'>{t('about.thesisName')}</h4>
                 <h5 className='text-brand-300 font-medium text-sm mb-1'>
-                  Boilerplate for Data Visualization and Analysis Tools
+                  {t('about.thesisSubtitle')}
                 </h5>
                 <p className='text-gray-500 text-xs mb-4'>Federal University of Rio Grande do Norte (UFRN) - 2024</p>
 
                 <p className='text-gray-400 text-sm leading-relaxed'>
-                  A Python desktop application for dataset feature analysis, prototyping and testing machine learning
-                  and statistical models. Built with a modular architecture using GTK for the UI, featuring a custom
-                  state management system with the Observer pattern, a typed JSON ORM with Pydantic and TinyDB, and
-                  internationalization support (i18n). Includes Docker containerization and automated documentation with
-                  MkDocs.
+                  {t('about.thesisDescription')}
                 </p>
               </div>
             </div>

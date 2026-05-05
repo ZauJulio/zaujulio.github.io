@@ -126,5 +126,60 @@
     "title": "404",
     "message": "Page not found",
     "backHome": "Back to Home"
+  },
+  "softSkills": {
+    "title": "Soft Skills",
+    "items": [
+      {
+        "name": "Analytical Problem Solving",
+        "description": "Bottleneck diagnosis, complex architecture debugging, and latency/load optimization in high-demand systems."
+      },
+      {
+        "name": "Systems Thinking & Planning",
+        "description": "Engineering roadmap management and full ecosystem architecture design, connecting business rules to infrastructure."
+      },
+      {
+        "name": "Pragmatism & Efficiency Focus",
+        "description": "Prioritizing performance, stability, and low resource usage in technical decision-making and solution implementation."
+      },
+      {
+        "name": "Communication & Feedback",
+        "description": "Conducting constructive code reviews focused on vulnerability mitigation and maintaining solid relationships with R&D teams."
+      },
+      {
+        "name": "Multidisciplinary Adaptability",
+        "description": "Efficient transition between multiple stacks (Node.js, C#, Python), infrastructure environments (CI/CD, DevOps), and OS/hardware-level optimizations."
+      },
+      {
+        "name": "Autonomy & Proactivity",
+        "description": "Independent identification of infrastructure bottlenecks and anticipation of scalability needs (e.g., preemptive cache and load balancing implementation)."
+      },
+      {
+        "name": "Attention to Detail",
+        "description": "Thorough review of critical routines, ensuring data integrity and accuracy in institutional reporting systems and document generation."
+      },
+      {
+        "name": "Continuous Learning",
+        "description": "Active research and integration of new technologies, runtimes, and automation tools for stack modernization and continuous performance improvement."
+      },
+      {
+        "name": "Technical Collaboration",
+        "description": "Articulating solutions between development, infrastructure, and product, spreading engineering best practices and security standards across the team."
+      },
+      {
+        "name": "Time Management & Prioritization",
+        "description": "Balancing complex new feature development (e.g., indicator dashboards) with necessary refactoring to maintain low resource usage and stability."
+      }
+    ]
+  },
+  "links": {
+    "pageTitle": "@ZauJulio — Links",
+    "pageDescription": "Software Developer — All my links in one place.",
+    "bio": "Software Developer",
+    "resume": "Resume/CV",
+    "linkedin": "LinkedIn",
+    "github": "GitHub",
+    "codersrank": "CodersRank",
+    "discord": "Discord"
   }
 }

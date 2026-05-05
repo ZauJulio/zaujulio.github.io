@@ -1,0 +1,84 @@
+{
+  "$schema": "../../public/profile-schema.json",
+  "name": "Zaú Júlio",
+  "title": "Engenheiro de Software",
+  "location": "Brasil (UTC-3)",
+  "email": "zaujulio.dev@gmail.com",
+  "website": "https://zaujulio.vercel.app",
+  "social": {
+    "github": "https://github.com/zaujulio",
+    "linkedin": "https://linkedin.com/in/zaujulio"
+  },
+  "experience": [
+    {
+      "id": "1",
+      "role": "Tech Lead",
+      "company": "Bitwise Technology",
+      "period": "Ago 2025 - Present",
+      "location": "Sorocaba, SP - Remoto",
+      "description": "Liderando os esforços de engenharia para construir soluções de software de alto desempenho. Definindo padrões técnicos, supervisionando o design de sistemas desde modelagem ER até orçamento e implantação de infraestrutura em nuvem.",
+      "skills": ["Mentoria", "Design de Sistemas", "CI/CD", "Arquitetura em Nuvem"]
+    },
+    {
+      "id": "2",
+      "role": "Desenvolvedor Full Stack",
+      "company": "Bitwise Technology",
+      "period": "Mar 2023 - Present",
+      "location": "Sorocaba, SP - Remoto",
+      "description": "Projetando e desenvolvendo aplicações web robustas em todo o ciclo de vida do software — do planejamento e arquitetura até implantação e otimização.",
+      "skills": ["TypeScript", "GraphQL", "MongoDB", "React", "AWS", "Node.js"]
+    },
+    {
+      "id": "3",
+      "role": "Desenvolvedor Full Stack",
+      "company": "commcepta",
+      "period": "Dez 2021 - Dez 2022",
+      "location": "Curitiba, PR - Remoto",
+      "description": "Handles projetos complexos envolvendo Big Data e GraphQL. Explorou insights ocultos em estruturas de dados em grafos, construindo um data lake em grande escala.",
+      "skills": ["GraphQL", "Big Data", "React", "Data Lake"]
+    },
+    {
+      "id": "4",
+      "role": "Diretor de Projetos",
+      "company": "Byte Serido Jr",
+      "period": "Jun 2021 - Nov 2022",
+      "location": "Caicó, RN - Híbrido",
+      "description": "Começou como Desenvolvedor Frontend, depois assumindo como Diretor de Projetos. Liderou o planejamento e execução de projetos de software.",
+      "skills": ["Gestão de Projetos", "Design de Sistemas", "Frontend", "Liderança"]
+    }
+  ],
+  "education": [
+    {
+      "id": "1",
+      "degree": "Bacharelado em Sistemas de Informação",
+      "institution": "Universidade Federal do Rio Grande do Norte (UFRN)",
+      "period": "Jan 2019 - Jan 2025",
+      "location": "Caicó, RN",
+      "description": "Programa de 8 semestres (3000h) cobrindo algoritmos, estruturas de dados, POO, bancos de dados, engenharia de software, redes de computadores, sistemas operacionais, programação web e visual, estatística e análise de sistemas.",
+      "skills": ["Full Stack", "Algoritmos", "Engenharia de Software", "Bancos de Dados", "Pesquisa"]
+    },
+    {
+      "id": "2",
+      "degree": "Técnico em Redes de Computadores",
+      "institution": "Metropole Digital - IMD/UFRN",
+      "period": "Jan 2018 - Set 2019",
+      "location": "Natal, RN",
+      "description": "Curso técnico no Instituto de Computação e Tecnologias Digitais (IMD). Cobriu arquitetura de redes, administração de servidores, sistemas Linux e fundamentos de infraestrutura.",
+      "skills": ["Redes de Computadores", "Linux", "Infraestrutura", "Monitoria"]
+    }
+  ],
+  "languages": [
+    {
+      "id": "1",
+      "name": "Português",
+      "level": "Nativo",
+      "proficiency": { "speaking": 100, "listening": 100, "reading": 100 }
+    },
+    {
+      "id": "2",
+      "name": "Inglês",
+      "level": "Intermediário",
+      "proficiency": { "speaking": 70, "listening": 80, "reading": 85 }
+    }
+  ]
+}

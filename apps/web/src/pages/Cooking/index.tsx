@@ -50,19 +50,19 @@ export default function CookingPage() {
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
       {/* Header */}
-      <header className='sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
+      <header className='sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
         <div className='max-w-7xl mx-auto px-6 py-4 flex items-center justify-between'>
           <Link
 to={`${import.meta.env.BASE_URL}`}
              className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
           >
             <ArrowLeftIcon className='size-4' />
-            Back to Portfolio
+            {t('common.backToPortfolio')}
           </Link>
 
           <div className='flex items-center gap-2'>
             <CookingPotIcon className='size-5 text-red-400' />
-            <span className='font-semibold text-white'>Cooking</span>
+            <span className='font-semibold text-white'>{t('cooking.title')}</span>
           </div>
         </div>
       </header>
@@ -74,10 +74,9 @@ to={`${import.meta.env.BASE_URL}`}
             <CookingPotIcon className='size-10 text-red-400' />
           </div>
 
-          <h1 className='text-4xl md:text-5xl font-bold mb-4'>Cooking</h1>
+          <h1 className='text-4xl md:text-5xl font-bold mb-4'>{t('cooking.title')}</h1>
           <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            Experimenting with flavors, techniques, and cuisines from around the world. From Brazilian comfort food to
-            international dishes — turning ingredients into experiences.
+            {t('cooking.description')}
           </p>
         </div>
       </section>
@@ -91,7 +90,7 @@ to={`${import.meta.env.BASE_URL}`}
 
             <input
               type='text'
-              placeholder='Search recipes...'
+              placeholder={t('cooking.searchPlaceholder')}
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
               className='w-full bg-gray-900/50 border border-gray-800 rounded-lg pl-10 pr-4 py-2 text-sm text-white placeholder:text-gray-500 focus:outline-none focus:border-brand-500/50 transition-colors'
@@ -108,11 +107,11 @@ to={`${import.meta.env.BASE_URL}`}
                   to={getFilterLink('cuisine', opt)}
                   className={`px-3 py-1.5 rounded-full text-xs transition-all duration-200 border no-underline ${
                     opt === activeCuisine
-                      ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                      ? 'bg-brand-500 text-white border-brand-500 font-medium'
                       : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
                   }`}
                 >
-                  {opt}
+                  {opt === 'All' ? t('cooking.all') : opt}
                 </Link>
               ))}
             </div>
@@ -126,11 +125,11 @@ to={`${import.meta.env.BASE_URL}`}
                   to={getFilterLink('mealType', opt)}
                   className={`px-3 py-1.5 rounded-full text-xs transition-all duration-200 border no-underline ${
                     opt === activeMealType
-                      ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                      ? 'bg-brand-500 text-white border-brand-500 font-medium'
                       : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
                   }`}
                 >
-                  {opt}
+                  {opt === 'All' ? t('cooking.all') : opt}
                 </Link>
               ))}
             </div>
@@ -144,11 +143,11 @@ to={`${import.meta.env.BASE_URL}`}
                   to={getFilterLink('courseType', opt)}
                   className={`px-3 py-1.5 rounded-full text-xs transition-all duration-200 border no-underline ${
                     opt === activeCourseType
-                      ? 'bg-brand-500 text-black border-brand-500 font-medium'
+                      ? 'bg-brand-500 text-white border-brand-500 font-medium'
                       : 'bg-gray-900/50 text-gray-400 border-gray-800 hover:border-brand-500/50 hover:text-white'
                   }`}
                 >
-                  {opt}
+                  {opt === 'All' ? t('cooking.all') : opt}
                 </Link>
               ))}
             </div>
@@ -171,10 +170,10 @@ to={`${import.meta.env.BASE_URL}`}
                 <ChefHatIcon className='size-8 text-gray-600' />
               </div>
 
-              <p className='text-gray-500 text-lg mb-2'>No recipes match your filters</p>
+              <p className='text-gray-500 text-lg mb-2'>{t('cooking.noRecipesMatch')}</p>
 
               <p className='text-gray-600 text-sm max-w-md mx-auto'>
-                Try adjusting the filters above, or add more
+                {t('cooking.tryAdjusting')}
                 <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs mx-1'>.md</code>
                 files to{' '}
                 <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>content/recipes/</code>.

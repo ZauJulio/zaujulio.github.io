@@ -3,32 +3,32 @@ import { ArrowLeftIcon, CalendarIcon, ClockIcon, CookingPotIcon, UsersIcon } fro
 import { Link, useParams } from 'react-router';
 
 import { MarkdownRenderer } from '@repo/shared/components/MarkdownRenderer';
-import { findBySlug, loadMarkdownFiles, type RecipeMeta } from '@repo/shared/lib/markdown';
+import { findBySlug, type RecipeMeta } from '@repo/shared/lib/markdown';
 
 import { Breadcrumbs } from '@components/Breadcrumbs';
-
-// Load all recipes at build time
-const recipeFiles = import.meta.glob('../../content/recipes/*.md', { query: '?raw', import: 'default', eager: true });
-const allRecipes = loadMarkdownFiles<RecipeMeta>(recipeFiles);
+import { useRecipes } from './data';
 
 export default function RecipePage() {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+  const recipes = useRecipes();
   const { slug } = useParams<{ slug: string }>();
-  const recipe = slug ? findBySlug(allRecipes, slug) : undefined;
+  const recipe = slug ? findBySlug(recipes, slug) : undefined;
+
+  const locale = i18n.language === 'pt-BR' ? 'pt-BR' : 'en-US';
 
   if (!recipe) {
     return (
       <div className='min-h-screen bg-black text-white font-sans flex items-center justify-center'>
         <div className='text-center'>
           <CookingPotIcon className='size-12 text-gray-600 mx-auto mb-4' />
-          <h1 className='text-2xl font-bold mb-2'>Recipe not found</h1>
-          <p className='text-gray-400 mb-6'>The recipe you're looking for doesn't exist.</p>
+          <h1 className='text-2xl font-bold mb-2'>{t('cooking.notFound')}</h1>
+          <p className='text-gray-400 mb-6'>{t('cooking.notFoundDesc')}</p>
           <Link
             to='/cooking'
             className='inline-flex items-center gap-2 text-brand-300 hover:text-brand-500 transition-colors no-underline'
           >
             <ArrowLeftIcon className='size-4' />
-            Back to Cooking
+            {t('cooking.backTo')}
           </Link>
         </div>
       </div>
@@ -40,19 +40,19 @@ export default function RecipePage() {
   return (
     <div className='min-h-screen bg-black text-white font-sans'>
       {/* Header */}
-      <header className='sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
+      <header className='sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
         <div className='max-w-4xl mx-auto px-6 py-4 flex items-center justify-between'>
           <Link
             to='/cooking'
             className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
           >
             <ArrowLeftIcon className='size-4' />
-            Back to Cooking
+            {t('cooking.backTo')}
           </Link>
 
           <div className='flex items-center gap-2'>
             <CookingPotIcon className='size-5 text-red-400' />
-            <span className='font-semibold text-white'>Recipe</span>
+            <span className='font-semibold text-white'>{t('cooking.recipe')}</span>
           </div>
         </div>
       </header>
@@ -60,7 +60,11 @@ export default function RecipePage() {
       {/* Breadcrumbs */}
       <div className='max-w-4xl mx-auto px-6'>
         <Breadcrumbs
-          items={[{ label: 'Home', href: '/' }, { label: 'Cooking', href: '/cooking' }, { label: meta.title }]}
+          items={[
+            { label: t('common.home'), href: '/' },
+            { label: t('cooking.title'), href: '/cooking' },
+            { label: meta.title },
+          ]}
         />
       </div>
 
@@ -116,7 +120,7 @@ export default function RecipePage() {
             {meta.date && (
               <span className='inline-flex items-center gap-1.5'>
                 <CalendarIcon className='size-4' />
-                {new Date(meta.date).toLocaleDateString('en-US', {
+                {new Date(meta.date).toLocaleDateString(locale, {
                   year: 'numeric',
                   month: 'long',
                   day: 'numeric',
@@ -126,19 +130,19 @@ export default function RecipePage() {
             {meta.prepTime && (
               <span className='inline-flex items-center gap-1.5'>
                 <ClockIcon className='size-4' />
-                Prep: {meta.prepTime}
+                {t('cooking.prepTime')}: {meta.prepTime}
               </span>
             )}
             {meta.cookTime && (
               <span className='inline-flex items-center gap-1.5'>
                 <ClockIcon className='size-4' />
-                Cook: {meta.cookTime}
+                {t('cooking.cookTime')}: {meta.cookTime}
               </span>
             )}
             {meta.servings && (
               <span className='inline-flex items-center gap-1.5'>
                 <UsersIcon className='size-4' />
-                {meta.servings} servings
+                {meta.servings} {t('cooking.servings').toLowerCase()}
               </span>
             )}
           </div>
