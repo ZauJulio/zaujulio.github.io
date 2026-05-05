@@ -15,6 +15,7 @@ const logger = {
   warn: (msg: string) => console.warn(`\x1b[33m[WARN ][${timestamp()}]\x1b[0m  ${msg}`),
   error: (msg: string) => console.error(`\x1b[31m[ERROR ][${timestamp()}]\x1b[0m  ${msg}`),
 };
+
 function timestamp(): string {
   return new Date().toISOString().split('T').join(' ').slice(0, 19);
 }
@@ -30,6 +31,7 @@ const STATIC_ROUTES = [
   { path: '/articles', priority: '0.8', changefreq: 'weekly' },
   { path: '/photography', priority: '0.7', changefreq: 'monthly' },
   { path: '/music', priority: '0.7', changefreq: 'monthly' },
+  { path: '/links', priority: '0.6', changefreq: 'monthly' },
 ];
 
 const CONTENT_TYPES: Record<string, { basePath: string; priority: string; changefreq: string }> = {
@@ -47,11 +49,14 @@ interface SitemapUrl {
 /** Recursively collect all markdown file paths in a directory */
 function getMarkdownFiles(dir: string): string[] {
   const files: string[] = [];
+
   try {
     const items = readdirSync(dir);
+  
     for (const item of items) {
       const fullPath = join(dir, item);
       const stat = statSync(fullPath);
+  
       if (stat.isDirectory()) {
         files.push(...getMarkdownFiles(fullPath));
       } else if (extname(item) === '.md') {
@@ -67,18 +72,23 @@ function getMarkdownFiles(dir: string): string[] {
 /** Extracts YAML frontmatter as key-value pairs from file content. */
 function extractFrontmatter(content: string): Record<string, string> | null {
   const match = content.match(/^---\n([\s\S]*?)\n---/);
+  
   if (!match) return null;
   const frontmatter: Record<string, string> = {};
   const lines = match[1].split('\n');
+  
   for (const line of lines) {
     const colonIndex = line.indexOf(':');
+  
     if (colonIndex > 0) {
       const key = line.slice(0, colonIndex).trim();
+  
       const value = line
         .slice(colonIndex + 1)
         .trim()
         .replace(/^['"]|['"]$/g, '');
-      frontmatter[key] = value;
+  
+        frontmatter[key] = value;
     }
   }
   return frontmatter;
@@ -88,16 +98,11 @@ function extractFrontmatter(content: string): Record<string, string> | null {
 function getFileLastModified(filePath: string): string {
   try {
     const stats = statSync(filePath);
+    
     return stats.mtime.toISOString().split('T')[0];
   } catch {
     return new Date().toISOString().split('T')[0];
   }
-}
-
-/** Generates URL-friendly slug from filepath */
-function generateSlug(filePath: string): string {
-  const fileName = basename(filePath, '.md');
-  return fileName;
 }
 
 /**
@@ -121,13 +126,17 @@ function generateSitemap(): { xml: string; urls: SitemapUrl[] } {
   for (const [contentType, config] of Object.entries(CONTENT_TYPES)) {
     const contentDir = join(CONTENT_DIR, contentType);
     const files = getMarkdownFiles(contentDir);
+
     logger.info(`Found ${files.length} markdown files in ${contentType}/`);
+    
     for (const file of files) {
       try {
         const content = readFileSync(file, 'utf-8');
         const frontmatter = extractFrontmatter(content);
-        const slug = generateSlug(file);
+        
+        const slug = basename(file, '.md');
         const lastmod = frontmatter?.date || getFileLastModified(file);
+        
         urls.push({
           loc: `${SITE_URL}${config.basePath}/${slug}`,
           lastmod,
@@ -157,15 +166,19 @@ function main() {
 
   let sitemap: string;
   let urls: SitemapUrl[];
+
   try {
     const result = generateSitemap();
+  
     sitemap = result.xml;
     urls = result.urls;
   } catch (e) {
     logger.error(`[sitemap] Failed: ${(e as any).message || e}`);
     process.exit(1);
   }
+  
   const outputPath = join(PUBLIC_DIR, 'sitemap.xml');
+  
   try {
     writeFileSync(outputPath, sitemap);
     logger.success('Sitemap generated successfully!');
@@ -177,6 +190,7 @@ function main() {
 
   logger.info(`Total URLs: ${urls.length}`);
   logger.info('URL breakdown:');
+  
   urls.forEach((url) => {
     logger.info(`  - ${url.loc.replace(SITE_URL, '')}`);
   });
