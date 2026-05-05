@@ -6,4 +6,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 export default defineConfig({
   base: '/',
   plugins: [reactRouter(), tailwindcss(), tsconfigPaths()],
+  ssr: {
+    noExternal: ["tw-animate-css"],
+  },
 });
