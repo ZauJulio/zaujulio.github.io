@@ -78,7 +78,7 @@
       "id": "2",
       "name": "English",
       "level": "Intermediate",
-      "proficiency": { "speaking": 35, "listening": 60, "reading": 95 }
+      "proficiency": { "speaking": 35, "listening": 50, "reading": 95 }
     },
     {
       "id": "3",
@@ -90,16 +90,17 @@
       "id": "4",
       "name": "French",
       "level": "Beginner",
-      "proficiency": { "speaking": 10, "listening": 25, "reading": 30 }
+      "proficiency": { "speaking": 10, "listening": 20, "reading": 30 }
     }
   ],
   "skills": {
-    "databases": ["MongoDB", "PostgreSQL", "Mongoose", "TypeORM", "SQL", "Psycopg"],
-    "backend": ["Node.js", "GraphQL", "ExpressJS", "Socket.io", "FastAPI", "Flask", "Django"],
-    "python": ["Python", "Pandas", "NumPy", "Scikit-Learn", "Matplotlib", "PyQt", "Data Analysis"],
-    "devops": ["Docker", "CI/CD", "Testing", "Git", "Linux", "Bash"],
-    "typescript": ["TypeScript", "React", "Next.js", "Redux", "GraphQL"],
-    "ml": ["Machine Learning", "SOM", "Neural Nets", "Data Science", "Scipy"]
+    "databases": ["MongoDB", "PostgreSQL", "Mongoose", "TypeORM", "SQL", "MySQL", "Neo4j", "Prisma"],
+    "backend": ["Node.js", "GraphQL", "ExpressJS", "Redis", "Socket.io", "RabbitMQ", "NestJS"],
+    "frontend": ["React", "Next.js", "Redux", "Tailwind CSS", "Chakra UI", "Chart.js", "Angular.js"],
+    "python": ["Python", "Pandas", "NumPy", "Scikit-Learn", "FastAPI", "Flask", "Matplotlib", "PyQt", "GTK", "Scraping", "Data Analysis"],
+    "devops": ["Docker", "CI/CD", "Testing", "Git", "Github", "GitLab", "Linux", "Bash"], 
+    "typescript": ["TypeScript", "Honor", "Zod", "Jest", "Vite", "Biome", "yup"],
+    "ml": ["Machine Learning", "SOM", "Neural Nets", "Data Science", "Scipy", "LLM", "RAG", "NLP"]
   },
   "thesis": {
     "title": "Features Analyzer",

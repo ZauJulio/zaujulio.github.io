@@ -245,7 +245,7 @@ export default function PhotographyPage() {
               </div>
               <p className='text-gray-500 text-lg mb-2'>{t('photography.noAlbums')}</p>
               <p className='text-gray-600 text-sm max-w-md mx-auto'>
-                {t('photography.addAlbumsHint')}
+                {/* {t('photography.addAlbumsHint')} */}
               </p>
             </div>
           )}

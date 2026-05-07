@@ -7,12 +7,13 @@
       "color": "#EE4540",
       "skills": [
         { "name": "MongoDB", "level": 90 },
-        { "name": "PostgreSQL", "level": 80 },
-        { "name": "SQL", "level": 75 },
-        { "name": "Neo4j", "level": 50 },
         { "name": "Mongoose", "level": 85 },
-        { "name": "TypeORM", "level": 70 },
-        { "name": "Psycopg", "level": 60 }
+        { "name": "Prisma", "level": 40 },
+        { "name": "PostgreSQL", "level": 60 },
+        { "name": "TypeORM", "level": 60 },
+        { "name": "SQL", "level": 80 },
+        { "name": "MySQL", "level": 65 },
+        { "name": "Neo4j", "level": 50 }
       ]
     },
     {
@@ -20,13 +21,27 @@
       "label": "Backend & APIs",
       "color": "#C72C41",
       "skills": [
-        { "name": "Node.js", "level": 90 },
-        { "name": "GraphQL", "level": 95 },
+        { "name": "Node.js", "level": 95 },
         { "name": "ExpressJS", "level": 85 },
-        { "name": "Socket.io", "level": 95 },
-        { "name": "FastAPI", "level": 70 },
-        { "name": "Flask", "level": 75 },
-        { "name": "Django", "level": 65 }
+        { "name": "NestJS", "level": 85 },
+        { "name": "Socket.io", "level": 85 },
+        { "name": "GraphQL", "level": 80 },
+        { "name": "Redis", "level": 80 },
+        { "name": "RabbitMQ", "level": 75 }
+      ]
+    },
+    {
+      "id": "typescript",
+      "label": "TypeScript Ecosystem",
+      "color": "#902943",
+      "skills": [
+        { "name": "TypeScript", "level": 90 },
+        { "name": "Biome", "level": 85 },
+        { "name": "Zod", "level": 85 },
+        { "name": "Hono", "level": 80 },
+        { "name": "Jest", "level": 80 },
+        { "name": "Vite", "level": 80 },
+        { "name": "yup", "level": 80 }
       ]
     },
     {
@@ -34,23 +49,31 @@
       "label": "Frontend",
       "color": "#A82033",
       "skills": [
-        { "name": "TypeScript", "level": 85 },
-        { "name": "React", "level": 75 },
+        { "name": "React", "level": 85 },
+        { "name": "Tailwind CSS", "level": 85 },
         { "name": "Next.js", "level": 80 },
-        { "name": "Redux", "level": 70 },
-        { "name": "HTML/CSS", "level": 90 }
+        { "name": "Redux", "level": 60 },
+        { "name": "Chakra UI", "level": 75 },
+        { "name": "Chart.js", "level": 50 },
+        { "name": "Angular.js", "level": 45 }
       ]
     },
     {
-      "id": "data",
-      "label": "Data & Analytics",
+      "id": "python",
+      "label": "Python Ecosystem",
       "color": "#801336",
       "skills": [
-        { "name": "Python", "level": 90 },
-        { "name": "Pandas", "level": 85 },
+        { "name": "Python", "level": 85 },
+        { "name": "Pandas", "level": 80 },
         { "name": "NumPy", "level": 80 },
-        { "name": "Matplotlib", "level": 75 },
-        { "name": "Data Analysis", "level": 80 }
+        { "name": "Data Analysis", "level": 80 },
+        { "name": "FastAPI", "level": 75 },
+        { "name": "Scraping", "level": 75 },
+        { "name": "Flask", "level": 70 },
+        { "name": "Matplotlib", "level": 70 },
+        { "name": "Scikit-Learn", "level": 70 },
+        { "name": "PyQt", "level": 65 },
+        { "name": "GTK", "level": 60 }
       ]
     },
     {
@@ -58,12 +81,14 @@
       "label": "DevOps & Infra",
       "color": "#F47370",
       "skills": [
-        { "name": "Docker", "level": 80 },
-        { "name": "CI/CD", "level": 75 },
-        { "name": "Testing", "level": 85 },
+        { "name": "Linux", "level": 95 },
         { "name": "Git", "level": 90 },
-        { "name": "Linux", "level": 85 },
-        { "name": "Bash", "level": 80 }
+        { "name": "Bash", "level": 85 },
+        { "name": "Docker", "level": 85 },
+        { "name": "Github", "level": 85 },
+        { "name": "GitLab", "level": 85 },
+        { "name": "CI/CD", "level": 80 },
+        { "name": "Testing", "level": 80 }
       ]
     },
     {
@@ -71,12 +96,14 @@
       "label": "ML & AI",
       "color": "#2D132C",
       "skills": [
-        { "name": "Scikit-Learn", "level": 85 },
-        { "name": "Machine Learning", "level": 75 },
-        { "name": "SOM", "level": 90 },
-        { "name": "Neural Nets", "level": 70 },
-        { "name": "Scipy", "level": 70 },
-        { "name": "PyQt", "level": 70 }
+        { "name": "LLM", "level": 75 },
+        { "name": "RAG", "level": 75 },
+        { "name": "Machine Learning", "level": 70 },
+        { "name": "Data Science", "level": 70 },
+        { "name": "SOM", "level": 70 },
+        { "name": "NLP", "level": 70 },
+        { "name": "Neural Nets", "level": 65 },
+        { "name": "Scipy", "level": 65 }
       ]
     }
   ]

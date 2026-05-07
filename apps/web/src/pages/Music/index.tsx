@@ -35,170 +35,9 @@ interface Playlist {
 
 // ─── Configurable Data ───────────────────────────────────────
 
-const playlists: Playlist[] = [
-  {
-    id: '1',
-    title: 'Late Night Coding',
-    description:
-      'Ambient and electronic tracks for deep focus sessions. Lo-fi beats, post-rock, and atmospheric soundscapes.',
-    genre: 'Ambient',
-    trackCount: 48,
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/playlist/37i9dQZF1DX5trt9i14X7j',
-      },
-      {
-        platform: 'youtube-music',
-        url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_kgNMdXz9U6F0x5qXbT0jOmFb9F-qJz6Xk',
-      },
-    ],
-  },
-  {
-    id: '2',
-    title: 'Brazilian Classics',
-    description: 'MPB, Bossa Nova, and Tropicalia essentials. Caetano, Gil, Tom Jobim, Elis Regina, and more.',
-    genre: 'MPB',
-    trackCount: 65,
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/playlist/37i9dQZF1DWTwzVdyRpXm1',
-      },
-      {
-        platform: 'youtube-music',
-        url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_nMFasKMiG0y7GCh1j9AqD9ddvaqm6RMi8',
-      },
-    ],
-  },
-  {
-    id: '3',
-    title: 'Progressive & Post-Rock',
-    description: 'From Pink Floyd to Explosions in the Sky. Long builds, complex arrangements, and cinematic textures.',
-    genre: 'Progressive Rock',
-    trackCount: 37,
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/playlist/37i9dQZF1DX6VdMW310YC7',
-      },
-    ],
-  },
-  {
-    id: '4',
-    title: 'Synthwave Drive',
-    description: 'Retro-futuristic synths for when you need energy. Outrun, darksynth, and cyberpunk vibes.',
-    genre: 'Synthpop',
-    trackCount: 52,
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/playlist/37i9dQZF1DXdLEN7aqioXM',
-      },
-      {
-        platform: 'youtube-music',
-        url: 'https://music.youtube.com/playlist?list=RDCLAK5uy_n_wfGBh7X4w8h3pMYXjwkXrMrKb_n6qqkA',
-      },
-    ],
-  },
-];
+const playlists: Playlist[] = [];
 
-const favorites: MusicItem[] = [
-  {
-    id: '1',
-    title: 'Breathe (In the Air)',
-    artist: 'Pink Floyd',
-    album: 'The Dark Side of the Moon',
-    genre: 'Progressive Rock',
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/track/2ctvdKmETyOzPb2GiJJT53',
-      },
-      {
-        platform: 'youtube-music',
-        url: 'https://music.youtube.com/watch?v=mrojrDCI02k',
-      },
-    ],
-  },
-  {
-    id: '2',
-    title: 'Construcao',
-    artist: 'Chico Buarque',
-    album: 'Construcao',
-    genre: 'MPB',
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/track/5weVRbJJLJOEMKOhOSYJJg',
-      },
-      {
-        platform: 'youtube-music',
-        url: 'https://music.youtube.com/watch?v=nmMmMYOe--g',
-      },
-    ],
-  },
-  {
-    id: '3',
-    title: 'The Less I Know the Better',
-    artist: 'Tame Impala',
-    album: 'Currents',
-    genre: 'Psychedelic',
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/track/6K4t31amVTZDgR3sKmwUJJ',
-      },
-      {
-        platform: 'youtube-music',
-        url: 'https://music.youtube.com/watch?v=2SUwOgmvzK4',
-      },
-    ],
-  },
-  {
-    id: '4',
-    title: 'Midnight City',
-    artist: 'M83',
-    album: "Hurry Up, We're Dreaming",
-    genre: 'Synthpop',
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/track/6GyFP1nfCDB8lbD2bG0Hkz',
-      },
-    ],
-  },
-  {
-    id: '5',
-    title: 'Aquarela',
-    artist: 'Toquinho',
-    album: 'Aquarela',
-    genre: 'MPB',
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/track/6tMCnmmNRSig8aBDp2TiAo',
-      },
-      {
-        platform: 'youtube-music',
-        url: 'https://music.youtube.com/watch?v=qVk6qN0HNYI',
-      },
-    ],
-  },
-  {
-    id: '6',
-    title: 'Your Hand in Mine',
-    artist: 'Explosions in the Sky',
-    album: 'The Earth Is Not a Cold Dead Place',
-    genre: 'Post-Rock',
-    links: [
-      {
-        platform: 'spotify',
-        url: 'https://open.spotify.com/track/360ksfaBMz8jvhxMJ8GJfq',
-      },
-    ],
-  },
-];
+const favorites: MusicItem[] = [];
 
 // ─── Extract unique genres from both playlists and favorites ──
 const allGenres = Array.from(
@@ -509,12 +348,12 @@ export default function MusicPage() {
               <Disc3Icon className='size-8 text-gray-600' />
             </div>
             <p className='text-gray-500 text-lg mb-2'>Playlists coming soon</p>
-            <p className='text-gray-600 text-sm max-w-lg mx-auto mb-6'>
+            {/* <p className='text-gray-600 text-sm max-w-lg mx-auto mb-6'>
               Add your playlists and favorite tracks to the{' '}
               <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>playlists</code> and{' '}
               <code className='text-gray-400 bg-gray-800 px-1.5 py-0.5 rounded text-xs'>favorites</code> arrays in this
               component. Each item supports both Spotify and YouTube Music links.
-            </p>
+            </p> */}
           </div>
         </section>
       )}
