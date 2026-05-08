@@ -16,7 +16,7 @@ export default function Home() {
     playMode: 'always',
     createContainers: true,
     hideOverflow: true,
-    timing: { duration: 450, iterations: 1 },
+    timing: { duration: 200, iterations: 1 },
     glitchTimeSpan: { start: 0, end: 1 },
     shake: {
       velocity: 15,
@@ -60,7 +60,7 @@ export default function Home() {
       >
         <div className='absolute inset-0 z-0'>
           <img
-            src={`${import.meta.env.BASE_URL}glitch-effect-black-background.jpg`}
+            src={`${import.meta.env.BASE_URL}glitch-effect-black-background.webp`}
             alt='Glitch Background'
             className='w-full h-full object-cover opacity-50'
           />
