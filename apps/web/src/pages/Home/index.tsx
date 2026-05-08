@@ -70,9 +70,9 @@ export default function Home() {
         <div className='relative z-10 flex flex-col items-center text-center px-4'>
           <NavigationBar />
 
-          <h1 className='text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-lg'>{t('hero.title')}</h1>
+          <h1 className='select-none text-5xl md:text-7xl font-bold mb-4 tracking-tight text-white drop-shadow-lg'>{t('hero.title')}</h1>
 
-          <p className='text-xl md:text-2xl text-brand-300 font-light tracking-wide'>{t('hero.subtitle')}</p>
+          <p className='select-none text-xl md:text-2xl text-brand-300 font-light tracking-wide'>{t('hero.subtitle')}</p>
         </div>
 
         <div className='absolute bottom-8 z-10 animate-bounce'>

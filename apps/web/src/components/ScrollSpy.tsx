@@ -109,7 +109,7 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
                 
               }}
             >
-              {section.label}
+              
             </span>
           </button>
         ))}

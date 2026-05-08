@@ -31,7 +31,7 @@
     {
       "id": "3",
       "role": "Full Stack Developer",
-      "company": "commcepta",
+      "company": "Commcepta",
       "period": "Dec 2021 - Dec 2022",
       "location": "Curitiba, PR - Remote",
       "description": "Handled complex projects involving Big Data and GraphQL. Explored hidden insights within graph data structures, building a large-scale data lake.",
@@ -45,6 +45,15 @@
       "location": "Caico, RN - Hybrid",
       "description": "Started as a Frontend Developer, later taking on the role of Project Director. Led the planning and execution of software projects.",
       "skills": ["Project Management", "System Design", "Frontend", "Leadership"]
+    },
+    {
+      "id": "5",
+      "role": "Research Assistant",
+      "company": "Federal University of Rio Grande do Norte (UFRN)",
+      "period": "Aug 2020 - Sept 2021",
+      "location": "Caicó, RN - On-site",
+      "description": "Worked as an Undergraduate Research Assistant at LabEPI/UFRN on projects focused on applying Artificial Intelligence and Unsupervised Machine Learning for smart energy management. Built data pipelines using Python, R, and Octave to ingest and pre-process time-series data.",
+      "skills": ["Teaching", "Computer Networks", "Software Engineering", "Mentoring"]
     }
   ],
   "education": [

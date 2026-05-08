@@ -196,7 +196,7 @@ function BubbleCluster({ cluster }: { cluster: SkillCluster }) {
                     stroke={cluster.color}
                     strokeOpacity={0.5}
                     strokeWidth={1}
-                    className='transition-all duration-300 hover:fill-opacity-80 hover:stroke-opacity-100 cursor-pointer'
+                    className='transition-all duration-300 hover:fill-opacity-80 hover:stroke-opacity-100'
                   />
                   <title>{`${bubble.name}: ${bubble.level}%`}</title>
 
