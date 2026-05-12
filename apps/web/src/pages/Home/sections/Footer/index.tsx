@@ -53,7 +53,7 @@ export function Footer() {
           {/* Center: export buttons */}
           <div className='flex items-center gap-3'>
             <a
-              href='/resume.pdf'
+              href='https://raw.githubusercontent.com/ZauJulio/ZauJulio/refs/heads/main/resume/resume.pdf'
               download
               className='inline-flex items-center gap-2 px-4 py-2 text-sm text-gray-400 hover:text-brand-300 border border-gray-700 hover:border-brand-500/50 rounded-lg transition-colors'
             >
@@ -97,7 +97,7 @@ export function Footer() {
             <LinkedinIcon className='size-5' />
           </a>
           <a
-            href='/resume.pdf'
+            href='https://raw.githubusercontent.com/ZauJulio/ZauJulio/refs/heads/main/resume/resume.pdf'
             download
             className='text-gray-500 hover:text-brand-300 transition-colors'
             aria-label={t('nav.resume')}

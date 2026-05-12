@@ -8,8 +8,8 @@ export function RecipeCard({ recipe }: { recipe: ContentItem<RecipeMeta> }) {
 
   return (
     <Link
-to={`${import.meta.env.BASE_URL}cooking/${meta.slug}`}
-       className='rounded-xl border border-gray-800 bg-gray-900/50 overflow-hidden group hover:border-brand-500/50 transition-all duration-300 no-underline block'
+      to={`${import.meta.env.BASE_URL}cooking/${meta.slug}`}
+      className='rounded-xl border border-gray-800 bg-gray-900/50 overflow-hidden group hover:border-brand-500/50 transition-all duration-300 no-underline block'
     >
       {meta.cover && (
         <div className='aspect-video overflow-hidden'>

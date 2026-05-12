@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
 import { CodeIcon, FileTextIcon, HeartIcon, MailIcon, SendIcon, UserIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 
 import { Avatar, AvatarFallback, AvatarImage } from '@repo/ui/components/avatar';
@@ -21,7 +21,7 @@ function scrollToSection(id: string) {
 
 export function NavigationBar() {
   const { t } = useTranslation();
-  
+
   return (
     <nav className='flex flex-col items-center gap-6 mb-8'>
       <Avatar className='size-32 ring-2 ring-brand-500/50 ring-offset-2 ring-offset-transparent transition-transform duration-300 hover:scale-130 cursor-pointer'>
@@ -37,7 +37,7 @@ export function NavigationBar() {
               <button
                 type='button'
                 onClick={() => scrollToSection('about')}
-                className='bg-transparent border-none cursor-pointer hover:bg-gray-700/15'
+                className='bg-transparent border-none cursor-pointer hover:text-brand-400'
               >
                 <UserIcon className='size-4 mr-2' />
                 {t('nav.about')}
@@ -50,7 +50,7 @@ export function NavigationBar() {
               <button
                 type='button'
                 onClick={() => scrollToSection('projects')}
-                className='bg-transparent border-none cursor-pointer hover:bg-gray-700/15'
+                className='bg-transparent border-none cursor-pointer hover:text-brand-400'
               >
                 <CodeIcon className='size-4 mr-2' />
                 {t('nav.projects')}
@@ -63,7 +63,7 @@ export function NavigationBar() {
               <button
                 type='button'
                 onClick={() => scrollToSection('hobbies')}
-                className='bg-transparent border-none cursor-pointer hover:bg-gray-700/15'
+                className='bg-transparent border-none cursor-pointer hover:text-brand-400'
               >
                 <HeartIcon className='size-4 mr-2' />
                 {t('nav.hobbies')}
@@ -76,7 +76,7 @@ export function NavigationBar() {
               <button
                 type='button'
                 onClick={() => scrollToSection('hire')}
-                className='bg-transparent border-none cursor-pointer hover:bg-gray-700/15'
+                className='bg-transparent border-none cursor-pointer hover:text-brand-400'
               >
                 <SendIcon className='size-4 mr-2' />
                 {t('nav.hire')}
@@ -86,7 +86,7 @@ export function NavigationBar() {
 
           <NavigationMenuItem>
             <NavigationMenuLink asChild className={navigationMenuTriggerStyle()}>
-              <Link to='/articles' className='hover:bg-gray-700/15'>
+              <Link to='/articles' className='hover:text-brand-400'>
                 <FileTextIcon className='size-4 mr-2' />
                 {t('nav.articles')}
               </Link>
@@ -101,7 +101,7 @@ export function NavigationBar() {
           href='https://github.com/zaujulio'
           target='_blank'
           rel='noopener noreferrer'
-          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700/15 rounded-md transition-colors'
+          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-brand-400 rounded-md transition-colors'
         >
           <GithubIcon className='size-4' />
           {t('nav.github')}
@@ -110,14 +110,14 @@ export function NavigationBar() {
           href='https://linkedin.com/in/zaujulio'
           target='_blank'
           rel='noopener noreferrer'
-          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700/15 rounded-md transition-colors'
+          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-brand-400 rounded-md transition-colors'
         >
           <LinkedinIcon className='size-4' />
           {t('nav.linkedin')}
         </a>
         <a
           href='mailto:zaujulio.dev@gmail.com'
-          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-white hover:bg-gray-700/15 rounded-md transition-colors'
+          className='inline-flex items-center gap-2 px-4 py-2 text-sm font-medium text-gray-300 hover:text-brand-400 rounded-md transition-colors'
         >
           <MailIcon className='size-4' />
           {t('nav.contact')}

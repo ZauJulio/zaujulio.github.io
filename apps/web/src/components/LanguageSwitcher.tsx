@@ -14,16 +14,14 @@ export function LanguageSwitcher() {
   };
 
   return (
-    <div className='fixed top-4 right-4 z-50 flex items-center gap-1 bg-black/80 backdrop-blur-md border border-gray-800 rounded-lg px-2 py-1'>
+    <div className='fixed top-2.5 right-4 z-50 flex items-center gap-1 bg-black/10 backdrop-blur-md border border-gray-800 rounded-lg px-2 py-1'>
       {languages.map((lang) => (
         <button
           key={lang.code}
           type='button'
           onClick={() => handleLanguageChange(lang.code)}
           className={`px-2 py-1 text-xs font-medium rounded transition-colors ${
-            i18n.language === lang.code
-              ? 'bg-brand-500 text-white'
-              : 'text-gray-400 hover:text-white'
+            i18n.language === lang.code ? 'bg-brand-500/70 text-white' : 'text-gray-400 hover:text-white'
           }`}
           aria-label={`Switch to ${lang.label}`}
         >

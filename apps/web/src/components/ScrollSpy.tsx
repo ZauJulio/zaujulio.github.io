@@ -106,11 +106,8 @@ export function ScrollSpy({ sections }: ScrollSpyProps) {
               }`}
               style={{
                 WebkitTextStroke: '1px white',
-                
               }}
-            >
-              
-            </span>
+            />
           </button>
         ))}
       </div>

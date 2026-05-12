@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next';
 import { HomeIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 
 export default function NotFound() {
   const { t } = useTranslation();
-  
+
   return (
     <div className='min-h-screen bg-black flex items-center justify-center px-4'>
       <div className='text-center max-w-md'>

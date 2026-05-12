@@ -10,9 +10,7 @@
     "titleBar.inactiveForeground": "#e7e7e799"
   },
   "peacock.color": "#005461",
-  "cSpell.words": [
-    "powerglitch"
-  ],
+  "cSpell.words": ["powerglitch"],
   "chat.tools.terminal.autoApprove": {
     "command": true
   }

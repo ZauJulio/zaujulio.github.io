@@ -1,6 +1,6 @@
-import { useTranslation } from 'react-i18next';
 import { ExternalLinkIcon } from 'lucide-react';
 import { useMemo } from 'react';
+import { useTranslation } from 'react-i18next';
 
 import articlesJson from 'content/articles/articles.json';
 import articlesPtBRJson from 'content/articles/articles.pt-BR.json';
@@ -24,9 +24,7 @@ function useHomeArticles() {
 
   return useMemo(() => {
     const data = lang === 'pt-BR' ? articlesPtBRJson : articlesJson;
-    return (data.articles as Article[])
-      .slice()
-      .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
+    return (data.articles as Article[]).slice().sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
   }, [lang]);
 }
 
@@ -34,7 +32,7 @@ function ArticleCard({ article }: { article: Article }) {
   return (
     <a
       href={`${import.meta.env.BASE_URL}articles/${article.slug}`}
-      className='group block rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition-all duration-300 hover:border-brand-500/50 hover:bg-gray-800/50 hover:shadow-lg hover:shadow-brand-500/5 w-4/5 mx-auto md:w-4/5'
+      className='group block rounded-xl border border-gray-800 bg-gray-900/30 p-6 transition-all duration-300 hover:border-brand-500/50 hover:bg-gray-800/35 hover:shadow-lg hover:shadow-brand-500/5 w-4/5 mx-auto md:w-4/5'
     >
       {article.cover && (
         <div className='w-full max-h-[160px] overflow-hidden mb-3'>
@@ -75,9 +73,7 @@ export function ArticlesSection() {
   return (
     <section id='articles' className='container mx-auto mt-24 mb-16 px-4 md:px-0'>
       <h2 className='text-3xl md:text-4xl font-bold mb-2 text-center'>{t('articles.latest')}</h2>
-      <p className='text-gray-400 text-lg mb-8 text-center'>
-        {t('articles.latestDescription')}
-      </p>
+      <p className='text-gray-400 text-lg mb-8 text-center'>{t('articles.latestDescription')}</p>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-8'>
         {articles.slice(0, 4).map((article) => (
           <ArticleCard key={article.slug} article={article} />

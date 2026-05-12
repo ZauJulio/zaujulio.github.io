@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
 import { ArrowRightIcon, CameraIcon, CookingPotIcon, Music2Icon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router';
 
 interface HobbyCard {
@@ -49,7 +49,7 @@ function HobbyCardComponent({ hobby }: { hobby: HobbyCard }) {
   return (
     <Link
       to={hobby.to}
-      className='group block rounded-xl border border-gray-800 bg-gray-900/50 p-6 transition-all duration-300 hover:border-brand-500/50 hover:bg-gray-800/50 hover:shadow-lg hover:shadow-brand-500/5 no-underline'
+      className='group block rounded-xl border border-gray-800 bg-gray-950/10 p-6 transition-all duration-300 hover:border-brand-500/50 hover:bg-gray-800/535 hover:shadow-lg hover:shadow-brand-500/5 no-underline'
     >
       <div className={`inline-flex p-3 rounded-lg bg-gradient-to-br ${hobby.gradient} mb-4`}>
         <Icon className={`size-6 ${hobby.iconColor}`} />
@@ -73,10 +73,7 @@ export function HobbiesSection() {
   const { t } = useTranslation();
 
   return (
-    <section
-      id='hobbies'
-      className='py-20 px-4 relative'
-    >
+    <section id='hobbies' className='py-20 px-4 relative'>
       <div className='max-w-6xl mx-auto'>
         <h2 className='text-3xl md:text-4xl font-bold text-center mb-4 text-white'>{t('hobbies.title')}</h2>
         <div className='text-center mb-12 max-w-3xl mx-auto space-y-4'>

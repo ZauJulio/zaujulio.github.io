@@ -112,6 +112,7 @@
       "!**/.obsidian",
       "!**/.next",
       "!**/dist",
+      "!**/build",
       "!**/node_modules",
       "!**/storybook-static"
     ]

@@ -1,11 +1,12 @@
-import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, CalendarIcon, ClockIcon, CookingPotIcon, UsersIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router';
 
 import { MarkdownRenderer } from '@repo/shared/components/MarkdownRenderer';
-import { findBySlug, type RecipeMeta } from '@repo/shared/lib/markdown';
+import { findBySlug } from '@repo/shared/lib/markdown';
 
 import { Breadcrumbs } from '@components/Breadcrumbs';
+
 import { useRecipes } from './data';
 
 export default function RecipePage() {
@@ -41,7 +42,7 @@ export default function RecipePage() {
     <div className='min-h-screen bg-black text-white font-sans'>
       {/* Header */}
       <header className='sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
-        <div className='max-w-4xl mx-auto px-6 py-4 flex items-center justify-between'>
+        <div className='max-w-4xl mx-auto px-6 py-4 flex items-center flex-start'>
           <Link
             to='/cooking'
             className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
@@ -49,11 +50,6 @@ export default function RecipePage() {
             <ArrowLeftIcon className='size-4' />
             {t('cooking.backTo')}
           </Link>
-
-          <div className='flex items-center gap-2'>
-            <CookingPotIcon className='size-5 text-red-400' />
-            <span className='font-semibold text-white'>{t('cooking.recipe')}</span>
-          </div>
         </div>
       </header>
 

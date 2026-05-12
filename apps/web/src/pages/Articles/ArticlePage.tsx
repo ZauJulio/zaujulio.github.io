@@ -1,5 +1,5 @@
-import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, CalendarIcon, ClockIcon, ExternalLinkIcon, NewspaperIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 import { Link, useParams } from 'react-router';
 
 import { MarkdownRenderer } from '@repo/shared/components/MarkdownRenderer';

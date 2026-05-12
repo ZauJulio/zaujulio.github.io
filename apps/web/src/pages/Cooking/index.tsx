@@ -1,10 +1,10 @@
-import { useTranslation } from 'react-i18next';
 import { ArrowLeftIcon, ChefHatIcon, CookingPotIcon, SearchIcon } from 'lucide-react';
 import { useMemo, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { Link, useSearchParams } from 'react-router';
 
 import { RecipeCard } from './components/RecipeCard';
-import { useRecipes, useRecipeFilters } from './data';
+import { useRecipeFilters, useRecipes } from './data';
 
 export const meta = () => [{ title: 'Zaú Júlio - Cooking' }];
 
@@ -51,19 +51,14 @@ export default function CookingPage() {
     <div className='min-h-screen bg-black text-white font-sans'>
       {/* Header */}
       <header className='sticky top-0 z-40 bg-black/80 backdrop-blur-md border-b border-gray-800/50'>
-        <div className='max-w-7xl mx-auto px-6 py-4 flex items-center justify-between'>
+        <div className='max-w-7xl mx-auto px-6 py-4 flex items-center flex-start'>
           <Link
-to={`${import.meta.env.BASE_URL}`}
-             className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
+            to={`${import.meta.env.BASE_URL}`}
+            className='inline-flex items-center gap-2 text-gray-400 hover:text-brand-300 transition-colors no-underline text-sm'
           >
             <ArrowLeftIcon className='size-4' />
             {t('common.backToPortfolio')}
           </Link>
-
-          <div className='flex items-center gap-2'>
-            <CookingPotIcon className='size-5 text-red-400' />
-            <span className='font-semibold text-white'>{t('cooking.title')}</span>
-          </div>
         </div>
       </header>
 
@@ -75,9 +70,7 @@ to={`${import.meta.env.BASE_URL}`}
           </div>
 
           <h1 className='text-4xl md:text-5xl font-bold mb-4'>{t('cooking.title')}</h1>
-          <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>
-            {t('cooking.description')}
-          </p>
+          <p className='text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed'>{t('cooking.description')}</p>
         </div>
       </section>
 

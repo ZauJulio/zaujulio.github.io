@@ -7,6 +7,6 @@ export default defineConfig({
   base: '/',
   plugins: [reactRouter(), tailwindcss(), tsconfigPaths()],
   ssr: {
-    noExternal: ["tw-animate-css"],
+    noExternal: ['tw-animate-css'],
   },
 });

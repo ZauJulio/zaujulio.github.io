@@ -21,12 +21,29 @@ export function MarkdownRenderer({ content }: { content: string }) {
         rehypePlugins={[rehypeRaw, rehypeHighlight]}
         components={{
           // Headings - use inline style to override prose reset
-          h1: ({ children }) => <h1 style={{ paddingBottom: '1rem' }} className='text-3xl font-bold text-white mt-10 mb-4 px-4'>{children}</h1>,
-          h2: ({ children }) => (
-            <h2 style={{ paddingBottom: '1rem' }} className='text-2xl font-bold text-white mt-10 mb-4 px-4 border-b border-gray-800'>{children}</h2>
+          h1: ({ children }) => (
+            <h1 style={{ paddingBottom: '1rem' }} className='text-3xl font-bold text-white mt-10 mb-4 px-4'>
+              {children}
+            </h1>
           ),
-          h3: ({ children }) => <h3 style={{ paddingBottom: '1rem' }} className='text-xl font-semibold text-white mt-8 mb-3 px-4'>{children}</h3>,
-          h4: ({ children }) => <h4 style={{ paddingBottom: '1rem' }} className='text-lg font-semibold text-gray-200 mt-6 mb-2 px-4'>{children}</h4>,
+          h2: ({ children }) => (
+            <h2
+              style={{ paddingBottom: '1rem' }}
+              className='text-2xl font-bold text-white mt-10 mb-4 px-4 border-b border-gray-800'
+            >
+              {children}
+            </h2>
+          ),
+          h3: ({ children }) => (
+            <h3 style={{ paddingBottom: '1rem' }} className='text-xl font-semibold text-white mt-8 mb-3 px-4'>
+              {children}
+            </h3>
+          ),
+          h4: ({ children }) => (
+            <h4 style={{ paddingBottom: '1rem' }} className='text-lg font-semibold text-gray-200 mt-6 mb-2 px-4'>
+              {children}
+            </h4>
+          ),
 
           // Paragraphs
           p: ({ children }) => <p className='text-gray-300 leading-relaxed'>{children}</p>,
@@ -75,24 +92,44 @@ export function MarkdownRenderer({ content }: { content: string }) {
 
           // Blockquotes - use inline style to override prose reset
           blockquote: ({ children }) => (
-            <blockquote style={{ marginLeft: '1rem', marginRight: '1rem' }} className='border-l-4 border-brand-500/50 bg-gray-900/50 px-6 py-4 my-6 rounded-r-lg text-gray-400 italic'>
+            <blockquote
+              style={{ marginLeft: '1rem', marginRight: '1rem' }}
+              className='border-l-4 border-brand-500/50 bg-gray-900/50 px-6 py-4 my-6 rounded-r-lg text-gray-400 italic'
+            >
               {children}
             </blockquote>
           ),
 
           // Lists - use inline style to override prose reset
           ul: ({ children }) => (
-            <ul style={{ listStyleType: 'disc', paddingLeft: '2.5rem' }} className='space-y-3 text-gray-300 my-8 mx-4 marker:text-brand-400'>{children}</ul>
+            <ul
+              style={{ listStyleType: 'disc', paddingLeft: '2.5rem' }}
+              className='space-y-3 text-gray-300 my-8 mx-4 marker:text-brand-400'
+            >
+              {children}
+            </ul>
           ),
           ol: ({ children }) => (
-            <ol style={{ listStyleType: 'decimal', paddingLeft: '2.5rem' }} className='space-y-3 text-gray-300 my-8 mx-4 marker:text-brand-400'>{children}</ol>
+            <ol
+              style={{ listStyleType: 'decimal', paddingLeft: '2.5rem' }}
+              className='space-y-3 text-gray-300 my-8 mx-4 marker:text-brand-400'
+            >
+              {children}
+            </ol>
           ),
           li: ({ children, ...props }) => {
             // Check if this li has nested ul/ol
             const hasNestedList = React.Children.toArray(children).some(
-              (child) => React.isValidElement(child) && (child.type === 'ul' || child.type === 'ol')
+              (child) => React.isValidElement(child) && (child.type === 'ul' || child.type === 'ol'),
             );
-            return <li className={hasNestedList ? 'text-gray-300 leading-relaxed' : 'text-gray-300 leading-relaxed list-item'} {...props}>{children}</li>;
+            return (
+              <li
+                className={hasNestedList ? 'text-gray-300 leading-relaxed' : 'text-gray-300 leading-relaxed list-item'}
+                {...props}
+              >
+                {children}
+              </li>
+            );
           },
 
           // Tables

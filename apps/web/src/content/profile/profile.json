@@ -106,8 +106,20 @@
     "databases": ["MongoDB", "PostgreSQL", "Mongoose", "TypeORM", "SQL", "MySQL", "Neo4j", "Prisma"],
     "backend": ["Node.js", "GraphQL", "ExpressJS", "Redis", "Socket.io", "RabbitMQ", "NestJS"],
     "frontend": ["React", "Next.js", "Redux", "Tailwind CSS", "Chakra UI", "Chart.js", "Angular.js"],
-    "python": ["Python", "Pandas", "NumPy", "Scikit-Learn", "FastAPI", "Flask", "Matplotlib", "PyQt", "GTK", "Scraping", "Data Analysis"],
-    "devops": ["Docker", "CI/CD", "Testing", "Git", "Github", "GitLab", "Linux", "Bash"], 
+    "python": [
+      "Python",
+      "Pandas",
+      "NumPy",
+      "Scikit-Learn",
+      "FastAPI",
+      "Flask",
+      "Matplotlib",
+      "PyQt",
+      "GTK",
+      "Scraping",
+      "Data Analysis"
+    ],
+    "devops": ["Docker", "CI/CD", "Testing", "Git", "Github", "GitLab", "Linux", "Bash"],
     "typescript": ["TypeScript", "Honor", "Zod", "Jest", "Vite", "Biome", "yup"],
     "ml": ["Machine Learning", "SOM", "Neural Nets", "Data Science", "Scipy", "LLM", "RAG", "NLP"]
   },

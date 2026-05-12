@@ -1,15 +1,6 @@
+import { Code2, ExternalLink, FileText, Github, Instagram, Linkedin, MessageCircle, Youtube } from 'lucide-react';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import {
-  Github,
-  Linkedin,
-  Code2,
-  MessageCircle,
-  Instagram,
-  Youtube,
-  FileText,
-  ExternalLink,
-} from 'lucide-react';
 
 export const meta = () => [
   { title: '@ZauJulio — Links' },
@@ -34,8 +25,6 @@ interface SocialItem {
 }
 
 // Links and socials are built inside the component to access t()
-
-
 
 // ─── Component ───────────────────────────────────────────────
 
@@ -330,16 +319,12 @@ export default function LinksPage() {
           animation: fadeInUp 0.5s ease-out both;
         }
       `}</style>
-      
+
       <div className='links-page'>
         <div className='links-container'>
           {/* Profile Header */}
           <div className='animate-in' style={{ textAlign: 'center' }}>
-            <img
-              src={`${import.meta.env.BASE_URL}avatar.png`}
-              alt='@ZauJulio'
-              className='links-avatar'
-            />
+            <img src={`${import.meta.env.BASE_URL}avatar.png`} alt='@ZauJulio' className='links-avatar' />
             <h1 className='links-name'>@ZauJulio</h1>
             <p className='links-bio'>{t('links.bio')}</p>
           </div>

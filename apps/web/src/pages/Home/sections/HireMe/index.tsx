@@ -1,16 +1,13 @@
-import { useTranslation } from 'react-i18next';
 import { MailIcon, SendIcon } from 'lucide-react';
+import { useTranslation } from 'react-i18next';
 
 import { GithubIcon, LinkedinIcon } from '../../../../../../../packages/ui/components/Icons';
 
 export function HireMeSection() {
   const { t } = useTranslation();
-  
+
   return (
-    <section
-      id='hire'
-      className='py-24 relative'
-    >
+    <section id='hire' className='py-24 relative'>
       <div className='container mx-auto px-6 max-w-3xl text-center'>
         <div className='flex justify-center mb-6'>
           <div className='p-3 bg-brand-900/40 rounded-xl'>
@@ -26,7 +23,7 @@ export function HireMeSection() {
         <div className='flex flex-col sm:flex-row items-center justify-center gap-4 mb-12'>
           <a
             href='mailto:zaujulio.dev@gmail.com'
-            className='inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-300 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25 no-underline'
+            className='inline-flex items-center gap-2 bg-brand-500 hover:bg-brand-400 text-black font-semibold px-8 py-3 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-brand-500/25 no-underline'
           >
             <MailIcon className='size-5' />
             {t('hire.email')}
@@ -45,19 +42,19 @@ export function HireMeSection() {
 
         {/* Quick info */}
         <div className='grid grid-cols-1 sm:grid-cols-3 gap-6'>
-          <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-5'>
+          <div className='bg-gray-800/10 backdrop-blur-sm rounded-lg border border-gray-700/60 p-5'>
             <p className='text-brand-300 font-semibold text-sm mb-1'>Location</p>
             <p className='text-gray-400 text-sm'>Brazil (UTC-3)</p>
             <p className='text-gray-500 text-xs mt-1'>Available for remote work</p>
           </div>
 
-          <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-5'>
+          <div className='bg-gray-800/10 backdrop-blur-sm rounded-lg border border-gray-700/60 p-5'>
             <p className='text-brand-300 font-semibold text-sm mb-1'>Experience</p>
             <p className='text-gray-400 text-sm'>5+ years</p>
             <p className='text-gray-500 text-xs mt-1'>Full Stack & Tech Lead</p>
           </div>
 
-          <div className='bg-gray-800/50 backdrop-blur-sm rounded-lg border border-gray-700/60 p-5'>
+          <div className='bg-gray-800/10 backdrop-blur-sm rounded-lg border border-gray-700/60 p-5'>
             <p className='text-brand-300 font-semibold text-sm mb-1'>Open Source</p>
             <a
               href='https://github.com/zaujulio'
