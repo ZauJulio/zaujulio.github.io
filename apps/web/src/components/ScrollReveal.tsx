@@ -26,8 +26,34 @@ export function ScrollReveal({
 }: ScrollRevealProps) {
   const ref = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [shouldAnimate, setShouldAnimate] = useState(true);
 
   useEffect(() => {
+    const mediaQuery = window.matchMedia('(max-width: 768px)');
+
+    const updateAnimationMode = () => {
+      const isCompactViewport = mediaQuery.matches;
+      setShouldAnimate(!isCompactViewport);
+
+      if (isCompactViewport) {
+        setIsVisible(true);
+      }
+    };
+
+    updateAnimationMode();
+
+    if (typeof mediaQuery.addEventListener === 'function') {
+      mediaQuery.addEventListener('change', updateAnimationMode);
+      return () => mediaQuery.removeEventListener('change', updateAnimationMode);
+    }
+
+    mediaQuery.addListener(updateAnimationMode);
+    return () => mediaQuery.removeListener(updateAnimationMode);
+  }, []);
+
+  useEffect(() => {
+    if (!shouldAnimate) return undefined;
+
     const el = ref.current;
     if (!el) return undefined;
 
@@ -44,7 +70,7 @@ export function ScrollReveal({
 
     observer.observe(el);
     return () => observer.disconnect();
-  }, [threshold]);
+  }, [shouldAnimate, threshold]);
 
   const translateMap = {
     up: `translateY(${distance}px)`,
@@ -58,8 +84,8 @@ export function ScrollReveal({
       ref={ref}
       className={className}
       style={{
-        opacity: isVisible ? 1 : 0,
-        transform: isVisible ? 'translate(0, 0)' : translateMap[direction],
+        opacity: shouldAnimate ? (isVisible ? 1 : 0) : 1,
+        transform: shouldAnimate ? (isVisible ? 'translate(0, 0)' : translateMap[direction]) : 'translate(0, 0)',
         transition: `opacity ${duration}ms ease-out ${delay}ms, transform ${duration}ms ease-out ${delay}ms`,
       }}
     >
